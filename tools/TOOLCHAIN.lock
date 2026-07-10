@@ -1,0 +1,34 @@
+{
+  "schema": "athanor_cv32e40p_replay_toolchain_lock_v1",
+  "oss_cad_suite": {
+    "release_date": "2026-06-30",
+    "file_date": "20260630",
+    "installable_release_tag": "oss-cad-suite-20260630",
+    "download_url": "https://github.com/YosysHQ/oss-cad-suite-build/releases/download/2026-06-30/oss-cad-suite-linux-x64-20260630.tgz",
+    "tarball_sha256": "28f1018973618732dd35c0f95550ff85ee7687fc3b87860608eeffb86ad7909e"
+  },
+  "tools": {
+    "yosys": {
+      "relative_path": "bin/yosys",
+      "version_prefix": "Yosys 0.66+181",
+      "version": "Yosys 0.66+181 (git sha1 afe6b18f2, Release, Clang /usr/bin/clang++ 18.1.8)",
+      "binary_sha256_local_receipt": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6"
+    },
+    "iverilog": {
+      "relative_path": "bin/iverilog",
+      "version_prefix": "Icarus Verilog version 14.0",
+      "version": "Icarus Verilog version 14.0 (devel) (s20260301-226-ga1c333ea6-dirty)",
+      "binary_sha256_local_receipt": "6d84be4052a92cf7184c7149506f5db6ac251f99e438a96ae3ce33f326e2ff9d"
+    },
+    "vvp": {
+      "relative_path": "bin/vvp",
+      "version_prefix": "Icarus Verilog runtime version 14.0",
+      "version": "Icarus Verilog runtime version 14.0 (devel) (s20260301-226-ga1c333ea6-dirty)",
+      "binary_sha256_local_receipt": "9f6d770762b5e77d81216e5f21a634028a9ee062a724eeb116980bdb6cb110cc"
+    }
+  },
+  "selected_flow": {
+    "liberty": "sky130_fd_sc_hd__tt_025C_1v80.lib",
+    "liberty_sha256": "ec0e1067a35c8bf20b11e58d1e8ac53326067e4dac84a125cc1b917a3518d0d9"
+  }
+}
