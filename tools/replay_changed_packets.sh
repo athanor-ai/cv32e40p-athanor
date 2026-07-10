@@ -17,6 +17,9 @@ set -euo pipefail
 REPLAY_SCRIPTS=(
   replay_source_delta.py
   replay_predicate_equiv.py
+  replay_full_decoder_equiv.py
+  replay_parent_equiv.sh
+  replay_rf_grid.sh
   replay_selected_summary.py
   activity/replay_toggle.py
 )
@@ -29,7 +32,11 @@ replay_one() {
     for script in "${REPLAY_SCRIPTS[@]}"; do
       if [ -f "$script" ]; then
         echo "--- $script"
-        python3 "$script" || exit 1
+        case "$script" in
+          *.py) python3 "$script" || exit 1 ;;
+          *.sh) bash "$script" || exit 1 ;;
+          *) echo "unsupported replay script type: $script" >&2; exit 1 ;;
+        esac
       fi
     done
     python3 -c "import json,glob; [json.load(open(f)) for f in glob.glob('*_manifest.json')]" || exit 1
