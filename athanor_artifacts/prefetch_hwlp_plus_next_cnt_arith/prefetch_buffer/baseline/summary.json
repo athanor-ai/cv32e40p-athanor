@@ -1,0 +1,12 @@
+{
+  "area": 7186.8928,
+  "manifest_sha": "cda04e5bd205abeac68c78a18d658c5b012aa6fe998b77caa7a198967080384c",
+  "top": "cv32e40p_prefetch_buffer",
+  "wns": {
+    "in2out": 2.6664,
+    "in2reg": 0.3554,
+    "overall": -0.7369,
+    "reg2out": 0.0782,
+    "reg2reg": -0.7369
+  }
+}

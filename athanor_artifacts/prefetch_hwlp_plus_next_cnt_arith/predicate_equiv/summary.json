@@ -1,0 +1,38 @@
+{
+  "candidate": "prefetch_hwlp_plus_next_cnt_arith",
+  "rows": {
+    "negative_nextcnt_missing_down": {
+      "expect": "fail",
+      "fail": true,
+      "hwlp_expr": "hwlp_jump_i && (!fifo_empty_i || resp_valid_i)",
+      "log_sha": "11171cf9c95004091c450c18ac803b2733a6bfcb3d1e70a61ca110b1116f04bb",
+      "next_expr": "cnt_q + count_up",
+      "ok": true,
+      "rc": 0,
+      "success": false,
+      "sv_sha": "1e0b636293c6bb13b20d3fa1446f7a927175c93f55e7e0665c1bd7cea5bf67b5"
+    },
+    "negative_wrong_demorgan": {
+      "expect": "fail",
+      "fail": true,
+      "hwlp_expr": "hwlp_jump_i && (!fifo_empty_i && resp_valid_i)",
+      "log_sha": "44752834c96b34f27eebf53a4cafdab56d0f136bf38af87bcfd9ae066a5070c0",
+      "next_expr": "cnt_q + count_up - count_down",
+      "ok": true,
+      "rc": 0,
+      "success": false,
+      "sv_sha": "5d87e2a97b7084993cb550f6f8c85c778dd6e2509705218e08b239834f779b5f"
+    },
+    "positive": {
+      "expect": "success",
+      "fail": false,
+      "hwlp_expr": "hwlp_jump_i && (!fifo_empty_i || resp_valid_i)",
+      "log_sha": "6dfbc79e116b145a857c1d8bc4b75c95ca1fb514f03bdbcd05c7165dee0b7571",
+      "next_expr": "cnt_q + count_up - count_down",
+      "ok": true,
+      "rc": 0,
+      "success": true,
+      "sv_sha": "e27833ce17b336be1153304905d94256125e3af4524e6c47ca4a2977f6961e7c"
+    }
+  }
+}
