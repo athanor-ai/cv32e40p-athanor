@@ -1,0 +1,116 @@
+{
+  "activity_toggle": {
+    "baseline_toggles": 1482734,
+    "boundary_equality_every_cycle": true,
+    "gate_toggles": 1482734,
+    "method": "cv32_alu_parent_div_rem_heavy_iverilog_vcd_hierarchy_toggle_v1",
+    "power_evidence_type": "toggle_convention",
+    "receipt": "activity/toggle_convention_receipt.json",
+    "receipt_sha256": "44c70dac77c7b28e2de67dff2044fe7a0b7f1d26b58b688128f92ba9365133a0",
+    "toggle_delta_pct": 0.0,
+    "vcd_gzip": "activity/toggle.vcd.gz",
+    "vcd_gzip_sha256": "38115da694aca3e47eafdcc4d20b5e9ca492b3a0125d6058012d6320dfbfac71"
+  },
+  "boundary": "default ALU parent-context evidence packet using source-local predicate equivalence; no accepted CV32 optimization, no full parent equivalence claim, no whole-core claim, no customer impact claim",
+  "candidate_id": "shift_left_divrem_prefix",
+  "classification": "default_alu_parent_area_timing_activity_positive_source_local_equiv_needs_independent_replay",
+  "customer_claim_ready": false,
+  "cv32e40p_commit": "6033d2b1be3295ec774d17ac4cf226faacfdeb08",
+  "interpretation": "The ALU parent context passes area, timing, and activity/toggle. Semantic evidence is the exact source replacement plus output-level SAT over the rewritten shift_left predicate, with a wrong-prefix negative control.",
+  "module": "cv32e40p_alu",
+  "predicate_equiv": {
+    "method": "Yosys output-level SAT, proving diff_o == 0",
+    "negative_control": {
+      "counterexample": {
+        "diff_o": "1",
+        "new_shift_left": "0",
+        "old_shift_left": "1",
+        "operator_i": "0110010"
+      },
+      "label": "negative_prefix_01101",
+      "log": "predicate_equiv/negative_prefix_01101/yosys_sat.log",
+      "log_sha256": "1639a424dd94b6f0b4d8535f0eb5e8c236ca67d25eec6b27ad5fbc6cd163bb49",
+      "result": "FAIL: model found with diff_o=1"
+    },
+    "positive": {
+      "label": "positive_prefix_01100",
+      "log": "predicate_equiv/positive_prefix_01100/yosys_sat.log",
+      "log_sha256": "6ed0d4b4b9d0d0441f70b3de172a7c919534ce18172b909fedece2755b4a2ea7",
+      "result": "SUCCESS: no model found for diff_o=1"
+    }
+  },
+  "schema": "cv32e40p_alu_shift_left_divrem_prefix_source_local_replay_v1",
+  "scope": {
+    "full_parent_equivalence": "not claimed",
+    "ppa_and_activity": "default ALU parent context only",
+    "semantic_equivalence": "source-local shift_left predicate over full 7-bit operator_i space",
+    "whole_core": "not measured"
+  },
+  "selected_flow": {
+    "area": {
+      "baseline": 29548.3392,
+      "delta_pct": -0.389566,
+      "gate": 29433.2288
+    },
+    "baseline_sha256s_sha256": "395f1d20549f6811cc2032815ba0159a3bb3b65e36483386ca91fe68e78b4e6f",
+    "gate_sha256s_sha256": "5839cbfaafbe5e98d00383cc4fc90d370ddc480bc06e4422aca266226a320776",
+    "timing_slack": {
+      "in2out": {
+        "baseline": -20.2186,
+        "gate": -14.8633,
+        "status": "improved"
+      },
+      "in2reg": {
+        "baseline": -16.2551,
+        "gate": -11.1514,
+        "status": "improved"
+      },
+      "overall": {
+        "baseline": -20.2186,
+        "gate": -14.8633,
+        "status": "improved"
+      },
+      "reg2out": {
+        "baseline": -2.4968,
+        "gate": -2.1748,
+        "status": "improved"
+      },
+      "reg2reg": {
+        "baseline": -4.9985,
+        "gate": -4.6204,
+        "status": "improved"
+      }
+    },
+    "top": "cv32e40p_alu_parent_context"
+  },
+  "selected_toolchain": {
+    "liberty": "sky130_fd_sc_hd__tt_025C_1v80.lib",
+    "yosys_version": "Yosys 0.66+181 (git sha1 afe6b18f2, Release, Clang /usr/bin/clang++ 18.1.8)"
+  },
+  "source_delta": {
+    "behavioral_movements_outside_predicate": 0,
+    "new_predicate": "operator_i[6:2] == 5'b01100 inside shift_left",
+    "old_predicate": "shift_left explicit DIV/DIVU/REM/REMU equality terms",
+    "receipt": "replay_source_delta.py",
+    "source_diff": "SOURCE_DIFF.patch",
+    "source_diff_sha256": "7dc98377b215d83c809c20657fbf11e2d6127386f2a5859d4b1326fd19d55f02"
+  },
+  "source_files": [
+    {
+      "path": "gold_source.sv",
+      "sha256": "6eca8d4c2e299adcc498417220478360cc22898ba9037cdad6a1b81e80373c7b"
+    },
+    {
+      "path": "gate_source.sv",
+      "sha256": "40df2e0b309ece64b8da1d71817c2569ec6b200a45e8add5588f52103c4d62bb"
+    },
+    {
+      "path": "gold_alu_parent_context.v",
+      "sha256": "965f9b07bc6e84f1b815fe5a897b840c02bfb7bce0dca96a6dee1a206c5bd3a9"
+    },
+    {
+      "path": "gate_alu_parent_context.v",
+      "sha256": "2087341f36af6497e51bc2e4a487219c4b30fad00c69b2b06b69a5dca3626d42"
+    }
+  ]
+}
