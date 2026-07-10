@@ -1,0 +1,700 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.66+181 (git sha1 afe6b18f2, Release, Clang /usr/bin/clang++ 18.1.8)
+
+-- Running command `read_rtlil /tmp/dexter_cv32_regfile_readmask_equiv/neg_fpu0_zfinx0/gold.il; read_rtlil /tmp/dexter_cv32_regfile_readmask_equiv/neg_fpu0_zfinx0/gate.il; opt; equiv_make gold gate equiv; hierarchy -top equiv; opt; equiv_simple; equiv_induct; equiv_status -assert' --
+
+1. Executing RTLIL frontend.
+Input filename: /tmp/dexter_cv32_regfile_readmask_equiv/neg_fpu0_zfinx0/gold.il
+
+2. Executing RTLIL frontend.
+Input filename: /tmp/dexter_cv32_regfile_readmask_equiv/neg_fpu0_zfinx0/gate.il
+
+3. Executing OPT pass (performing simple optimizations).
+
+3.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gate.
+Optimizing module gold.
+
+3.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gate'.
+Computing hashes of 257 cells of `\gate'.
+Finding duplicate cells in `\gate'.
+Finding identical cells in module `\gold'.
+Computing hashes of 257 cells of `\gold'.
+Finding duplicate cells in `\gold'.
+Removed a total of 0 cells.
+
+3.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gate..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \gold..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~564 debug messages>
+
+3.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gate.
+  Optimizing cells in module \gold.
+Performed a total of 0 changes.
+
+3.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gate'.
+Computing hashes of 257 cells of `\gate'.
+Finding duplicate cells in `\gate'.
+Finding identical cells in module `\gold'.
+Computing hashes of 257 cells of `\gold'.
+Finding duplicate cells in `\gold'.
+Removed a total of 0 cells.
+
+3.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gate..
+Finding unused cells or wires in module \gold..
+
+3.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gate.
+Optimizing module gold.
+
+3.9. Finished fast OPT passes. (There is nothing left to do.)
+
+4. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: clk_gold (\clk_gold), clk_gate (\clk_gate) -> clk
+Presumably equivalent wires: rst_n_gold (\rst_n_gold), rst_n_gate (\rst_n_gate) -> rst_n
+Presumably equivalent wires: scan_cg_en_i_gold (\scan_cg_en_i_gold), scan_cg_en_i_gate (\scan_cg_en_i_gate) -> scan_cg_en_i
+Presumably equivalent wires: raddr_a_i_gold (\raddr_a_i_gold), raddr_a_i_gate (\raddr_a_i_gate) -> raddr_a_i
+Presumably equivalent wires: rdata_a_o_gold (\rdata_a_o_gold), rdata_a_o_gate (\rdata_a_o_gate) -> rdata_a_o
+Presumably equivalent wires: raddr_b_i_gold (\raddr_b_i_gold), raddr_b_i_gate (\raddr_b_i_gate) -> raddr_b_i
+Presumably equivalent wires: rdata_b_o_gold (\rdata_b_o_gold), rdata_b_o_gate (\rdata_b_o_gate) -> rdata_b_o
+Presumably equivalent wires: raddr_c_i_gold (\raddr_c_i_gold), raddr_c_i_gate (\raddr_c_i_gate) -> raddr_c_i
+Presumably equivalent wires: rdata_c_o_gold (\rdata_c_o_gold), rdata_c_o_gate (\rdata_c_o_gate) -> rdata_c_o
+Presumably equivalent wires: waddr_a_i_gold (\waddr_a_i_gold), waddr_a_i_gate (\waddr_a_i_gate) -> waddr_a_i
+Presumably equivalent wires: wdata_a_i_gold (\wdata_a_i_gold), wdata_a_i_gate (\wdata_a_i_gate) -> wdata_a_i
+Presumably equivalent wires: we_a_i_gold (\we_a_i_gold), we_a_i_gate (\we_a_i_gate) -> we_a_i
+Presumably equivalent wires: waddr_b_i_gold (\waddr_b_i_gold), waddr_b_i_gate (\waddr_b_i_gate) -> waddr_b_i
+Presumably equivalent wires: wdata_b_i_gold (\wdata_b_i_gold), wdata_b_i_gate (\wdata_b_i_gate) -> wdata_b_i
+Presumably equivalent wires: we_b_i_gold (\we_b_i_gold), we_b_i_gate (\we_b_i_gate) -> we_b_i
+Presumably equivalent wires: mem_gold ({ \mem_gold [1023:32] 32'00000000000000000000000000000000 }), mem_gate ({ \mem_gate [1023:32] 32'00000000000000000000000000000000 }) -> mem
+Presumably equivalent wires: mem_fp_gold (1024'0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000), mem_fp_gate (1024'0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) -> mem_fp
+Presumably equivalent wires: waddr_a_gold (\waddr_a_i_gold), waddr_a_gate (\waddr_a_i_gate) -> waddr_a
+Presumably equivalent wires: waddr_b_gold (\waddr_b_i_gold), waddr_b_gate (\waddr_b_i_gate) -> waddr_b
+Presumably equivalent wires: we_a_dec_gold (\we_a_dec_gold), we_a_dec_gate (\we_a_dec_gate) -> we_a_dec
+  Skipping signal bit we_a_dec_gold [0]: undriven on gold side.
+Presumably equivalent wires: we_b_dec_gold (\we_b_dec_gold), we_b_dec_gate (\we_b_dec_gate) -> we_b_dec
+  Skipping signal bit we_b_dec_gold [0]: undriven on gold side.
+Changing input S of cell $procmux$482_gate ($mux): \we_b_dec_gate [11] -> \we_b_dec [11]
+Changing input S of cell $procmux$479_gate ($mux): \we_a_dec_gate [11] -> \we_a_dec [11]
+Changing input A of cell $procmux$479_gate ($mux): \mem_gate [383:352] -> \mem [383:352]
+Changing input A of cell $shiftx$/tmp/dexter_cv32_regfile_readmask_equiv/neg/cv32e40p_register_file_ff.sv:91$171_gate ($shiftx): { \mem_gate [1023:32] 32'00000000000000000000000000000000 } -> { \mem [1023:32] 32'00000000000000000000000000000000 }
+Changing input S of cell $procmux$477_gate ($mux): \we_b_dec_gate [10] -> \we_b_dec [10]
+Changing input S of cell $procmux$474_gate ($mux): \we_a_dec_gate [10] -> \we_a_dec [10]
+Changing input A of cell $procmux$474_gate ($mux): \mem_gate [351:320] -> \mem [351:320]
+Changing input S of cell $procmux$472_gate ($mux): \we_b_dec_gate [9] -> \we_b_dec [9]
+Changing input S of cell $procmux$469_gate ($mux): \we_a_dec_gate [9] -> \we_a_dec [9]
+Changing input A of cell $procmux$469_gate ($mux): \mem_gate [319:288] -> \mem [319:288]
+Changing input S of cell $procmux$467_gate ($mux): \we_b_dec_gate [8] -> \we_b_dec [8]
+Changing input S of cell $procmux$464_gate ($mux): \we_a_dec_gate [8] -> \we_a_dec [8]
+Changing input A of cell $procmux$464_gate ($mux): \mem_gate [287:256] -> \mem [287:256]
+Changing input S of cell $procmux$542_gate ($mux): \we_b_dec_gate [23] -> \we_b_dec [23]
+Changing input S of cell $procmux$462_gate ($mux): \we_b_dec_gate [7] -> \we_b_dec [7]
+Changing input S of cell $procmux$539_gate ($mux): \we_a_dec_gate [23] -> \we_a_dec [23]
+Changing input A of cell $procmux$539_gate ($mux): \mem_gate [767:736] -> \mem [767:736]
+Changing input S of cell $procmux$459_gate ($mux): \we_a_dec_gate [7] -> \we_a_dec [7]
+Changing input A of cell $procmux$459_gate ($mux): \mem_gate [255:224] -> \mem [255:224]
+Changing input S of cell $procmux$562_gate ($mux): \we_b_dec_gate [27] -> \we_b_dec [27]
+Changing input S of cell $procmux$457_gate ($mux): \we_b_dec_gate [6] -> \we_b_dec [6]
+Changing input S of cell $procmux$537_gate ($mux): \we_b_dec_gate [22] -> \we_b_dec [22]
+Changing input S of cell $procmux$454_gate ($mux): \we_a_dec_gate [6] -> \we_a_dec [6]
+Changing input A of cell $procmux$454_gate ($mux): \mem_gate [223:192] -> \mem [223:192]
+Changing input S of cell $procmux$534_gate ($mux): \we_a_dec_gate [22] -> \we_a_dec [22]
+Changing input A of cell $procmux$534_gate ($mux): \mem_gate [735:704] -> \mem [735:704]
+Changing input S of cell $procmux$452_gate ($mux): \we_b_dec_gate [5] -> \we_b_dec [5]
+Changing input S of cell $procmux$569_gate ($mux): \we_a_dec_gate [29] -> \we_a_dec [29]
+Changing input A of cell $procmux$569_gate ($mux): \mem_gate [959:928] -> \mem [959:928]
+Changing input S of cell $procmux$449_gate ($mux): \we_a_dec_gate [5] -> \we_a_dec [5]
+Changing input A of cell $procmux$449_gate ($mux): \mem_gate [191:160] -> \mem [191:160]
+Changing input S of cell $procmux$532_gate ($mux): \we_b_dec_gate [21] -> \we_b_dec [21]
+Changing input S of cell $procmux$447_gate ($mux): \we_b_dec_gate [4] -> \we_b_dec [4]
+Changing input S of cell $procmux$559_gate ($mux): \we_a_dec_gate [27] -> \we_a_dec [27]
+Changing input A of cell $procmux$559_gate ($mux): \mem_gate [895:864] -> \mem [895:864]
+Changing input S of cell $procmux$529_gate ($mux): \we_a_dec_gate [21] -> \we_a_dec [21]
+Changing input A of cell $procmux$529_gate ($mux): \mem_gate [703:672] -> \mem [703:672]
+Changing input S of cell $procmux$444_gate ($mux): \we_a_dec_gate [4] -> \we_a_dec [4]
+Changing input A of cell $procmux$444_gate ($mux): \mem_gate [159:128] -> \mem [159:128]
+Changing input S of cell $procmux$442_gate ($mux): \we_b_dec_gate [3] -> \we_b_dec [3]
+Changing input S of cell $procmux$527_gate ($mux): \we_b_dec_gate [20] -> \we_b_dec [20]
+Changing input S of cell $procmux$439_gate ($mux): \we_a_dec_gate [3] -> \we_a_dec [3]
+Changing input A of cell $procmux$439_gate ($mux): \mem_gate [127:96] -> \mem [127:96]
+Changing input S of cell $procmux$524_gate ($mux): \we_a_dec_gate [20] -> \we_a_dec [20]
+Changing input A of cell $procmux$524_gate ($mux): \mem_gate [671:640] -> \mem [671:640]
+Changing input S of cell $procmux$437_gate ($mux): \we_b_dec_gate [2] -> \we_b_dec [2]
+Changing input S of cell $procmux$557_gate ($mux): \we_b_dec_gate [26] -> \we_b_dec [26]
+Changing input S of cell $procmux$434_gate ($mux): \we_a_dec_gate [2] -> \we_a_dec [2]
+Changing input A of cell $procmux$434_gate ($mux): \mem_gate [95:64] -> \mem [95:64]
+Changing input S of cell $procmux$522_gate ($mux): \we_b_dec_gate [19] -> \we_b_dec [19]
+Changing input S of cell $procmux$432_gate ($mux): \we_b_dec_gate [1] -> \we_b_dec [1]
+Changing input S of cell $procmux$519_gate ($mux): \we_a_dec_gate [19] -> \we_a_dec [19]
+Changing input A of cell $procmux$519_gate ($mux): \mem_gate [639:608] -> \mem [639:608]
+Changing input S of cell $procmux$429_gate ($mux): \we_a_dec_gate [1] -> \we_a_dec [1]
+Changing input A of cell $procmux$429_gate ($mux): \mem_gate [63:32] -> \mem [63:32]
+Changing input S of cell $procmux$572_gate ($mux): \we_b_dec_gate [29] -> \we_b_dec [29]
+Changing input S of cell $procmux$547_gate ($mux): \we_b_dec_gate [24] -> \we_b_dec [24]
+Changing input S of cell $procmux$517_gate ($mux): \we_b_dec_gate [18] -> \we_b_dec [18]
+Changing input S of cell $procmux$492_gate ($mux): \we_b_dec_gate [13] -> \we_b_dec [13]
+Changing input S of cell $procmux$554_gate ($mux): \we_a_dec_gate [26] -> \we_a_dec [26]
+Changing input A of cell $procmux$554_gate ($mux): \mem_gate [863:832] -> \mem [863:832]
+Changing input S of cell $procmux$514_gate ($mux): \we_a_dec_gate [18] -> \we_a_dec [18]
+Changing input A of cell $procmux$514_gate ($mux): \mem_gate [607:576] -> \mem [607:576]
+Changing input S of cell $procmux$489_gate ($mux): \we_a_dec_gate [13] -> \we_a_dec [13]
+Changing input A of cell $procmux$489_gate ($mux): \mem_gate [447:416] -> \mem [447:416]
+Changing input S of cell $procmux$512_gate ($mux): \we_b_dec_gate [17] -> \we_b_dec [17]
+Changing input A of cell $shiftx$/tmp/dexter_cv32_regfile_readmask_equiv/neg/cv32e40p_register_file_ff.sv:89$155_gate ($shiftx): { \mem_gate [1023:32] 32'00000000000000000000000000000000 } -> { \mem [1023:32] 32'00000000000000000000000000000000 }
+Changing input S of cell $procmux$567_gate ($mux): \we_b_dec_gate [28] -> \we_b_dec [28]
+Changing input S of cell $procmux$509_gate ($mux): \we_a_dec_gate [17] -> \we_a_dec [17]
+Changing input A of cell $procmux$509_gate ($mux): \mem_gate [575:544] -> \mem [575:544]
+Changing input S of cell $procmux$552_gate ($mux): \we_b_dec_gate [25] -> \we_b_dec [25]
+Changing input S of cell $procmux$507_gate ($mux): \we_b_dec_gate [16] -> \we_b_dec [16]
+Changing input S of cell $procmux$504_gate ($mux): \we_a_dec_gate [16] -> \we_a_dec [16]
+Changing input A of cell $procmux$504_gate ($mux): \mem_gate [543:512] -> \mem [543:512]
+Changing input S of cell $procmux$564_gate ($mux): \we_a_dec_gate [28] -> \we_a_dec [28]
+Changing input A of cell $procmux$564_gate ($mux): \mem_gate [927:896] -> \mem [927:896]
+Changing input S of cell $procmux$487_gate ($mux): \we_b_dec_gate [12] -> \we_b_dec [12]
+Changing input S of cell $procmux$502_gate ($mux): \we_b_dec_gate [15] -> \we_b_dec [15]
+Changing input S of cell $procmux$484_gate ($mux): \we_a_dec_gate [12] -> \we_a_dec [12]
+Changing input A of cell $procmux$484_gate ($mux): \mem_gate [415:384] -> \mem [415:384]
+Changing input S of cell $procmux$549_gate ($mux): \we_a_dec_gate [25] -> \we_a_dec [25]
+Changing input A of cell $procmux$549_gate ($mux): \mem_gate [831:800] -> \mem [831:800]
+Changing input S of cell $procmux$499_gate ($mux): \we_a_dec_gate [15] -> \we_a_dec [15]
+Changing input A of cell $procmux$499_gate ($mux): \mem_gate [511:480] -> \mem [511:480]
+Changing input A of cell $shiftx$/tmp/dexter_cv32_regfile_readmask_equiv/neg/cv32e40p_register_file_ff.sv:90$163_gate ($shiftx): { \mem_gate [1023:32] 32'00000000000000000000000000000000 } -> { \mem [1023:32] 32'00000000000000000000000000000000 }
+Changing input S of cell $procmux$497_gate ($mux): \we_b_dec_gate [14] -> \we_b_dec [14]
+Changing input S of cell $procmux$494_gate ($mux): \we_a_dec_gate [14] -> \we_a_dec [14]
+Changing input A of cell $procmux$494_gate ($mux): \mem_gate [479:448] -> \mem [479:448]
+Changing input S of cell $procmux$582_gate ($mux): \we_b_dec_gate [31] -> \we_b_dec [31]
+Changing input S of cell $procmux$579_gate ($mux): \we_a_dec_gate [31] -> \we_a_dec [31]
+Changing input A of cell $procmux$579_gate ($mux): \mem_gate [1023:992] -> \mem [1023:992]
+Changing input S of cell $procmux$544_gate ($mux): \we_a_dec_gate [24] -> \we_a_dec [24]
+Changing input A of cell $procmux$544_gate ($mux): \mem_gate [799:768] -> \mem [799:768]
+Changing input S of cell $procmux$577_gate ($mux): \we_b_dec_gate [30] -> \we_b_dec [30]
+Changing input S of cell $procmux$574_gate ($mux): \we_a_dec_gate [30] -> \we_a_dec [30]
+Changing input A of cell $procmux$574_gate ($mux): \mem_gate [991:960] -> \mem [991:960]
+Changing input A of cell $shiftx$/tmp/dexter_cv32_regfile_readmask_equiv/baseline/cv32e40p_register_file_ff.sv:90$150_gold ($shiftx): { \mem_gold [1023:32] 32'00000000000000000000000000000000 } -> { \mem [1023:32] 32'00000000000000000000000000000000 }
+Changing input A of cell $shiftx$/tmp/dexter_cv32_regfile_readmask_equiv/baseline/cv32e40p_register_file_ff.sv:91$155_gold ($shiftx): { \mem_gold [1023:32] 32'00000000000000000000000000000000 } -> { \mem [1023:32] 32'00000000000000000000000000000000 }
+Changing input S of cell $procmux$489_gold ($mux): \we_b_dec_gold [16] -> \we_b_dec [16]
+Changing input S of cell $procmux$486_gold ($mux): \we_a_dec_gold [16] -> \we_a_dec [16]
+Changing input A of cell $procmux$486_gold ($mux): \mem_gold [543:512] -> \mem [543:512]
+Changing input S of cell $procmux$484_gold ($mux): \we_b_dec_gold [15] -> \we_b_dec [15]
+Changing input S of cell $procmux$481_gold ($mux): \we_a_dec_gold [15] -> \we_a_dec [15]
+Changing input A of cell $procmux$481_gold ($mux): \mem_gold [511:480] -> \mem [511:480]
+Changing input S of cell $procmux$479_gold ($mux): \we_b_dec_gold [14] -> \we_b_dec [14]
+Changing input S of cell $procmux$476_gold ($mux): \we_a_dec_gold [14] -> \we_a_dec [14]
+Changing input A of cell $procmux$476_gold ($mux): \mem_gold [479:448] -> \mem [479:448]
+Changing input S of cell $procmux$544_gold ($mux): \we_b_dec_gold [27] -> \we_b_dec [27]
+Changing input S of cell $procmux$474_gold ($mux): \we_b_dec_gold [13] -> \we_b_dec [13]
+Changing input S of cell $procmux$561_gold ($mux): \we_a_dec_gold [31] -> \we_a_dec [31]
+Changing input A of cell $procmux$561_gold ($mux): \mem_gold [1023:992] -> \mem [1023:992]
+Changing input S of cell $procmux$541_gold ($mux): \we_a_dec_gold [27] -> \we_a_dec [27]
+Changing input A of cell $procmux$541_gold ($mux): \mem_gold [895:864] -> \mem [895:864]
+Changing input S of cell $procmux$471_gold ($mux): \we_a_dec_gold [13] -> \we_a_dec [13]
+Changing input A of cell $procmux$471_gold ($mux): \mem_gold [447:416] -> \mem [447:416]
+Changing input S of cell $procmux$469_gold ($mux): \we_b_dec_gold [12] -> \we_b_dec [12]
+Changing input S of cell $procmux$539_gold ($mux): \we_b_dec_gold [26] -> \we_b_dec [26]
+Changing input S of cell $procmux$466_gold ($mux): \we_a_dec_gold [12] -> \we_a_dec [12]
+Changing input A of cell $procmux$466_gold ($mux): \mem_gold [415:384] -> \mem [415:384]
+Changing input S of cell $procmux$536_gold ($mux): \we_a_dec_gold [26] -> \we_a_dec [26]
+Changing input A of cell $procmux$536_gold ($mux): \mem_gold [863:832] -> \mem [863:832]
+Changing input S of cell $procmux$464_gold ($mux): \we_b_dec_gold [11] -> \we_b_dec [11]
+Changing input S of cell $procmux$559_gold ($mux): \we_b_dec_gold [30] -> \we_b_dec [30]
+Changing input S of cell $procmux$461_gold ($mux): \we_a_dec_gold [11] -> \we_a_dec [11]
+Changing input A of cell $procmux$461_gold ($mux): \mem_gold [383:352] -> \mem [383:352]
+Changing input S of cell $procmux$534_gold ($mux): \we_b_dec_gold [25] -> \we_b_dec [25]
+Changing input S of cell $procmux$459_gold ($mux): \we_b_dec_gold [10] -> \we_b_dec [10]
+Changing input S of cell $procmux$531_gold ($mux): \we_a_dec_gold [25] -> \we_a_dec [25]
+Changing input A of cell $procmux$531_gold ($mux): \mem_gold [831:800] -> \mem [831:800]
+Changing input S of cell $procmux$456_gold ($mux): \we_a_dec_gold [10] -> \we_a_dec [10]
+Changing input A of cell $procmux$456_gold ($mux): \mem_gold [351:320] -> \mem [351:320]
+Changing input S of cell $procmux$491_gold ($mux): \we_a_dec_gold [17] -> \we_a_dec [17]
+Changing input A of cell $procmux$491_gold ($mux): \mem_gold [575:544] -> \mem [575:544]
+Changing input S of cell $procmux$454_gold ($mux): \we_b_dec_gold [9] -> \we_b_dec [9]
+Changing input S of cell $procmux$529_gold ($mux): \we_b_dec_gold [24] -> \we_b_dec [24]
+Changing input S of cell $procmux$451_gold ($mux): \we_a_dec_gold [9] -> \we_a_dec [9]
+Changing input A of cell $procmux$451_gold ($mux): \mem_gold [319:288] -> \mem [319:288]
+Changing input S of cell $procmux$556_gold ($mux): \we_a_dec_gold [30] -> \we_a_dec [30]
+Changing input A of cell $procmux$556_gold ($mux): \mem_gold [991:960] -> \mem [991:960]
+Changing input S of cell $procmux$526_gold ($mux): \we_a_dec_gold [24] -> \we_a_dec [24]
+Changing input A of cell $procmux$526_gold ($mux): \mem_gold [799:768] -> \mem [799:768]
+Changing input S of cell $procmux$449_gold ($mux): \we_b_dec_gold [8] -> \we_b_dec [8]
+Changing input S of cell $procmux$446_gold ($mux): \we_a_dec_gold [8] -> \we_a_dec [8]
+Changing input A of cell $procmux$446_gold ($mux): \mem_gold [287:256] -> \mem [287:256]
+Changing input S of cell $procmux$524_gold ($mux): \we_b_dec_gold [23] -> \we_b_dec [23]
+Changing input S of cell $procmux$444_gold ($mux): \we_b_dec_gold [7] -> \we_b_dec [7]
+Changing input S of cell $procmux$521_gold ($mux): \we_a_dec_gold [23] -> \we_a_dec [23]
+Changing input A of cell $procmux$521_gold ($mux): \mem_gold [767:736] -> \mem [767:736]
+Changing input S of cell $procmux$441_gold ($mux): \we_a_dec_gold [7] -> \we_a_dec [7]
+Changing input A of cell $procmux$441_gold ($mux): \mem_gold [255:224] -> \mem [255:224]
+Changing input S of cell $procmux$554_gold ($mux): \we_b_dec_gold [29] -> \we_b_dec [29]
+Changing input S of cell $procmux$439_gold ($mux): \we_b_dec_gold [6] -> \we_b_dec [6]
+Changing input S of cell $procmux$519_gold ($mux): \we_b_dec_gold [22] -> \we_b_dec [22]
+Changing input S of cell $procmux$436_gold ($mux): \we_a_dec_gold [6] -> \we_a_dec [6]
+Changing input A of cell $procmux$436_gold ($mux): \mem_gold [223:192] -> \mem [223:192]
+Changing input S of cell $procmux$516_gold ($mux): \we_a_dec_gold [22] -> \we_a_dec [22]
+Changing input A of cell $procmux$516_gold ($mux): \mem_gold [735:704] -> \mem [735:704]
+Changing input S of cell $procmux$434_gold ($mux): \we_b_dec_gold [5] -> \we_b_dec [5]
+Changing input S of cell $procmux$431_gold ($mux): \we_a_dec_gold [5] -> \we_a_dec [5]
+Changing input A of cell $procmux$431_gold ($mux): \mem_gold [191:160] -> \mem [191:160]
+Changing input S of cell $procmux$514_gold ($mux): \we_b_dec_gold [21] -> \we_b_dec [21]
+Changing input S of cell $procmux$429_gold ($mux): \we_b_dec_gold [4] -> \we_b_dec [4]
+Changing input S of cell $procmux$551_gold ($mux): \we_a_dec_gold [29] -> \we_a_dec [29]
+Changing input A of cell $procmux$551_gold ($mux): \mem_gold [959:928] -> \mem [959:928]
+Changing input S of cell $procmux$511_gold ($mux): \we_a_dec_gold [21] -> \we_a_dec [21]
+Changing input A of cell $procmux$511_gold ($mux): \mem_gold [703:672] -> \mem [703:672]
+Changing input S of cell $procmux$426_gold ($mux): \we_a_dec_gold [4] -> \we_a_dec [4]
+Changing input A of cell $procmux$426_gold ($mux): \mem_gold [159:128] -> \mem [159:128]
+Changing input S of cell $procmux$424_gold ($mux): \we_b_dec_gold [3] -> \we_b_dec [3]
+Changing input S of cell $procmux$509_gold ($mux): \we_b_dec_gold [20] -> \we_b_dec [20]
+Changing input S of cell $procmux$421_gold ($mux): \we_a_dec_gold [3] -> \we_a_dec [3]
+Changing input A of cell $procmux$421_gold ($mux): \mem_gold [127:96] -> \mem [127:96]
+Changing input S of cell $procmux$564_gold ($mux): \we_b_dec_gold [31] -> \we_b_dec [31]
+Changing input S of cell $procmux$506_gold ($mux): \we_a_dec_gold [20] -> \we_a_dec [20]
+Changing input A of cell $procmux$506_gold ($mux): \mem_gold [671:640] -> \mem [671:640]
+Changing input S of cell $procmux$419_gold ($mux): \we_b_dec_gold [2] -> \we_b_dec [2]
+Changing input S of cell $procmux$549_gold ($mux): \we_b_dec_gold [28] -> \we_b_dec [28]
+Changing input S of cell $procmux$416_gold ($mux): \we_a_dec_gold [2] -> \we_a_dec [2]
+Changing input A of cell $procmux$416_gold ($mux): \mem_gold [95:64] -> \mem [95:64]
+Changing input S of cell $procmux$504_gold ($mux): \we_b_dec_gold [19] -> \we_b_dec [19]
+Changing input S of cell $procmux$414_gold ($mux): \we_b_dec_gold [1] -> \we_b_dec [1]
+Changing input S of cell $procmux$501_gold ($mux): \we_a_dec_gold [19] -> \we_a_dec [19]
+Changing input A of cell $procmux$501_gold ($mux): \mem_gold [639:608] -> \mem [639:608]
+Changing input S of cell $procmux$411_gold ($mux): \we_a_dec_gold [1] -> \we_a_dec [1]
+Changing input A of cell $procmux$411_gold ($mux): \mem_gold [63:32] -> \mem [63:32]
+Changing input S of cell $procmux$499_gold ($mux): \we_b_dec_gold [18] -> \we_b_dec [18]
+Changing input S of cell $procmux$546_gold ($mux): \we_a_dec_gold [28] -> \we_a_dec [28]
+Changing input A of cell $procmux$546_gold ($mux): \mem_gold [927:896] -> \mem [927:896]
+Changing input S of cell $procmux$496_gold ($mux): \we_a_dec_gold [18] -> \we_a_dec [18]
+Changing input A of cell $procmux$496_gold ($mux): \mem_gold [607:576] -> \mem [607:576]
+Changing input A of cell $shiftx$/tmp/dexter_cv32_regfile_readmask_equiv/baseline/cv32e40p_register_file_ff.sv:89$145_gold ($shiftx): { \mem_gold [1023:32] 32'00000000000000000000000000000000 } -> { \mem [1023:32] 32'00000000000000000000000000000000 }
+Changing input S of cell $procmux$494_gold ($mux): \we_b_dec_gold [17] -> \we_b_dec [17]
+Setting undriven nets to undef: \we_b_dec [0]
+Setting undriven nets to undef: \we_a_dec [0]
+Setting undriven nets to undef: \we_b_dec_gold [0]
+Setting undriven nets to undef: \we_a_dec_gold [0]
+Setting undriven nets to undef: \we_b_dec_gate [0]
+Setting undriven nets to undef: \we_a_dec_gate [0]
+
+5. Executing HIERARCHY pass (managing design hierarchy).
+
+5.1. Analyzing design hierarchy..
+Top module:  \equiv
+
+5.2. Analyzing design hierarchy..
+Top module:  \equiv
+Removing unused module `\gate'.
+Removing unused module `\gold'.
+Removed 2 unused modules.
+
+6. Executing OPT pass (performing simple optimizations).
+
+6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module equiv.
+
+6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\equiv'.
+Computing hashes of 2732 cells of `\equiv'.
+Finding duplicate cells in `\equiv'.
+Computing hashes of 1612 cells of `\equiv'.
+Finding duplicate cells in `\equiv'.
+<suppressed ~3360 debug messages>
+Removed a total of 1120 cells.
+
+6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \equiv..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~564 debug messages>
+
+6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \equiv.
+Performed a total of 0 changes.
+
+6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\equiv'.
+Computing hashes of 1612 cells of `\equiv'.
+Finding duplicate cells in `\equiv'.
+Computing hashes of 1519 cells of `\equiv'.
+Finding duplicate cells in `\equiv'.
+Computing hashes of 1488 cells of `\equiv'.
+Finding duplicate cells in `\equiv'.
+Computing hashes of 1457 cells of `\equiv'.
+Finding duplicate cells in `\equiv'.
+Computing hashes of 1426 cells of `\equiv'.
+Finding duplicate cells in `\equiv'.
+<suppressed ~558 debug messages>
+Removed a total of 186 cells.
+
+6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \equiv..
+Removed 13 unused cells and 160 unused wires.
+<suppressed ~16 debug messages>
+
+6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module equiv.
+
+6.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \equiv..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~285 debug messages>
+
+6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \equiv.
+Performed a total of 0 changes.
+
+6.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\equiv'.
+Computing hashes of 1413 cells of `\equiv'.
+Finding duplicate cells in `\equiv'.
+Removed a total of 0 cells.
+
+6.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \equiv..
+
+6.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module equiv.
+
+6.16. Finished fast OPT passes. (There is nothing left to do.)
+
+7. Executing EQUIV_SIMPLE pass.
+Found 96 unproven $equiv cells (3 groups) in equiv:
+ Grouping SAT models for \rdata_c_o:
+  Trying to prove $equiv for \rdata_c_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_c_o [31]:ezsat
+ success!
+ Grouping SAT models for \rdata_b_o:
+  Trying to prove $equiv for \rdata_b_o [0]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [1]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [2]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [3]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [4]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [5]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [6]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [7]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [8]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [9]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [10]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [11]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [12]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [13]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [14]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [15]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [16]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [17]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [18]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [19]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [20]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [21]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [22]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [23]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [24]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [25]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [26]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [27]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [28]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [29]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [30]:ezsat
+ success!
+  Trying to prove $equiv for \rdata_b_o [31]:ezsat
+ success!
+ Grouping SAT models for \rdata_a_o:
+  Trying to prove $equiv for \rdata_a_o [0]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [1]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [2]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [3]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [4]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [5]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [6]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [7]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [8]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [9]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [10]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [11]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [12]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [13]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [14]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [15]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [16]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [17]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [18]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [19]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [20]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [21]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [22]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [23]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [24]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [25]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [26]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [27]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [28]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [29]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [30]:ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \rdata_a_o [31]:ezsat
+ezsat
+ failed.
+Proved 64 previously unproven $equiv cells.
+
+8. Executing EQUIV_INDUCT pass.
+Found 32 unproven $equiv cells in module equiv:
+  Proving existence of base case for step 1. (261458 clauses over 95209 variables)
+  Proving induction step 1. (538787 clauses over 195377 variables)
+  Proof for induction step failed. Extending to next time step.
+  Proving existence of base case for step 2. (538788 clauses over 195377 variables)
+  Proving induction step 2. (816117 clauses over 295545 variables)
+  Proof for induction step failed. Extending to next time step.
+  Proving existence of base case for step 3. (816118 clauses over 295545 variables)
+  Proving induction step 3. (1093447 clauses over 395713 variables)
+  Proof for induction step failed. Extending to next time step.
+  Proving existence of base case for step 4. (1093448 clauses over 395713 variables)
+  Proving induction step 4. (1370777 clauses over 495881 variables)
+  Proof for induction step failed. Trying to prove individual $equiv from workset.
+  Trying to prove $equiv for \rdata_a_o [11]: failed.
+  Trying to prove $equiv for \rdata_a_o [8]: failed.
+  Trying to prove $equiv for \rdata_a_o [10]: failed.
+  Trying to prove $equiv for \rdata_a_o [16]: failed.
+  Trying to prove $equiv for \rdata_a_o [30]: failed.
+  Trying to prove $equiv for \rdata_a_o [31]: failed.
+  Trying to prove $equiv for \rdata_a_o [28]: failed.
+  Trying to prove $equiv for \rdata_a_o [29]: failed.
+  Trying to prove $equiv for \rdata_a_o [25]: failed.
+  Trying to prove $equiv for \rdata_a_o [27]: failed.
+  Trying to prove $equiv for \rdata_a_o [18]: failed.
+  Trying to prove $equiv for \rdata_a_o [4]: failed.
+  Trying to prove $equiv for \rdata_a_o [19]: failed.
+  Trying to prove $equiv for \rdata_a_o [5]: failed.
+  Trying to prove $equiv for \rdata_a_o [17]: failed.
+  Trying to prove $equiv for \rdata_a_o [6]: failed.
+  Trying to prove $equiv for \rdata_a_o [21]: failed.
+  Trying to prove $equiv for \rdata_a_o [22]: failed.
+  Trying to prove $equiv for \rdata_a_o [14]: failed.
+  Trying to prove $equiv for \rdata_a_o [15]: failed.
+  Trying to prove $equiv for \rdata_a_o [20]: failed.
+  Trying to prove $equiv for \rdata_a_o [24]: failed.
+  Trying to prove $equiv for \rdata_a_o [7]: failed.
+  Trying to prove $equiv for \rdata_a_o [9]: failed.
+  Trying to prove $equiv for \rdata_a_o [23]: failed.
+  Trying to prove $equiv for \rdata_a_o [26]: failed.
+  Trying to prove $equiv for \rdata_a_o [0]: failed.
+  Trying to prove $equiv for \rdata_a_o [1]: failed.
+  Trying to prove $equiv for \rdata_a_o [2]: failed.
+  Trying to prove $equiv for \rdata_a_o [3]: failed.
+  Trying to prove $equiv for \rdata_a_o [12]: failed.
+  Trying to prove $equiv for \rdata_a_o [13]: failed.
+Proved 0 previously unproven $equiv cells.
+
+9. Executing EQUIV_STATUS pass.
+Found 1150 $equiv cells in equiv:
+  Of those cells 1118 are proven and 32 are unproven.
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$839: \rdata_a_o_gold [31] \rdata_a_o_gate [31]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$838: \rdata_a_o_gold [30] \rdata_a_o_gate [30]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$837: \rdata_a_o_gold [29] \rdata_a_o_gate [29]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$836: \rdata_a_o_gold [28] \rdata_a_o_gate [28]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$835: \rdata_a_o_gold [27] \rdata_a_o_gate [27]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$834: \rdata_a_o_gold [26] \rdata_a_o_gate [26]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$833: \rdata_a_o_gold [25] \rdata_a_o_gate [25]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$832: \rdata_a_o_gold [24] \rdata_a_o_gate [24]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$831: \rdata_a_o_gold [23] \rdata_a_o_gate [23]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$830: \rdata_a_o_gold [22] \rdata_a_o_gate [22]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$829: \rdata_a_o_gold [21] \rdata_a_o_gate [21]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$828: \rdata_a_o_gold [20] \rdata_a_o_gate [20]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$827: \rdata_a_o_gold [19] \rdata_a_o_gate [19]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$826: \rdata_a_o_gold [18] \rdata_a_o_gate [18]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$825: \rdata_a_o_gold [17] \rdata_a_o_gate [17]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$824: \rdata_a_o_gold [16] \rdata_a_o_gate [16]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$823: \rdata_a_o_gold [15] \rdata_a_o_gate [15]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$822: \rdata_a_o_gold [14] \rdata_a_o_gate [14]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$821: \rdata_a_o_gold [13] \rdata_a_o_gate [13]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$820: \rdata_a_o_gold [12] \rdata_a_o_gate [12]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$819: \rdata_a_o_gold [11] \rdata_a_o_gate [11]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$818: \rdata_a_o_gold [10] \rdata_a_o_gate [10]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$817: \rdata_a_o_gold [9] \rdata_a_o_gate [9]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$816: \rdata_a_o_gold [8] \rdata_a_o_gate [8]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$815: \rdata_a_o_gold [7] \rdata_a_o_gate [7]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$814: \rdata_a_o_gold [6] \rdata_a_o_gate [6]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$813: \rdata_a_o_gold [5] \rdata_a_o_gate [5]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$812: \rdata_a_o_gold [4] \rdata_a_o_gate [4]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$811: \rdata_a_o_gold [3] \rdata_a_o_gate [3]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$810: \rdata_a_o_gold [2] \rdata_a_o_gate [2]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$809: \rdata_a_o_gold [1] \rdata_a_o_gate [1]
+  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$808: \rdata_a_o_gold [0] \rdata_a_o_gate [0]
+Found a total of 32 unproven $equiv cells.
+ERROR: Found 32 unproven $equiv cells in 'equiv_status -assert'.

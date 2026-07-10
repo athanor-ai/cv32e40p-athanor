@@ -86,9 +86,9 @@ module cv32e40p_register_file #(
   //-----------------------------------------------------------------------------
   //-- READ : Read address decoder RAD
   //-----------------------------------------------------------------------------
-  assign rdata_a_o = (FPU && !ZFINX && raddr_a_i[5]) ? mem_fp[raddr_a_i[4:0]] : (mem[raddr_a_i[4:0]] & {DATA_WIDTH{~raddr_a_i[5]}});
-  assign rdata_b_o = (FPU && !ZFINX && raddr_b_i[5]) ? mem_fp[raddr_b_i[4:0]] : (mem[raddr_b_i[4:0]] & {DATA_WIDTH{~raddr_b_i[5]}});
-  assign rdata_c_o = (FPU && !ZFINX && raddr_c_i[5]) ? mem_fp[raddr_c_i[4:0]] : (mem[raddr_c_i[4:0]] & {DATA_WIDTH{~raddr_c_i[5]}});
+  assign rdata_a_o = raddr_a_i[5] ? mem_fp[raddr_a_i[4:0]] : mem[raddr_a_i[4:0]];
+  assign rdata_b_o = raddr_b_i[5] ? mem_fp[raddr_b_i[4:0]] : mem[raddr_b_i[4:0]];
+  assign rdata_c_o = raddr_c_i[5] ? mem_fp[raddr_c_i[4:0]] : mem[raddr_c_i[4:0]];
 
   //-----------------------------------------------------------------------------
   //-- WRITE : Write Address Decoder (WAD), combinatorial process
