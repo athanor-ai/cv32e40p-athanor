@@ -1,0 +1,3 @@
+read_verilog -sv hwlp_flush_expr_miter.sv
+prep -top hwlp_flush_expr_miter
+sat -prove diff_o 0 -show hwlp_jump_i,fifo_empty_i,resp_valid_i,old_o,new_o,diff_o

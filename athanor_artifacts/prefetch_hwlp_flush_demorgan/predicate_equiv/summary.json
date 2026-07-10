@@ -1,0 +1,35 @@
+{
+  "candidate": "prefetch_hwlp_flush_demorgan",
+  "rows": {
+    "negative_missing_jump": {
+      "expect": "fail",
+      "expr": "(!fifo_empty_i || resp_valid_i)",
+      "fail": true,
+      "log_sha": "6e8d3b2441bf6f186c2337f9d6dd4036ba0700e6cae73055f3a249c61f0696bb",
+      "ok": true,
+      "rc": 0,
+      "success": false,
+      "sv_sha": "7cf1677ddaf6949942789d7b90d3af6d8b9e9224b8738c1d898471ff72c723c7"
+    },
+    "negative_wrong_demorgan": {
+      "expect": "fail",
+      "expr": "hwlp_jump_i && (!fifo_empty_i && resp_valid_i)",
+      "fail": true,
+      "log_sha": "897a97c9014b5c75d6d4fa031e89d2cac72a1badf68d873f37c2054abc87d8a6",
+      "ok": true,
+      "rc": 0,
+      "success": false,
+      "sv_sha": "99a2e6e344e21bcbf98d4a6fbc3df2928278f350786d0752bb88aa90729ce057"
+    },
+    "positive": {
+      "expect": "success",
+      "expr": "hwlp_jump_i && (!fifo_empty_i || resp_valid_i)",
+      "fail": false,
+      "log_sha": "56015ca18fd4f3dcb646754be3f88f0509d5f2c619c4c33eee59aa713cea7645",
+      "ok": true,
+      "rc": 0,
+      "success": true,
+      "sv_sha": "6232d2829ebabaaabe84cfe1a6201c84d1f6a7b23c5e22ce83f4259e311829da"
+    }
+  }
+}
