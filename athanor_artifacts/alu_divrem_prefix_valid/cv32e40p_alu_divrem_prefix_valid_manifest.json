@@ -1,0 +1,122 @@
+{
+  "activity_toggle": {
+    "baseline_toggles": 1482734,
+    "boundary_equality_every_cycle": true,
+    "gate_toggles": 1482734,
+    "method": "cv32_alu_parent_div_rem_heavy_iverilog_vcd_hierarchy_toggle_v1",
+    "power_evidence_type": "toggle_convention",
+    "receipt": "activity/toggle_convention_receipt.json",
+    "receipt_sha256": "402929f34bc98cb6fbd4c23630b76b9d9efb9116c7b26332edf33f3db18b83be",
+    "toggle_delta_pct": 0.0,
+    "vcd_gzip": "activity/toggle.vcd.gz",
+    "vcd_gzip_sha256": "fb2628b814432dbf45bf95428b9e3b88a6f611c1ed75ee7db48210081c35ce84"
+  },
+  "boundary": "default ALU parent-context evidence packet using source-local predicate equivalence; no accepted CV32 optimization, no full parent equivalence claim, no whole-core claim, no customer impact claim",
+  "candidate_id": "divrem_prefix_valid",
+  "classification": "default_alu_parent_area_timing_activity_positive_source_local_equiv_needs_independent_replay",
+  "customer_claim_ready": false,
+  "cv32e40p_commit": "6033d2b1be3295ec774d17ac4cf226faacfdeb08",
+  "interpretation": "The ALU parent context passes area, timing, and activity/toggle. Semantic evidence is the exact source replacement plus output-level SAT over the rewritten div_valid predicate, with a wrong-prefix negative control. The full ALU-parent equivalence attempt is nondiscriminating and is recorded only as a harness wall.",
+  "module": "cv32e40p_alu",
+  "nondiscriminating_parent_equiv_wall": {
+    "classification": "harness_wall_not_promotion_evidence",
+    "negative_unproven": 1032,
+    "positive_unproven": 1032,
+    "summary": "parent_equiv_wall/summary.json"
+  },
+  "predicate_equiv": {
+    "method": "Yosys output-level SAT, proving diff_o == 0",
+    "negative_control": {
+      "counterexample": {
+        "diff_o": "1",
+        "new_div_valid": "1",
+        "old_div_valid": "0",
+        "operator_i": "0110101"
+      },
+      "label": "negative_prefix_01101",
+      "log": "predicate_equiv/negative_prefix_01101/yosys_sat.log",
+      "log_sha256": "fcf026b997ee1f05f0f8902c5f4a6c0b10d8ef1d4897ddd5b44da8bed6823319",
+      "result": "FAIL: model found with diff_o=1"
+    },
+    "positive": {
+      "label": "positive_prefix_01100",
+      "log": "predicate_equiv/positive_prefix_01100/yosys_sat.log",
+      "log_sha256": "66f6fae082b862e20f61b64acc3f4a85f8491f29b80db0631af9a62d6d4617d5",
+      "result": "SUCCESS: no model found for diff_o=1"
+    }
+  },
+  "schema": "cv32e40p_alu_divrem_prefix_valid_source_local_replay_v1",
+  "scope": {
+    "full_parent_equivalence": "not claimed; nondiscriminating harness-wall attempt included separately",
+    "ppa_and_activity": "default ALU parent context only",
+    "semantic_equivalence": "source-local div_valid predicate over full 7-bit operator_i space",
+    "whole_core": "not measured"
+  },
+  "selected_flow": {
+    "area": {
+      "baseline": 29548.3392,
+      "delta_pct": -0.118564,
+      "gate": 29513.3056
+    },
+    "baseline_sha256s_sha256": "eb524bc8ab41e043d7bdf61ca9fc8a8c20d7a32d561a7f1a8fad41c1271ad522",
+    "gate_sha256s_sha256": "2266cd03614ae600d51cabd3453f39847128feb772f1c12fc2afcbb0bbf863dd",
+    "timing_slack": {
+      "in2out": {
+        "baseline": -20.2186,
+        "gate": -14.418,
+        "status": "improved"
+      },
+      "in2reg": {
+        "baseline": -16.2551,
+        "gate": -11.4272,
+        "status": "improved"
+      },
+      "overall": {
+        "baseline": -20.2186,
+        "gate": -14.418,
+        "status": "improved"
+      },
+      "reg2out": {
+        "baseline": -2.4968,
+        "gate": -1.8351,
+        "status": "improved"
+      },
+      "reg2reg": {
+        "baseline": -4.9985,
+        "gate": -3.9626,
+        "status": "improved"
+      }
+    },
+    "top": "cv32e40p_alu_parent_context"
+  },
+  "selected_toolchain": {
+    "liberty": "sky130_fd_sc_hd__tt_025C_1v80.lib",
+    "yosys_version": "Yosys 0.66+181 (git sha1 afe6b18f2, Release, Clang /usr/bin/clang++ 18.1.8)"
+  },
+  "source_delta": {
+    "behavioral_movements_outside_predicate": 0,
+    "new_predicate": "enable_i & (operator_i[6:2] == 5'b01100)",
+    "old_predicate": "enable_i & ((operator_i == ALU_DIV) || (operator_i == ALU_DIVU) || (operator_i == ALU_REM) || (operator_i == ALU_REMU))",
+    "receipt": "replay_source_delta.py",
+    "source_diff": "SOURCE_DIFF.patch",
+    "source_diff_sha256": "c9ba0536cb588de2b6199dbb51646c2c769c28be8bf8df668c725403fcd91a31"
+  },
+  "source_files": [
+    {
+      "path": "gold_source.sv",
+      "sha256": "6eca8d4c2e299adcc498417220478360cc22898ba9037cdad6a1b81e80373c7b"
+    },
+    {
+      "path": "gate_source.sv",
+      "sha256": "55e39d14f78df7c4868b68e0481fd8a3361d4124584ed557732f9c4ec802c674"
+    },
+    {
+      "path": "gold_alu_parent_context.v",
+      "sha256": "965f9b07bc6e84f1b815fe5a897b840c02bfb7bce0dca96a6dee1a206c5bd3a9"
+    },
+    {
+      "path": "gate_alu_parent_context.v",
+      "sha256": "ec5479f154296dd626a79d22a6ba2df66119b0ad71306405b2c504424f61e606"
+    }
+  ]
+}
