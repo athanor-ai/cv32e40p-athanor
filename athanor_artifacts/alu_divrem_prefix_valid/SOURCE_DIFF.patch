@@ -1,5 +1,5 @@
---- /workdir/_tmp/dexter-cv32e40p-athanor/athanor_artifacts/alu_divrem_prefix_valid/gold_source.sv	2026-07-04 14:57:50.407091697 -0700
-+++ /workdir/_tmp/dexter-cv32e40p-athanor/athanor_artifacts/alu_divrem_prefix_valid/gate_source.sv	2026-07-09 20:50:05.187496846 -0700
+--- gold_source.sv
++++ gate_source.sv
 @@ -891,8 +891,7 @@
    assign div_shift_int = ff_no_one ? 6'd31 : clb_result;
    assign div_shift = div_shift_int + (div_op_a_signed ? 6'd0 : 6'd1);

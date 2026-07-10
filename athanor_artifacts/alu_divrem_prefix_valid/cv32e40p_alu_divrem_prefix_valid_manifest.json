@@ -99,7 +99,7 @@
     "old_predicate": "enable_i & ((operator_i == ALU_DIV) || (operator_i == ALU_DIVU) || (operator_i == ALU_REM) || (operator_i == ALU_REMU))",
     "receipt": "replay_source_delta.py",
     "source_diff": "SOURCE_DIFF.patch",
-    "source_diff_sha256": "c9ba0536cb588de2b6199dbb51646c2c769c28be8bf8df668c725403fcd91a31"
+    "source_diff_sha256": "cb8378f6ce3c1413d33c4e5d7a452d867b4dcd1dbdae3f6472b6b573f0ee91a6"
   },
   "source_files": [
     {

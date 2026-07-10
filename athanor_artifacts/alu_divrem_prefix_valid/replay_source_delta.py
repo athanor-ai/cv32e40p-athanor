@@ -2,8 +2,8 @@
 from __future__ import annotations
 
 import hashlib
+import difflib
 import json
-import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -36,14 +36,14 @@ def main() -> int:
     if gold.replace(OLD, NEW) != gate:
         failures.append("gate source is not exactly gold source with one predicate replacement")
 
-    diff = subprocess.run(
-        ["diff", "-u", str(GOLD), str(GATE)],
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        check=False,
+    diff = difflib.unified_diff(
+        gold.splitlines(),
+        gate.splitlines(),
+        fromfile="gold_source.sv",
+        tofile="gate_source.sv",
+        lineterm="",
     )
-    normalized_diff = "\n".join(line.rstrip(" \t") for line in diff.stdout.splitlines()) + "\n"
+    normalized_diff = "\n".join(line.rstrip(" \t") for line in diff) + "\n"
     packaged_diff = (ROOT / "SOURCE_DIFF.patch").read_text()
     if normalized_diff != packaged_diff:
         failures.append("packaged SOURCE_DIFF.patch differs from normalized regenerated diff")

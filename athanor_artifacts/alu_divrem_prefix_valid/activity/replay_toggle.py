@@ -365,7 +365,6 @@ def main() -> None:
         "gold_sha256",
         "gate_sha256",
         "common_toggles",
-        "common_paths",
         "toggle_delta_pct_common_paths",
         "toggle_status",
     ]
@@ -379,6 +378,8 @@ def main() -> None:
             mismatches.append(
                 f"exercise_sample.{key}: replay={receipt['exercise_sample'].get(key)!r} packaged={expected['exercise_sample'].get(key)!r}"
             )
+    if receipt["common_paths"] <= 0:
+        mismatches.append(f"common_paths: replay found no comparable gold/gate VCD paths")
     if mismatches:
         raise SystemExit("activity replay mismatches packaged receipt:\n" + "\n".join(mismatches))
     print(json.dumps(receipt, indent=2, sort_keys=True))
