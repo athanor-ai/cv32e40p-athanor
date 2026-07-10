@@ -57,7 +57,11 @@ jobs:
                              ("iverilog", ["iverilog", "-V"]),
                              ("vvp", ["vvp", "-V"])):
               prefix = lock["tools"][name]["version_prefix"]
-              out = subprocess.run(argv, capture_output=True, text=True).stdout.splitlines()[0]
+              proc = subprocess.run(argv, capture_output=True, text=True)
+              # vvp prints its banner to STDERR with empty stdout; take the
+              # first non-empty line across both streams.
+              lines = [l for l in (proc.stdout + proc.stderr).splitlines() if l.strip()]
+              out = lines[0] if lines else "<no output>"
               if not out.startswith(prefix):
                   print(f"::error::installed {name} reports '{out}' but the lock pins prefix '{prefix}'")
                   fail = 1
@@ -66,34 +70,20 @@ jobs:
           sys.exit(fail)
           PY
 
+      # The gate proves it can BITE before it is trusted: a seeded packet
+      # whose replay fails must fail the driver, and a passing one must pass.
+      - name: Replay-gate bite proof (seeded fixtures)
+        run: bash tools/test_replay_gate_bites.sh
+
       - name: Replay every changed packet
         run: |
           set -euo pipefail
           # Activity replays resolve simulators via env-with-pinned-fallback.
           export IVERILOG="$HOME/oss-cad-suite/bin/iverilog"
           export VVP="$HOME/oss-cad-suite/bin/vvp"
-          base="origin/${{ github.base_ref }}"
           git fetch --quiet origin "${{ github.base_ref }}"
-          mapfile -t pkgs < <(git diff --name-only "$base"...HEAD -- athanor_artifacts/ \
-            | cut -d/ -f1-2 | sort -u)
-          if [ "${#pkgs[@]}" -eq 0 ]; then
-            echo "no packet dirs changed (lock-only PR) — consistency legs above are the gate"
-            exit 0
-          fi
-          fail=0
-          for pkg in "${pkgs[@]}"; do
-            [ -d "$pkg" ] || continue   # deleted packet dirs have nothing to replay
-            echo "=== replaying $pkg from a fresh clone"
-            ( cd "$pkg"
-              sha256sum -c SHA256SUMS
-              for script in replay_source_delta.py replay_predicate_equiv.py \
-                            replay_selected_summary.py activity/replay_toggle.py; do
-                if [ -f "$script" ]; then
-                  echo "--- $script"
-                  python3 "$script"
-                fi
-              done
-              python3 -c "import json,glob; [json.load(open(f)) for f in glob.glob('*_manifest.json')]"
-            ) || { echo "::error::replay failed for $pkg"; fail=1; }
-          done
-          exit "$fail"
+          # Driver is a separate set -e script ON PURPOSE: an inline
+          # `( cmds ) || handler` subshell suppresses errexit on its LHS, so
+          # a failing replay command could green the gate as long as the
+          # manifest still parsed.
+          bash tools/replay_changed_packets.sh --base "origin/${{ github.base_ref }}"
