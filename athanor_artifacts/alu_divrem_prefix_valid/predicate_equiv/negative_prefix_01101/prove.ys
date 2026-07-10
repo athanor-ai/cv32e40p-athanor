@@ -1,0 +1,4 @@
+
+read_verilog -sv /workdir/_tmp/cv32_alu_divvalid_expr_equiv/negative_prefix_01101/divvalid_expr_miter.sv
+prep -top divvalid_expr_miter
+sat -prove diff_o 0 -show enable_i,operator_i,old_div_valid,new_div_valid,diff_o

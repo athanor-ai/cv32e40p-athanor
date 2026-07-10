@@ -1,0 +1,11 @@
+/replay_out/
+!/activity/toggle_convention_receipt.json
+!/activity/toggle_trace.json
+!/cv32e40p_alu_divrem_prefix_valid_manifest.json
+!/parent_equiv_wall/
+!/parent_equiv_wall/**
+!/predicate_equiv/summary.json
+!/predicate_equiv/*/yosys_sat.log
+!/selected_flow/*/summary.json
+!/selected_flow/*/reports/
+!/selected_flow/*/reports/**

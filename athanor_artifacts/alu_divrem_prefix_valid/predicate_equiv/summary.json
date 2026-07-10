@@ -1,0 +1,20 @@
+{
+  "negative": {
+    "fail": true,
+    "label": "negative_prefix_01101",
+    "log_sha": "fcf026b997ee1f05f0f8902c5f4a6c0b10d8ef1d4897ddd5b44da8bed6823319",
+    "manifest_sha": "b7130a27a45518255761da960b7e4c966dec7de7258ef538a125868665a6f5a9",
+    "rc": 0,
+    "success": false
+  },
+  "new": "enable_i & (operator_i[6:2] == 5'b01100)",
+  "old": "enable_i & ((operator_i == ALU_DIV) || (operator_i == ALU_DIVU) || (operator_i == ALU_REM) || (operator_i == ALU_REMU))",
+  "positive": {
+    "fail": false,
+    "label": "positive_prefix_01100",
+    "log_sha": "66f6fae082b862e20f61b64acc3f4a85f8491f29b80db0631af9a62d6d4617d5",
+    "manifest_sha": "59996218db92bc93e39738b9832ccad12757dbab027118343334f0e8d714abff",
+    "rc": 0,
+    "success": true
+  }
+}
