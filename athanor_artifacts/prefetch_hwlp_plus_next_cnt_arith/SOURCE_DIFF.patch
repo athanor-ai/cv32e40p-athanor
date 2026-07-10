@@ -1,0 +1,37 @@
+--- gold_source.sv
++++ gate_source.sv
+@@ -223,24 +223,7 @@
+   assign count_up = trans_valid_o && trans_ready_i;  // Increment upon accepted transfer request
+   assign count_down = resp_valid_i;  // Decrement upon accepted transfer response
+
+-  always_comb begin
+-    case ({
+-      count_up, count_down
+-    })
+-      2'b00: begin
+-        next_cnt = cnt_q;
+-      end
+-      2'b01: begin
+-        next_cnt = cnt_q - 1'b1;
+-      end
+-      2'b10: begin
+-        next_cnt = cnt_q + 1'b1;
+-      end
+-      2'b11: begin
+-        next_cnt = cnt_q;
+-      end
+-    endcase
+-  end
++  assign next_cnt = cnt_q + count_up - count_down;
+
+   generate
+     if (COREV_PULP) begin : gen_hwlp
+@@ -258,7 +241,7 @@
+
+       // If HWLP_END-4 is in ID and HWLP_END is being/was returned by the memory
+       // we can flush all the eventual outstanding requests up to now
+-      assign hwlp_flush_resp        = hwlp_jump_i && !(fifo_empty_i && !resp_valid_i);
++      assign hwlp_flush_resp        = hwlp_jump_i && (!fifo_empty_i || resp_valid_i);
+
+       //////////////////////////////////////////////////////////////////////////////
+       // HWLP delayed flush controller

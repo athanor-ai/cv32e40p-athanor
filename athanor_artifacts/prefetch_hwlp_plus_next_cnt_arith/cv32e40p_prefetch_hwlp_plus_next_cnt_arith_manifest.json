@@ -1,0 +1,184 @@
+{
+  "activity_toggle": {
+    "baseline_toggles": 21739,
+    "boundary_equality_every_cycle": true,
+    "gate_toggles": 21739,
+    "method": "prefetch_buffer_hwlp_activity_iverilog_vcd_hierarchy_toggle_v1",
+    "power_evidence_type": "toggle_convention",
+    "receipt": "activity/toggle_convention_receipt.json",
+    "receipt_sha256": "ed8949e9bb28de07424e963b752274d4f889804639ffda4d1827e28e15de5157",
+    "toggle_delta_pct": 0.0
+  },
+  "boundary": "dual-scope evidence packet: claim scope is default IF-stage parent; local prefetch-buffer in2out regression is a named caveat; no accepted CV32 optimization, no whole-core claim, no customer impact claim",
+  "candidate_id": "prefetch_hwlp_plus_next_cnt_arith",
+  "claim_scope_if_stage": {
+    "area": {
+      "baseline": 18228.7328,
+      "delta_pct": -0.226508,
+      "gate": 18187.4432
+    },
+    "baseline_sha256s_sha256": "597f5a43dde2fb94b4a9da87dd7cd6abba406026bc64bf7ea46d05c7f53b8978",
+    "gate_sha256s_sha256": "c8c1d106afea9e4d144870aebd8acda3a090b66335e3adb95440c9d85362514b",
+    "timing_slack": {
+      "in2out": {
+        "baseline": 1.1039,
+        "delta": 0.0176,
+        "gate": 1.1215,
+        "status": "improved"
+      },
+      "in2reg": {
+        "baseline": -1.876,
+        "delta": 1.4308,
+        "gate": -0.4452,
+        "status": "improved"
+      },
+      "overall": {
+        "baseline": -1.876,
+        "delta": 0.8143,
+        "gate": -1.0617,
+        "status": "improved"
+      },
+      "reg2out": {
+        "baseline": 0.9203,
+        "delta": 0.0474,
+        "gate": 0.9677,
+        "status": "improved"
+      },
+      "reg2reg": {
+        "baseline": -1.7646,
+        "delta": 0.7029,
+        "gate": -1.0617,
+        "status": "improved"
+      }
+    },
+    "top": "cv32e40p_if_stage"
+  },
+  "classification": "if_stage_scoped_win_with_named_prefetch_buffer_in2out_regression",
+  "customer_claim_ready": false,
+  "cv32e40p_commit": "6033d2b1be3295ec774d17ac4cf226faacfdeb08",
+  "local_caveat_prefetch_buffer": {
+    "area": {
+      "baseline": 7186.8928,
+      "delta_pct": -0.783426,
+      "gate": 7130.5888
+    },
+    "baseline_sha256s_sha256": "f77a9bd16a9d06bbb5789a9f25969a6191d30de92ee00d4b2717c42651fc7e01",
+    "gate_sha256s_sha256": "748e0bff599b23b0f89c9e180b67d95215cb44b92b7481e5f6456a12f70ed417",
+    "named_regression": {
+      "baseline": 2.6664,
+      "delta": -0.0172,
+      "gate": 2.6492,
+      "group": "in2out",
+      "interpretation": "This local in2out regression is first-class disclosure; customers with this local path as a constraint should inspect before reuse."
+    },
+    "timing_slack": {
+      "in2out": {
+        "baseline": 2.6664,
+        "delta": -0.0172,
+        "gate": 2.6492,
+        "status": "regressed"
+      },
+      "in2reg": {
+        "baseline": 0.3554,
+        "delta": 0.083,
+        "gate": 0.4384,
+        "status": "improved"
+      },
+      "overall": {
+        "baseline": -0.7369,
+        "delta": 0.0355,
+        "gate": -0.7014,
+        "status": "improved"
+      },
+      "reg2out": {
+        "baseline": 0.0782,
+        "delta": 0.5243,
+        "gate": 0.6025,
+        "status": "improved"
+      },
+      "reg2reg": {
+        "baseline": -0.7369,
+        "delta": 0.0355,
+        "gate": -0.7014,
+        "status": "improved"
+      }
+    },
+    "top": "cv32e40p_prefetch_buffer"
+  },
+  "module": "cv32e40p_prefetch_controller",
+  "predicate_equiv": {
+    "method": "Yosys output-level SAT over both replacement outputs",
+    "negative_controls": {
+      "negative_nextcnt_missing_down": {
+        "log": "predicate_equiv/negative_nextcnt_missing_down/yosys_sat.log",
+        "log_sha256": "80da07e681d3e7c3ae1fdf261ba27b9330bc5d016db243ad3e7629e955950cab",
+        "result": "FAIL: next-count arithmetic leg bites"
+      },
+      "negative_wrong_demorgan": {
+        "log": "predicate_equiv/negative_wrong_demorgan/yosys_sat.log",
+        "log_sha256": "d3ff04d4664ecb0122b01d7aa1755b3ae316ba211637df842e24ea85de3c97c7",
+        "result": "FAIL: De Morgan leg bites"
+      }
+    },
+    "positive": {
+      "log": "predicate_equiv/positive/yosys_sat.log",
+      "log_sha256": "dd42ea5c9912328428d9288ee06d2a99932a22af45e332a5a8c1690e35ab8db1",
+      "result": "SUCCESS: no model found for diff_o=1"
+    }
+  },
+  "relationship_to_prior_packets": {
+    "not_additive_with": [
+      "prefetch_hwlp_flush_demorgan"
+    ],
+    "supersets": [
+      {
+        "candidate_id": "prefetch_hwlp_flush_demorgan",
+        "cv32e40p_athanor_pr": "#6",
+        "dominance_note": "This packet includes #6's De Morgan replacement and adds next_cnt arithmetic. It improves IF-stage area/timing versus baseline, but carries a named local prefetch-buffer in2out regression; do not sum deltas with #6.",
+        "shared_replacement": "hwlp_flush_resp De Morgan"
+      }
+    ],
+    "table_guidance": "If both packets are shown, present this as a dual-scope successor/alternative to #6, not an additive row."
+  },
+  "schema": "cv32e40p_prefetch_hwlp_nextcnt_dual_scope_replay_v1",
+  "scope": {
+    "accepted_optimization": "not claimed",
+    "local_caveat": "prefetch-buffer parent in2out regression is measured and named",
+    "ppa_claim": "default IF-stage parent context only",
+    "semantic_equivalence": "source-local combined miter over the two replacement outputs",
+    "whole_core": "not measured"
+  },
+  "source_delta": {
+    "behavioral_movements_outside_replacements": 0,
+    "receipt": "replay_source_delta.py",
+    "replacement_count": 2,
+    "source_diff": "SOURCE_DIFF.patch",
+    "source_diff_sha256": "6640e6d2115b888e62548463dfc635142d8268cca6fdcfd46f800c5b0944174c"
+  },
+  "source_files": [
+    {
+      "path": "gold_source.sv",
+      "sha256": "66e6078ea3b3acd3ceea4b974c0488d25e02324935532de1f2d39cdc34c875a0"
+    },
+    {
+      "path": "gate_source.sv",
+      "sha256": "130be961886856f00b43b5319321d5229f4365feb5b9b7bc499ac64a405376a2"
+    },
+    {
+      "path": "gold_prefetch_buffer_parent.v",
+      "sha256": "f6432f7f87101e8d7e7edc07029b34531bd534439535184e9e0e4d42256bd6b2"
+    },
+    {
+      "path": "gate_prefetch_buffer_parent.v",
+      "sha256": "08fd8dbcc491dfa8c5404c0627c92dd1277d32fd7a01a006a6b5488ba6584c25"
+    },
+    {
+      "path": "gold_if_stage_parent.v",
+      "sha256": "2840d83692ee690b08339bd20376f725021a2540714a99257d9fa89bfab0c493"
+    },
+    {
+      "path": "gate_if_stage_parent.v",
+      "sha256": "b076fd0439b6477c851de30de0162afd399cb6abf401194c92b096e00b8399a7"
+    }
+  ]
+}

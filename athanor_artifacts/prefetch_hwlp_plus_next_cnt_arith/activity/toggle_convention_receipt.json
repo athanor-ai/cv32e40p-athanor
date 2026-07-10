@@ -1,0 +1,40 @@
+{
+  "boundary_equality_every_cycle": true,
+  "candidate": "hwlp_plus_next_cnt_arith",
+  "common_paths": 110,
+  "common_toggles": {
+    "gate": 21739,
+    "gold": 21739
+  },
+  "cycle_count": 260,
+  "exercise_sample": {
+    "tb.dut.fifo_cnt": 18,
+    "tb.dut.fifo_i.cnt_o": 18,
+    "tb.dut.fifo_i.status_cnt_n": 42,
+    "tb.dut.fifo_i.status_cnt_q": 18,
+    "tb.dut.hwlp_target_i": 516,
+    "tb.dut.prefetch_controller_i.cnt_q": 211,
+    "tb.dut.prefetch_controller_i.fifo_cnt_i": 18,
+    "tb.dut.prefetch_controller_i.fifo_cnt_masked": 18,
+    "tb.dut.prefetch_controller_i.fifo_empty_i": 18,
+    "tb.dut.prefetch_controller_i.fifo_flush_but_first_o": 0,
+    "tb.dut.prefetch_controller_i.fifo_flush_o": 6,
+    "tb.dut.prefetch_controller_i.flush_cnt_q": 16,
+    "tb.dut.prefetch_controller_i.hwlp_flush_after_resp": 8,
+    "tb.dut.prefetch_controller_i.hwlp_flush_cnt_delayed_q": 4,
+    "tb.dut.prefetch_controller_i.hwlp_flush_resp": 2,
+    "tb.dut.prefetch_controller_i.hwlp_flush_resp_delayed": 8,
+    "tb.dut.prefetch_controller_i.hwlp_jump_i": 8,
+    "tb.dut.prefetch_controller_i.hwlp_target_i": 516,
+    "tb.dut.prefetch_controller_i.hwlp_wait_resp_flush": 8,
+    "tb.dut.prefetch_controller_i.next_cnt": 239,
+    "tb.dut.prefetch_controller_i.next_flush_cnt": 24,
+    "tb.dut.prefetch_controller_i.resp_valid_i": 109,
+    "tb.hwlp_target_i": 516
+  },
+  "gate_bundle_sha": "08fd8dbcc491dfa8c5404c0627c92dd1277d32fd7a01a006a6b5488ba6584c25",
+  "gate_vcd_gzip_sha": "b27fcc32fc8927b970fa9b5746cedfeb60742dca9500192786a7e1639d8c0e5e",
+  "gold_bundle_sha": "f6432f7f87101e8d7e7edc07029b34531bd534439535184e9e0e4d42256bd6b2",
+  "gold_vcd_gzip_sha": "c5de416a6f11328fa8c75ea5943134ad530fe97a3ee427e1318b92f65c1a59cf",
+  "toggle_delta_pct_common_paths": 0.0
+}

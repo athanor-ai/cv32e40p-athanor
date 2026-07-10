@@ -1,0 +1,3 @@
+read_verilog -sv prefetch_hwlp_nextcnt_expr_miter.sv
+prep -top prefetch_hwlp_nextcnt_expr_miter
+sat -prove diff_o 0 -show hwlp_jump_i,fifo_empty_i,resp_valid_i,cnt_q,count_up,count_down,old_hwlp_flush_resp_o,new_hwlp_flush_resp_o,old_next_cnt_o,new_next_cnt_o,diff_o

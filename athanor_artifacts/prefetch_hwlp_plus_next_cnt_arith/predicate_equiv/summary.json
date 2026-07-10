@@ -1,0 +1,38 @@
+{
+  "candidate": "prefetch_hwlp_plus_next_cnt_arith",
+  "rows": {
+    "negative_nextcnt_missing_down": {
+      "expect": "fail",
+      "fail": true,
+      "hwlp_expr": "hwlp_jump_i && (!fifo_empty_i || resp_valid_i)",
+      "log_sha": "80da07e681d3e7c3ae1fdf261ba27b9330bc5d016db243ad3e7629e955950cab",
+      "next_expr": "cnt_q + count_up",
+      "ok": true,
+      "rc": 0,
+      "success": false,
+      "sv_sha": "1e0b636293c6bb13b20d3fa1446f7a927175c93f55e7e0665c1bd7cea5bf67b5"
+    },
+    "negative_wrong_demorgan": {
+      "expect": "fail",
+      "fail": true,
+      "hwlp_expr": "hwlp_jump_i && (!fifo_empty_i && resp_valid_i)",
+      "log_sha": "d3ff04d4664ecb0122b01d7aa1755b3ae316ba211637df842e24ea85de3c97c7",
+      "next_expr": "cnt_q + count_up - count_down",
+      "ok": true,
+      "rc": 0,
+      "success": false,
+      "sv_sha": "5d87e2a97b7084993cb550f6f8c85c778dd6e2509705218e08b239834f779b5f"
+    },
+    "positive": {
+      "expect": "success",
+      "fail": false,
+      "hwlp_expr": "hwlp_jump_i && (!fifo_empty_i || resp_valid_i)",
+      "log_sha": "dd42ea5c9912328428d9288ee06d2a99932a22af45e332a5a8c1690e35ab8db1",
+      "next_expr": "cnt_q + count_up - count_down",
+      "ok": true,
+      "rc": 0,
+      "success": true,
+      "sv_sha": "e27833ce17b336be1153304905d94256125e3af4524e6c47ca4a2977f6961e7c"
+    }
+  }
+}
