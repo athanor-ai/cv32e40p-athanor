@@ -1,0 +1,33 @@
+{
+  "candidate": "alu_addsub_divvalid_adderneg_combo",
+  "rows": {
+    "negative_adder_even_subs": {
+      "fail": true,
+      "log_sha": "4b2e807a3772694b13f3896dedbbebb6068967e71ac6e92888580a9f240c49b3",
+      "manifest_sha": "b4b6e60815e9ce9ed9350634c77602e1d70d1ef588282c45361b456b995dbc44",
+      "rc": 0,
+      "success": false
+    },
+    "negative_addsub_prefix_0101": {
+      "fail": true,
+      "log_sha": "2093006356fed63851a690596fc0a43133366690ea81b8c69a3a610d9584e191",
+      "manifest_sha": "fbb35d005c17e912511a0ecbfa07253ace27206d7e417cb9476ea28d9986ed7b",
+      "rc": 0,
+      "success": false
+    },
+    "negative_div_prefix_01101": {
+      "fail": true,
+      "log_sha": "d54ef1bf312468b3cfdec2cba731d348f1de8eb9e3b84852bc86c87cee62d6a1",
+      "manifest_sha": "afbbcc721f3ce08ad6abef4c9cd30cc46480557c1310ea5268b2f3ef17d7ac02",
+      "rc": 0,
+      "success": false
+    },
+    "positive": {
+      "fail": false,
+      "log_sha": "334da679aad30d4b1189649160b7e07a50e54f35d096fbacef65856eb91b7406",
+      "manifest_sha": "eb42c103effe4ff08ed48ada490dd031730fae6c482cdb443875ff3920509f96",
+      "rc": 0,
+      "success": true
+    }
+  }
+}

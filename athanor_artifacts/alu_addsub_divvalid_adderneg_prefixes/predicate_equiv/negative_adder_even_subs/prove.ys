@@ -1,0 +1,4 @@
+
+read_verilog -sv alu_combo_expr_miter.sv
+prep -top alu_combo_expr_miter
+sat -prove diff_o 0 -show enable_i,is_subrot_i,operator_i,old_shift_use_round,new_shift_use_round,old_div_valid,new_div_valid,old_adder_op_b_negate,new_adder_op_b_negate,diff_o

@@ -1,0 +1,120 @@
+{
+  "activity_toggle": {
+    "baseline_toggles": 1482734,
+    "boundary_equality_every_cycle": true,
+    "gate_toggles": 1482734,
+    "method": "cv32_alu_parent_div_rem_heavy_iverilog_vcd_hierarchy_toggle_v1",
+    "power_evidence_type": "toggle_convention",
+    "receipt": "activity/toggle_convention_receipt.json",
+    "receipt_sha256": "663c089f9444874441778f45f19383e1a4219217304b49631e629c8f35269260",
+    "toggle_delta_pct": 0.0,
+    "vcd_gzip": "activity/toggle.vcd.gz",
+    "vcd_gzip_sha256": "65b77fe1e423a3a4bda0bce8520a0aac3fc59a2117252d61d2b642b9de395199"
+  },
+  "boundary": "default ALU parent-context evidence packet using source-local predicate equivalence; no accepted CV32 optimization, no full parent equivalence claim, no whole-core claim, no customer impact claim",
+  "candidate_id": "addsub_divvalid_adderneg_prefixes",
+  "classification": "default_alu_parent_area_timing_activity_positive_source_local_equiv_needs_independent_replay",
+  "customer_claim_ready": false,
+  "cv32e40p_commit": "6033d2b1be3295ec774d17ac4cf226faacfdeb08",
+  "interpretation": "The ALU parent context passes area, timing, and activity/toggle. Semantic evidence is the exact source replacement plus output-level SAT over three rewritten predicates, with one negative control per predicate family.",
+  "module": "cv32e40p_alu",
+  "predicate_equiv": {
+    "method": "Yosys output-level SAT, proving combined diff_o == 0",
+    "negative_controls": {
+      "negative_adder_even_subs": {
+        "log": "predicate_equiv/negative_adder_even_subs/yosys_sat.log",
+        "log_sha256": "4b2e807a3772694b13f3896dedbbebb6068967e71ac6e92888580a9f240c49b3",
+        "result": "FAIL: model found with diff_o=1"
+      },
+      "negative_addsub_prefix_0101": {
+        "log": "predicate_equiv/negative_addsub_prefix_0101/yosys_sat.log",
+        "log_sha256": "2093006356fed63851a690596fc0a43133366690ea81b8c69a3a610d9584e191",
+        "result": "FAIL: model found with diff_o=1"
+      },
+      "negative_div_prefix_01101": {
+        "log": "predicate_equiv/negative_div_prefix_01101/yosys_sat.log",
+        "log_sha256": "d54ef1bf312468b3cfdec2cba731d348f1de8eb9e3b84852bc86c87cee62d6a1",
+        "result": "FAIL: model found with diff_o=1"
+      }
+    },
+    "positive": {
+      "label": "positive",
+      "log": "predicate_equiv/positive/yosys_sat.log",
+      "log_sha256": "334da679aad30d4b1189649160b7e07a50e54f35d096fbacef65856eb91b7406",
+      "result": "SUCCESS: no model found for diff_o=1"
+    }
+  },
+  "schema": "cv32e40p_alu_addsub_divvalid_adderneg_source_local_replay_v1",
+  "scope": {
+    "full_parent_equivalence": "not claimed",
+    "ppa_and_activity": "default ALU parent context only",
+    "semantic_equivalence": "source-local combined predicate miter over full 7-bit operator_i space plus enable_i/is_subrot_i where relevant",
+    "whole_core": "not measured"
+  },
+  "selected_flow": {
+    "area": {
+      "baseline": 29548.3392,
+      "delta_pct": -1.151762,
+      "gate": 29208.0128
+    },
+    "baseline_sha256s_sha256": "395f1d20549f6811cc2032815ba0159a3bb3b65e36483386ca91fe68e78b4e6f",
+    "gate_sha256s_sha256": "d1edfcc359f1d835cd17561cfc0373a81f00b2bac2582b56a73bf921aaf2694e",
+    "timing_slack": {
+      "in2out": {
+        "baseline": -20.2186,
+        "gate": -16.467,
+        "status": "improved"
+      },
+      "in2reg": {
+        "baseline": -16.2551,
+        "gate": -13.9334,
+        "status": "improved"
+      },
+      "overall": {
+        "baseline": -20.2186,
+        "gate": -16.467,
+        "status": "improved"
+      },
+      "reg2out": {
+        "baseline": -2.4968,
+        "gate": -2.1568,
+        "status": "improved"
+      },
+      "reg2reg": {
+        "baseline": -4.9985,
+        "gate": -4.1625,
+        "status": "improved"
+      }
+    },
+    "top": "cv32e40p_alu_parent_context"
+  },
+  "selected_toolchain": {
+    "liberty": "sky130_fd_sc_hd__tt_025C_1v80.lib",
+    "yosys_version": "Yosys 0.66+181 (git sha1 afe6b18f2, Release, Clang /usr/bin/clang++ 18.1.8)"
+  },
+  "source_delta": {
+    "behavioral_movements_outside_predicates": 0,
+    "receipt": "replay_source_delta.py",
+    "replacement_count": 3,
+    "source_diff": "SOURCE_DIFF.patch",
+    "source_diff_sha256": "d2ab01be55be4fb8cae60ab7d274e8e70fab2ab0a70ef6e91a4abdf1efdf7ae4"
+  },
+  "source_files": [
+    {
+      "path": "gold_source.sv",
+      "sha256": "6eca8d4c2e299adcc498417220478360cc22898ba9037cdad6a1b81e80373c7b"
+    },
+    {
+      "path": "gate_source.sv",
+      "sha256": "7973e26640b62a96582d22f23de50979db4bfa75296f04f7b824dd7cb944a403"
+    },
+    {
+      "path": "gold_alu_parent_context.v",
+      "sha256": "965f9b07bc6e84f1b815fe5a897b840c02bfb7bce0dca96a6dee1a206c5bd3a9"
+    },
+    {
+      "path": "gate_alu_parent_context.v",
+      "sha256": "65a911d3f731b1c7262d2c346e8599b2866235e0c0d6ba2db93ed39a89c5688e"
+    }
+  ]
+}
