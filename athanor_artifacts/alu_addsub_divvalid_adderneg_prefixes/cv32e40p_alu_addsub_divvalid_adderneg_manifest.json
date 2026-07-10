@@ -17,6 +17,7 @@
   "customer_claim_ready": false,
   "cv32e40p_commit": "6033d2b1be3295ec774d17ac4cf226faacfdeb08",
   "interpretation": "The ALU parent context passes area, timing, and activity/toggle. Semantic evidence is the exact source replacement plus output-level SAT over three rewritten predicates, with one negative control per predicate family.",
+  "methodology_note": "This packet presents a combined three-predicate source-local proof shape. It is not three independent accepted one-predicate promotions and still needs the standing methodology and independent replay review.",
   "module": "cv32e40p_alu",
   "predicate_equiv": {
     "method": "Yosys output-level SAT, proving combined diff_o == 0",
@@ -43,6 +44,22 @@
       "log_sha256": "334da679aad30d4b1189649160b7e07a50e54f35d096fbacef65856eb91b7406",
       "result": "SUCCESS: no model found for diff_o=1"
     }
+  },
+  "relationship_to_prior_packets": {
+    "not_additive_with": [
+      "alu_divrem_prefix_valid"
+    ],
+    "supersets": [
+      {
+        "candidate_id": "alu_divrem_prefix_valid",
+        "cv32e40p_athanor_pr": "#3",
+        "dominance_note": "This packet includes the div_valid rewrite from the div-valid-only packet and adds shift_use_round plus adder_op_b_negate rewrites. Treat the packets as overlapping alternatives, not additive wins.",
+        "shared_predicates": [
+          "div_valid"
+        ]
+      }
+    ],
+    "table_guidance": "If both packets reach a customer-facing table, name this packet's relationship to the div-valid-only packet explicitly; do not sum the reported area/timing/activity deltas."
   },
   "schema": "cv32e40p_alu_addsub_divvalid_adderneg_source_local_replay_v1",
   "scope": {

@@ -12,10 +12,12 @@ Reader terms:
 
 Boundary: this is not an accepted CV32 optimization, not a full parent-equivalence proof, not a whole-core claim, and not a customer-impact claim. It is a default ALU parent-context package that still needs independent replay.
 
+Relationship to earlier packets: this candidate includes the same `div_valid` rewrite packaged separately in `alu_divrem_prefix_valid` and adds two more ALU predicate rewrites. Treat the two packets as overlapping alternatives; do not add their area, timing, or activity numbers together. If both packets are shown in a customer-facing table, this one should carry an explicit superset/dominance note relative to the div-valid-only packet.
+
 Key results:
 
 - Source delta is exactly three predicate replacements.
-- Predicate SAT proves the combined replacement over `operator_i`, `enable_i`, and `is_subrot_i`.
+- Predicate SAT proves the combined replacement over `operator_i`, `enable_i`, and `is_subrot_i`; this is a combined three-predicate proof shape, not three separate accepted promotions.
 - Three negative controls bite: add/sub wrong prefix, div/rem wrong prefix, and inverted sub-bit adder-negate.
 - Parent selected-flow area moves `29548.339200 -> 29208.012800` (`-1.151762%`).
 - All five parent timing groups improve.
