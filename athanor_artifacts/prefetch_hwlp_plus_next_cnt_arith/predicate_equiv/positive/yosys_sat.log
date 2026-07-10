@@ -176,7 +176,7 @@ Finding unused cells or wires in module \prefetch_hwlp_nextcnt_expr_miter..
 === prefetch_hwlp_nextcnt_expr_miter ===
 
         +----------Local Count, excluding submodules.
-        | 
+        |
        26 wires
        38 wire bits
        11 public wires
@@ -212,15 +212,15 @@ Import show expression: { \hwlp_jump_i \fifo_empty_i \resp_valid_i \cnt_q \count
 Solving problem with 236 variables and 623 clauses..
 SAT proof finished - no model found: SUCCESS!
 
-                  /$$$$$$      /$$$$$$$$     /$$$$$$$    
-                 /$$__  $$    | $$_____/    | $$__  $$   
-                | $$  \ $$    | $$          | $$  \ $$   
-                | $$  | $$    | $$$$$       | $$  | $$   
-                | $$  | $$    | $$__/       | $$  | $$   
-                | $$/$$ $$    | $$          | $$  | $$   
+                  /$$$$$$      /$$$$$$$$     /$$$$$$$
+                 /$$__  $$    | $$_____/    | $$__  $$
+                | $$  \ $$    | $$          | $$  \ $$
+                | $$  | $$    | $$$$$       | $$  | $$
+                | $$  | $$    | $$__/       | $$  | $$
+                | $$/$$ $$    | $$          | $$  | $$
                 |  $$$$$$/ /$$| $$$$$$$$ /$$| $$$$$$$//$$
                  \____ $$$|__/|________/|__/|_______/|__/
-                       \__/                              
+                       \__/
 
 End of script. Logfile hash: 15b96ca656, time: 0.01s, user: 0.01s, system: 0.01s, MEM: 16.62 MB peak
 Yosys 0.66+181 (git sha1 afe6b18f2, Release, Clang /usr/bin/clang++ 18.1.8)
