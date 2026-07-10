@@ -3,6 +3,34 @@
 This package is a CV32E40P default-configuration optimization candidate. It is
 not a whole-core customer result yet.
 
+## Reader Terms
+
+- ID-stage: the instruction-decode stage of the processor. This package uses
+  `cv32e40p_id_stage` as the measured parent context because that is where the
+  register file is instantiated and consumed in the default configuration.
+- Selected-flow: the bounded area and timing flow used to compare a baseline
+  design against the candidate design under the same synthesis, mapping, and
+  static-timing settings.
+- RF or register file: the block that stores architectural register values.
+  The register-file grid is the set of parameter choices that were checked for
+  register-file equivalence.
+- FPU: the optional floating-point unit. When enabled with `ZFINX=0`, the
+  design has a separate floating-point register bank.
+- ZFINX: a configuration where floating-point operations use the integer
+  register file instead of a separate floating-point register bank.
+- Yosys `$equiv` cells: comparison points inserted by Yosys when it builds an
+  equivalence-checking circuit. A proven `$equiv` cell means the corresponding
+  baseline and candidate signal matched under the proof assumptions.
+- VCD toggle count: a count of signal transitions in a simulation waveform.
+  It is used here as activity evidence for the measured trace, not as a full
+  chip power claim.
+- A/A baseline control: a measurement that compares the baseline against
+  itself. It checks whether the activity-counting method is biased or noisy
+  before comparing baseline against candidate.
+- Boundary equality: a per-cycle check that the candidate parent context
+  produces the same externally visible outputs as the baseline during the
+  activity trace.
+
 ## Transform
 
 Candidate: `readmask_high_bank_zero`
