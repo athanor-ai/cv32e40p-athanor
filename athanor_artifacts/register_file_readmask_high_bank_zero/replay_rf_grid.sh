@@ -5,6 +5,40 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 YOSYS="${YOSYS:-/workdir/_tools/oss-cad-suite-20260630/bin/yosys}"
 OUT_DIR="${OUT_DIR:-$ROOT/replay_out/rf_grid_equiv}"
 mkdir -p "$OUT_DIR"
+expect_unproven_count() {
+  local log="$1"
+  local expected="$2"
+  local label="$3"
+  python3 - "$log" "$expected" "$label" <<'PY'
+import re
+import sys
+from pathlib import Path
+
+log = Path(sys.argv[1])
+expected = int(sys.argv[2])
+label = sys.argv[3]
+text = log.read_text(errors="replace")
+counts = []
+for match in re.finditer(
+    r"(?:Found(?: a total of)?\s+(\d+)\s+unproven\b|"
+    r"Of those cells\s+\d+\s+are proven and\s+(\d+)\s+are unproven\b)",
+    text,
+):
+    counts.append(int(match.group(1) or match.group(2)))
+if "Equivalence successfully proven" in text:
+    counts.append(0)
+if not counts:
+    print(f"{label}: no unproven-count verdict in {log}", file=sys.stderr)
+    sys.exit(1)
+actual = counts[-1]
+if actual != expected:
+    print(
+        f"{label}: expected final unproven count {expected}, got {actual} in {log}",
+        file=sys.stderr,
+    )
+    sys.exit(1)
+PY
+}
 
 run_one() {
   local name="$1"
@@ -27,10 +61,10 @@ run_one real_fpu1_zfinx0 "$ROOT/equiv_rf_grid/gate_register_file_ff.sv" 1 0
 run_one real_fpu1_zfinx1 "$ROOT/equiv_rf_grid/gate_register_file_ff.sv" 1 1
 run_one neg_fpu0_zfinx0 "$ROOT/equiv_rf_grid/negative_register_file_ff.sv" 0 0
 
-grep -q "Of those cells 1150 are proven and 0 are unproven" "$OUT_DIR/real_fpu0_zfinx0/equiv.log"
-grep -q "Of those cells 2238 are proven and 0 are unproven" "$OUT_DIR/real_fpu1_zfinx0/equiv.log"
-grep -q "Of those cells 1150 are proven and 0 are unproven" "$OUT_DIR/real_fpu1_zfinx1/equiv.log"
-grep -q "Found a total of 32 unproven" "$OUT_DIR/neg_fpu0_zfinx0/equiv.log"
+expect_unproven_count "$OUT_DIR/real_fpu0_zfinx0/equiv.log" 0 "rf grid real_fpu0_zfinx0"
+expect_unproven_count "$OUT_DIR/real_fpu1_zfinx0/equiv.log" 0 "rf grid real_fpu1_zfinx0"
+expect_unproven_count "$OUT_DIR/real_fpu1_zfinx1/equiv.log" 0 "rf grid real_fpu1_zfinx1"
+expect_unproven_count "$OUT_DIR/neg_fpu0_zfinx0/equiv.log" 32 "rf grid negative"
 if [[ "$(cat "$OUT_DIR/neg_fpu0_zfinx0/rc")" -eq 0 ]]; then
   echo "negative control unexpectedly passed" >&2
   exit 1
