@@ -1,0 +1,32 @@
+--- gold_source.sv
++++ gate_source.sv
+@@ -99,8 +99,7 @@
+   logic [36:0] adder_result_expanded;
+
+
+-  assign adder_op_b_negate = (operator_i == ALU_SUB) || (operator_i == ALU_SUBR) ||
+-                             (operator_i == ALU_SUBU) || (operator_i == ALU_SUBUR) || is_subrot_i;
++  assign adder_op_b_negate = ((operator_i[6:3] == 4'b0011) & operator_i[0]) | is_subrot_i;
+
+   // prepare operand a
+   assign adder_op_a = (operator_i == ALU_ABS) ? operand_a_neg : (is_subrot_i ? {
+@@ -237,8 +236,7 @@
+   // ALU_FL1 and ALU_CBL are used for the bit counting ops later
+   assign shift_left = (operator_i == ALU_SLL) || (operator_i == ALU_BINS) ||
+                       (operator_i == ALU_FL1) || (operator_i == ALU_CLB)  ||
+-                      (operator_i == ALU_DIV) || (operator_i == ALU_DIVU) ||
+-                      (operator_i == ALU_REM) || (operator_i == ALU_REMU) ||
++                      (operator_i[6:2] == 5'b01100) ||
+                       (operator_i == ALU_BREV);
+
+   assign shift_use_round = (operator_i == ALU_ADD)   || (operator_i == ALU_SUB)   ||
+@@ -891,8 +889,7 @@
+   assign div_shift_int = ff_no_one ? 6'd31 : clb_result;
+   assign div_shift = div_shift_int + (div_op_a_signed ? 6'd0 : 6'd1);
+
+-  assign div_valid = enable_i & ((operator_i == ALU_DIV) || (operator_i == ALU_DIVU) ||
+-                     (operator_i == ALU_REM) || (operator_i == ALU_REMU));
++  assign div_valid = enable_i & (operator_i[6:2] == 5'b01100);
+
+   // inputs A and B are swapped
+   cv32e40p_alu_div alu_div_i (
