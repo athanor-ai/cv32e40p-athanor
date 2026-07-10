@@ -1,0 +1,43 @@
+{
+  "boundary_equality_every_cycle": true,
+  "candidate": "compressed_l244_addi16sp_lui_zero_reduce",
+  "common_paths": 233,
+  "common_toggles": {
+    "gate": 55386,
+    "gold": 55386
+  },
+  "cycle_count": 220,
+  "exercise_sample": {
+    "tb.dut.aligner_i.instr_aligned_o": 1784,
+    "tb.dut.compressed_decoder_i.FPU": 0,
+    "tb.dut.compressed_decoder_i.ZFINX": 0,
+    "tb.dut.compressed_decoder_i._sv2v_0": 0,
+    "tb.dut.compressed_decoder_i.cv32e40p_pkg_OPCODE_BRANCH": 0,
+    "tb.dut.compressed_decoder_i.cv32e40p_pkg_OPCODE_JAL": 0,
+    "tb.dut.compressed_decoder_i.cv32e40p_pkg_OPCODE_JALR": 0,
+    "tb.dut.compressed_decoder_i.cv32e40p_pkg_OPCODE_LOAD": 0,
+    "tb.dut.compressed_decoder_i.cv32e40p_pkg_OPCODE_LOAD_FP": 0,
+    "tb.dut.compressed_decoder_i.cv32e40p_pkg_OPCODE_LUI": 0,
+    "tb.dut.compressed_decoder_i.cv32e40p_pkg_OPCODE_OP": 0,
+    "tb.dut.compressed_decoder_i.cv32e40p_pkg_OPCODE_OPIMM": 0,
+    "tb.dut.compressed_decoder_i.cv32e40p_pkg_OPCODE_STORE": 0,
+    "tb.dut.compressed_decoder_i.cv32e40p_pkg_OPCODE_STORE_FP": 0,
+    "tb.dut.compressed_decoder_i.illegal_instr_o": 113,
+    "tb.dut.compressed_decoder_i.instr_i": 1784,
+    "tb.dut.compressed_decoder_i.instr_o": 3576,
+    "tb.dut.compressed_decoder_i.is_compressed_o": 0,
+    "tb.dut.illegal_c_insn_id_o": 107,
+    "tb.dut.instr_aligned": 1784,
+    "tb.dut.instr_decompressed": 3576,
+    "tb.dut.is_compressed_id_o": 1
+  },
+  "gate_bundle_sha256": "f969070c695c136f4276314a4b424d8fcc2323b3dc6975e6d001b13616a628d8",
+  "gate_vcd_gzip_sha256": "5396728e863b6c795daee159bc394f31850cebe39c991d97adc2ddab3c4cb38f",
+  "gold_bundle_sha256": "2840d83692ee690b08339bd20376f725021a2540714a99257d9fa89bfab0c493",
+  "gold_vcd_gzip_sha256": "2ac78daf78afe230ceebf16edf749c5c346a9b7843d645c2f35a1b9e6335e677",
+  "toggle_delta_pct_common_paths": 0.0,
+  "tools": {
+    "iverilog": "/workdir/_tools/oss-cad-suite-20260630/bin/iverilog",
+    "vvp": "/workdir/_tools/oss-cad-suite-20260630/bin/vvp"
+  }
+}

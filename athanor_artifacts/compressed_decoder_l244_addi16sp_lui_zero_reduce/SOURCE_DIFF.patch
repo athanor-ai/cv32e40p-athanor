@@ -1,0 +1,11 @@
+--- gold_source.sv
++++ gate_source.sv
+@@ -241,7 +241,7 @@
+           end
+
+           3'b011: begin
+-            if ({instr_i[12], instr_i[6:2]} == 6'b0) begin
++            if ((~|{instr_i[12], instr_i[6:2]})) begin
+               illegal_instr_o = 1'b1;
+             end else begin
+               if (instr_i[11:7] == 5'h02) begin
