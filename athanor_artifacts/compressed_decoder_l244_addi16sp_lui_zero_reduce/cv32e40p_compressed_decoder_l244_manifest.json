@@ -133,7 +133,13 @@
   },
   "selected_toolchain": {
     "liberty": "sky130_fd_sc_hd__tt_025C_1v80.lib",
+    "liberty_sha256": "ec0e1067a35c8bf20b11e58d1e8ac53326067e4dac84a125cc1b917a3518d0d9",
     "yosys_version": "Yosys 0.66+181 (git sha1 afe6b18f2, Release, Clang /usr/bin/clang++ 18.1.8)"
+  },
+  "toolchain_lock": {
+    "path": "tools/TOOLCHAIN.lock",
+    "sha256": "bbc9b14e23f4f09b1ec76e9e551d89a26bd7e169095cf5ae0f1e63c81afee512",
+    "installable_release_tag": "oss-cad-suite-20260630"
   },
   "source_delta": {
     "behavioral_movements_outside_predicate": 0,
