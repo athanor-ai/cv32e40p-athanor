@@ -19,6 +19,23 @@
   "candidate_id": "prefetch_hwlp_flush_demorgan",
   "classification": "prefetch_buffer_parent_area_timing_activity_positive_source_local_equiv_needs_independent_replay",
   "customer_claim_ready": false,
+  "claim_taxonomy": {
+    "schema": "cv32_claim_taxonomy_v1",
+    "status": "evidence_packet",
+    "promotion_state": "not_customer_ready",
+    "claim_scope": "prefetch_buffer_parent_context",
+    "ppa_scope": "prefetch-buffer parent context",
+    "semantic_equivalence_scope": "source-local predicate equivalence",
+    "accepted_optimization": "not_claimed",
+    "whole_core": "not_claimed",
+    "customer_impact": "not_claimed",
+    "promotion_blockers": [
+      "independent_replay_process_gate",
+      "ATH-2899 composition/proof gate for any full-core wording",
+      "ATH-2900 taxonomy review",
+      "ATH-2901 one-command customer certificate surface"
+    ]
+  },
   "cv32e40p_commit": "6033d2b1be3295ec774d17ac4cf226faacfdeb08",
   "interpretation": "The right-sized prefetch-buffer parent context passes area, timing, and activity/toggle. The wider IF-stage wrapper is neutral, so any future wording must stay at the prefetch-buffer boundary unless broader measurements are added.",
   "methodology_note": "This packet uses source-local output-level SAT plus an exact one-predicate source-delta receipt as the formal weld. It is not a full parent-equivalence packet and still needs the standing methodology and independent replay review.",
