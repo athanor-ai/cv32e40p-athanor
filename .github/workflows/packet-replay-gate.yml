@@ -1,0 +1,89 @@
+name: Packet Replay Gate
+
+# Every artifact packet ships replay commands that must work from a fresh
+# clone — not just from the tree where the packet was built. Three packets
+# in a row carried author-environment leaks (absolute paths, simulator-
+# dependent fields, out-of-tree miter references) that only a clean-room
+# replay exposes. This workflow IS that clean room: a hosted runner has no
+# author state by construction. It installs the toolchain pinned by
+# tools/TOOLCHAIN.lock, verifies the lock, the manifests, and the installed
+# binaries agree, then runs each changed packet's own replay battery.
+#
+# Log output is limited to the replay commands' own receipts.
+
+on:
+  pull_request:
+    paths:
+      - "athanor_artifacts/**"
+      - "tools/TOOLCHAIN.lock"
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # The tarball hash is verified BEFORE extraction: an upstream re-tag
+      # must fail loudly, not install silently.
+      - name: Install pinned replay toolchain (tools/TOOLCHAIN.lock)
+        run: |
+          set -euo pipefail
+          url=$(python3 -c "import json; print(json.load(open('tools/TOOLCHAIN.lock'))['oss_cad_suite']['download_url'])")
+          want=$(python3 -c "import json; print(json.load(open('tools/TOOLCHAIN.lock'))['oss_cad_suite']['tarball_sha256'])")
+          echo "lock pins $(python3 -c "import json; print(json.load(open('tools/TOOLCHAIN.lock'))['oss_cad_suite']['installable_release_tag'])")"
+          curl -sSfL "$url" -o /tmp/suite.tgz
+          echo "${want}  /tmp/suite.tgz" | sha256sum -c -
+          tar xzf /tmp/suite.tgz -C "$HOME"
+          echo "$HOME/oss-cad-suite/bin" >> "$GITHUB_PATH"
+
+      # Two consistency legs: the static validator (manifests agree with the
+      # lock) plus a live check the validator cannot do from inside the repo
+      # — the INSTALLED binaries must report the lock's version prefixes.
+      - name: Lock / manifests / installed-binary consistency
+        run: |
+          set -euo pipefail
+          python3 tools/check_packet_toolchain_lock.py
+          python3 - <<'PY'
+          import json, subprocess, sys
+          lock = json.load(open("tools/TOOLCHAIN.lock"))
+          fail = 0
+          for name, argv in (("yosys", ["yosys", "-V"]),
+                             ("iverilog", ["iverilog", "-V"]),
+                             ("vvp", ["vvp", "-V"])):
+              prefix = lock["tools"][name]["version_prefix"]
+              proc = subprocess.run(argv, capture_output=True, text=True)
+              # vvp prints its banner to STDERR with empty stdout; take the
+              # first non-empty line across both streams.
+              lines = [l for l in (proc.stdout + proc.stderr).splitlines() if l.strip()]
+              out = lines[0] if lines else "<no output>"
+              if not out.startswith(prefix):
+                  print(f"::error::installed {name} reports '{out}' but the lock pins prefix '{prefix}'")
+                  fail = 1
+              else:
+                  print(f"OK: {name}: '{out}'")
+          sys.exit(fail)
+          PY
+
+      # The gate proves it can BITE before it is trusted: a seeded packet
+      # whose replay fails must fail the driver, and a passing one must pass.
+      - name: Replay-gate bite proof (seeded fixtures)
+        run: bash tools/test_replay_gate_bites.sh
+
+      - name: Replay every changed packet
+        run: |
+          set -euo pipefail
+          # Activity replays resolve simulators via env-with-pinned-fallback.
+          export IVERILOG="$HOME/oss-cad-suite/bin/iverilog"
+          export VVP="$HOME/oss-cad-suite/bin/vvp"
+          git fetch --quiet origin "${{ github.base_ref }}"
+          # Driver is a separate set -e script ON PURPOSE: an inline
+          # `( cmds ) || handler` subshell suppresses errexit on its LHS, so
+          # a failing replay command could green the gate as long as the
+          # manifest still parsed.
+          bash tools/replay_changed_packets.sh --base "origin/${{ github.base_ref }}"
