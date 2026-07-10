@@ -1,0 +1,99 @@
+
+21. Printing statistics.
+
+=== cv32e40p_id_stage ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+    16357        - wires
+    17397        - wire bits
+     5866        - public wires
+     6906        - public wire bits
+      151        - ports
+     1191        - port bits
+    12584 1.11E+05 cells
+        5        -   $scopeinfo
+       24  210.202   sky130_fd_sc_hd__a2111oi_0
+       44   385.37   sky130_fd_sc_hd__a211o_1
+      167 1.25E+03   sky130_fd_sc_hd__a211oi_1
+        8   80.077   sky130_fd_sc_hd__a21bo_1
+       44  330.317   sky130_fd_sc_hd__a21boi_0
+       37  277.766   sky130_fd_sc_hd__a21o_1
+     1039  5.2E+03   sky130_fd_sc_hd__a21oi_1
+       51   510.49   sky130_fd_sc_hd__a221o_1
+      222 1.94E+03   sky130_fd_sc_hd__a221oi_1
+      138 1.38E+03   sky130_fd_sc_hd__a222oi_1
+       91  797.014   sky130_fd_sc_hd__a22o_1
+      294 2.21E+03   sky130_fd_sc_hd__a22oi_1
+        1    10.01   sky130_fd_sc_hd__a2bb2o_1
+        7   61.309   sky130_fd_sc_hd__a2bb2oi_1
+        8   80.077   sky130_fd_sc_hd__a311o_1
+       23  201.443   sky130_fd_sc_hd__a311oi_1
+        3   26.275   sky130_fd_sc_hd__a31o_1
+      132  825.792   sky130_fd_sc_hd__a31oi_1
+        4   40.038   sky130_fd_sc_hd__a32o_1
+       14  122.618   sky130_fd_sc_hd__a32oi_1
+        1    10.01   sky130_fd_sc_hd__a41o_1
+        2   17.517   sky130_fd_sc_hd__a41oi_1
+      121  756.976   sky130_fd_sc_hd__and2_0
+       68  425.408   sky130_fd_sc_hd__and3_1
+       10   87.584   sky130_fd_sc_hd__and3b_1
+       19   166.41   sky130_fd_sc_hd__and4_1
+        3   30.029   sky130_fd_sc_hd__and4b_1
+      290 1.09E+03   sky130_fd_sc_hd__clkinv_1
+     1646 4.12E+04   sky130_fd_sc_hd__dfrtp_1
+        4  105.101   sky130_fd_sc_hd__dfstp_2
+       61  381.616   sky130_fd_sc_hd__lpflow_inputiso1p_1
+       89  556.784   sky130_fd_sc_hd__lpflow_isobufsrc_1
+       15  150.144   sky130_fd_sc_hd__maj3_1
+      430 4.84E+03   sky130_fd_sc_hd__mux2_1
+      356 3.56E+03   sky130_fd_sc_hd__mux2i_1
+      355    8E+03   sky130_fd_sc_hd__mux4_2
+     1441 5.41E+03   sky130_fd_sc_hd__nand2_1
+      167 1.04E+03   sky130_fd_sc_hd__nand2b_1
+      181  905.869   sky130_fd_sc_hd__nand3_1
+       10   75.072   sky130_fd_sc_hd__nand3b_1
+       64  400.384   sky130_fd_sc_hd__nand4_1
+       16  140.134   sky130_fd_sc_hd__nand4b_1
+        2   22.522   sky130_fd_sc_hd__nand4bb_1
+     2009 7.54E+03   sky130_fd_sc_hd__nor2_1
+        7   43.792   sky130_fd_sc_hd__nor2b_1
+      217 1.09E+03   sky130_fd_sc_hd__nor3_1
+       21  157.651   sky130_fd_sc_hd__nor3b_1
+       59  369.104   sky130_fd_sc_hd__nor4_1
+       19   166.41   sky130_fd_sc_hd__nor4b_1
+        3   30.029   sky130_fd_sc_hd__nor4bb_1
+        3   33.782   sky130_fd_sc_hd__o2111a_1
+       33  289.027   sky130_fd_sc_hd__o2111ai_1
+        7   70.067   sky130_fd_sc_hd__o211a_1
+      228 1.71E+03   sky130_fd_sc_hd__o211ai_1
+       50   375.36   sky130_fd_sc_hd__o21a_1
+     1034 5.17E+03   sky130_fd_sc_hd__o21ai_0
+       17  127.622   sky130_fd_sc_hd__o21bai_1
+       24  270.259   sky130_fd_sc_hd__o221a_1
+       87  761.981   sky130_fd_sc_hd__o221ai_1
+       17  148.893   sky130_fd_sc_hd__o22a_1
+      569 3.56E+03   sky130_fd_sc_hd__o22ai_1
+        9   78.826   sky130_fd_sc_hd__o2bb2ai_1
+        6   60.058   sky130_fd_sc_hd__o311a_1
+       22  192.685   sky130_fd_sc_hd__o311ai_0
+        9   78.826   sky130_fd_sc_hd__o31a_1
+       22  165.158   sky130_fd_sc_hd__o31ai_1
+       13  130.125   sky130_fd_sc_hd__o32a_1
+        5   43.792   sky130_fd_sc_hd__o32ai_1
+        4   45.043   sky130_fd_sc_hd__o41a_1
+       11   96.342   sky130_fd_sc_hd__o41ai_1
+       49  306.544   sky130_fd_sc_hd__or3_1
+       10   87.584   sky130_fd_sc_hd__or3b_1
+       29  217.709   sky130_fd_sc_hd__or4_1
+        5   50.048   sky130_fd_sc_hd__or4b_1
+      164 1.44E+03   sky130_fd_sc_hd__xnor2_1
+        5  112.608   sky130_fd_sc_hd__xnor3_1
+      110  963.424   sky130_fd_sc_hd__xor2_1
+
+   Area for cell type $scopeinfo is unknown!
+
+   Chip area for module '\cv32e40p_id_stage': 111291.737600
+     of which used for sequential elements: 41294.604800 (37.10%)
+

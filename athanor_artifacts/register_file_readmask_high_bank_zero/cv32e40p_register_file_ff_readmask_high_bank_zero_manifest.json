@@ -1,0 +1,161 @@
+{
+  "activity_toggle": {
+    "aa_control_receipt": "activity/toggle_aa_baseline_receipt.json",
+    "aa_control_receipt_sha256": "a8c6bea1b1d94f5f342621436e8bbcf841b125ff5f242063b188c75201e8ae51",
+    "baseline_toggles": 530322,
+    "gate_toggles": 530322,
+    "method": "cv32_idstage_register_file_context_iverilog_vcd_hierarchy_toggle_v1",
+    "power_evidence_type": "toggle_convention",
+    "receipt": "activity/toggle_convention_receipt.json",
+    "receipt_sha256": "8236124c069dbdf7ca0905594d79e07f1b17a6122ac48259bec3d9f3fd3ec85d",
+    "toggle_delta_pct": 0.0
+  },
+  "adapter_miter": {
+    "elaboration_log_sha256": "9a980997059f6fc97d2c43608a9f8c0e9392fdb407b5e72a5f96039c29e32b0a",
+    "note": "This adapter is supplied for ATH-2853 ingest work. The package proof receipt is the parent_yosys_equiv_induct check above, not this auxiliary tempinduct run.",
+    "path": "relation_aware_miter/cv32e40p_id_stage_relation_seq_miter.sv",
+    "tempinduct_k4_log": "relation_aware_miter/logs/cv32e40p_id_stage_relation_seq_miter_tempinduct_k4.log",
+    "tempinduct_k4_log_sha256": "f267d894eb32914a7b7d7d4f9c37ff3468f7d776ba4e568e1e43a59c37c6f8db",
+    "tempinduct_k4_status": "base_case_fail_auxiliary_harness_not_load_bearing"
+  },
+  "boundary": "default cv32e40p_id_stage parent-context evidence packet; no accepted CV32 optimization, no full-core claim, no customer impact claim",
+  "candidate_id": "readmask_high_bank_zero",
+  "classification": "parent_context_area_timing_equiv_activity_positive_needs_replay_package",
+  "customer_claim_ready": false,
+  "cv32e40p_commit": "6033d2b1be3295ec774d17ac4cf226faacfdeb08",
+  "interpretation": "Default parent context passes area, timing, parent equivalence, register-file grid equivalence, biting negative controls, and alias-safe activity/toggle. It still needs independent replay/package review before any accepted CV32 or public customer row.",
+  "module": "cv32e40p_register_file_ff",
+  "negative_controls": [
+    {
+      "gate_file": "equiv_idstage/negative_idstage_default.v",
+      "log": "equiv_idstage/logs/negative_yosys_equiv.log",
+      "log_sha256": "63a4590117638e3c1accac129115dd5fe5614376a7e22ef1a2c591e8f5a5c480",
+      "mutation": "uses raddr_a_i[4] instead of raddr_a_i[5] in one high-bank read mask",
+      "name": "bad_high_bit_mask_parent",
+      "result": "FAIL: 32 unproven regfile_data_ra_id $equiv cells",
+      "top": "cv32e40p_id_stage"
+    },
+    {
+      "gate_file": "equiv_rf_grid/negative_register_file_ff.sv",
+      "log": "equiv_rf_grid/logs/neg_fpu0_zfinx0_equiv.log",
+      "log_sha256": "4800c7d02dafcba6d133f20d667869060aef4323e214dc021142aee0f1388733",
+      "mutation": "uses raddr_a_i[4] instead of raddr_a_i[5] in one high-bank read mask",
+      "name": "bad_high_bit_mask_register_file_grid",
+      "result": "FAIL: 32 unproven bits in FPU=0,ZFINX=0 tuple",
+      "top": "cv32e40p_register_file"
+    }
+  ],
+  "parent_context": "cv32e40p_id_stage",
+  "positive_checks": [
+    {
+      "command_shape": "replay_parent_equiv.sh: read gold/gate parent bundles; proc; memory; async2sync; flatten; opt; equiv_make gold gate equiv; equiv_simple; equiv_induct; equiv_status -assert",
+      "induction_depth": "yosys equiv_induct automatic; no explicit sat -seq K was used",
+      "log": "equiv_idstage/logs/yosys_equiv.log",
+      "log_sha256": "d49ad26393b572c4f882b5a5d1d93ea448c2e6a6261655f1119be83ab05a2b27",
+      "name": "parent_yosys_equiv_induct",
+      "result": "2820/2820 $equiv cells proven",
+      "top": "cv32e40p_id_stage"
+    },
+    {
+      "command_shape": "replay_rf_grid.sh: chparam ADDR_WIDTH=6 and FPU/ZFINX tuples; equiv_make/equiv_simple/equiv_induct/equiv_status -assert",
+      "log_paths": [
+        "equiv_rf_grid/logs/real_fpu0_zfinx0_equiv.log",
+        "equiv_rf_grid/logs/real_fpu1_zfinx0_equiv.log",
+        "equiv_rf_grid/logs/real_fpu1_zfinx1_equiv.log"
+      ],
+      "log_sha256": {
+        "real_fpu0_zfinx0": "4644815531fecaca94c0c8bb14d7dab9e5b3c7ba50934e8470889869174abbf2",
+        "real_fpu1_zfinx0": "ec9ff661e44d3028ea3b02300308a880b97095a1e1246bbb6001ed1ba41eeee7",
+        "real_fpu1_zfinx1": "78fbfc5f3ddbff19f415e6b4981a6f329cf12d92ca963563d332a95be1bd93c3"
+      },
+      "name": "register_file_grid_equiv",
+      "result": "FPU/ZFINX 00: 1150/1150, 10: 2238/2238, 11: 1150/1150 $equiv cells proven",
+      "top": "cv32e40p_register_file"
+    }
+  ],
+  "schema": "cv32e40p_register_file_ff_equiv_induct_replay_v1",
+  "scope": {
+    "equivalence_grid": "register-file grid covers FPU/ZFINX tuples 00, 10, and 11",
+    "non_default_ppa_activity": "not measured; do not claim area/timing/toggle for non-default parent contexts",
+    "ppa_and_activity": "default parent tuple only: FPU=0, ZFINX=0"
+  },
+  "selected_flow": {
+    "area": {
+      "baseline": 111291.7376,
+      "delta_pct": -0.29455,
+      "gate": 110963.9232
+    },
+    "baseline_sha256s_sha256": "41194d98c95cc8c13839c8ce040c4bb83c24662bb842f1b64d32bbd9f1f9e38e",
+    "gate_sha256s_sha256": "06ea5c298442d3cb13960203662c9d92576770c77f252c79c58919c7b133938c",
+    "timing_slack": {
+      "in2out": {
+        "baseline": -4.0621,
+        "gate": -3.7434,
+        "status": "improved"
+      },
+      "in2reg": {
+        "baseline": -10.2941,
+        "gate": -10.2198,
+        "status": "improved"
+      },
+      "overall": {
+        "baseline": -10.2941,
+        "gate": -10.2198,
+        "status": "improved"
+      },
+      "reg2out": {
+        "baseline": -2.0943,
+        "gate": -2.0943,
+        "status": "flat"
+      },
+      "reg2reg": {
+        "baseline": -4.3976,
+        "gate": -4.3976,
+        "status": "flat"
+      }
+    }
+  },
+  "selected_toolchain": {
+    "liberty": "sky130_fd_sc_hd__tt_025C_1v80.lib",
+    "liberty_sha256": "ec0e1067a35c8bf20b11e58d1e8ac53326067e4dac84a125cc1b917a3518d0d9",
+    "yosys_version": "Yosys 0.66+181 (git sha1 afe6b18f2, Release, Clang /usr/bin/clang++ 18.1.8)"
+  },
+  "source_files": [
+    {
+      "path": "gold_source.sv",
+      "sha256": "cd04d46afbf778ff3f1573bdd390784e5461a09b33fd670fa126ae7d3c433e89"
+    },
+    {
+      "path": "gate_source.sv",
+      "sha256": "c86bb37bacc33f6cae137688400734eddc020dc99f2d2321b2d01bfd073feef3"
+    },
+    {
+      "path": "gold_idstage_default.v",
+      "sha256": "875dbe8ba3cba8bff06a6fb6be65424c7dfe7f07b91b0c75a43fad9688c46d07"
+    },
+    {
+      "path": "gate_idstage_default.v",
+      "sha256": "9a67cb59f2f28a9e748ff1d0cfb2a4754cf0621ca58839f9cc248d2fbcdb28fd"
+    },
+    {
+      "path": "equiv_idstage/negative_idstage_default.v",
+      "sha256": "c2b8104d35c77ccc5209bfe6fdb19afe9aa50b894c52b691320638ac3166001f"
+    },
+    {
+      "path": "relation_aware_miter/cv32e40p_id_stage_gold_exposed.v",
+      "sha256": "fd430572da279f569c7f8d57d09823b0250b323a01ad18020f7a4f7202e24b9f"
+    },
+    {
+      "path": "relation_aware_miter/cv32e40p_id_stage_gate_exposed.v",
+      "sha256": "406f2d6dc7ef8073e90d1590bc175adb2e1086e423c16ff712aa023a2bf55d83"
+    },
+    {
+      "path": "relation_aware_miter/cv32e40p_id_stage_gate_MUTANT_exposed.v",
+      "sha256": "45da1bfb659222ec35ed312e7410da07d5d1e4ca20a4d2859a6c9834d9542658"
+    },
+    {
+      "path": "relation_aware_miter/cv32e40p_id_stage_relation_seq_miter.sv",
+      "sha256": "dd52bdd2dacb33c7f8731dfc408ed4101e34d98eb5a4dee17224e3a8aebd3430"
+    }
+  ]
+}
