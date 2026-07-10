@@ -1,0 +1,32 @@
+{
+  "boundary_equality_every_cycle": true,
+  "candidate": "prefetch_hwlp_flush_demorgan",
+  "common_paths": 110,
+  "common_toggles": {
+    "gate": 21739,
+    "gold": 21739
+  },
+  "cycle_count": 260,
+  "exercise_sample": {
+    "tb.dut.hwlp_target_i": 516,
+    "tb.dut.prefetch_controller_i.fifo_empty_i": 18,
+    "tb.dut.prefetch_controller_i.fifo_flush_but_first_o": 0,
+    "tb.dut.prefetch_controller_i.fifo_flush_o": 6,
+    "tb.dut.prefetch_controller_i.flush_cnt_q": 16,
+    "tb.dut.prefetch_controller_i.hwlp_flush_after_resp": 8,
+    "tb.dut.prefetch_controller_i.hwlp_flush_cnt_delayed_q": 4,
+    "tb.dut.prefetch_controller_i.hwlp_flush_resp": 2,
+    "tb.dut.prefetch_controller_i.hwlp_flush_resp_delayed": 8,
+    "tb.dut.prefetch_controller_i.hwlp_jump_i": 8,
+    "tb.dut.prefetch_controller_i.hwlp_target_i": 516,
+    "tb.dut.prefetch_controller_i.hwlp_wait_resp_flush": 8,
+    "tb.dut.prefetch_controller_i.next_flush_cnt": 24,
+    "tb.dut.prefetch_controller_i.resp_valid_i": 109,
+    "tb.hwlp_target_i": 516
+  },
+  "gate_bundle_sha": "a5d3f42d34a55b8b3200b048f7a5f5d7b2bf25e1dee99929211af33bc98c9772",
+  "gate_vcd_gzip_sha": "a79990fa02ffd25257a96a08733c84b494becb463745b321dd85a3fb33d3264e",
+  "gold_bundle_sha": "f6432f7f87101e8d7e7edc07029b34531bd534439535184e9e0e4d42256bd6b2",
+  "gold_vcd_gzip_sha": "91bafc985057912b12a00cfaabce2425df405c14b2b8a0c8c571876f6cd5f7e4",
+  "toggle_delta_pct_common_paths": 0.0
+}

@@ -1,0 +1,12 @@
+{
+  "area": 18228.7328,
+  "manifest_sha": "1756ccd986d3cd3a6053257eeac31f5259b8dc987bf10dcfe4ea5ea7234e1b04",
+  "top": "cv32e40p_if_stage",
+  "wns": {
+    "in2out": 1.1039,
+    "in2reg": -1.876,
+    "overall": -1.876,
+    "reg2out": 0.9203,
+    "reg2reg": -1.7646
+  }
+}

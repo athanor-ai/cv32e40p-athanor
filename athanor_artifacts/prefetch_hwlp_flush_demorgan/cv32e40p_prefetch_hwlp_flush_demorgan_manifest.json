@@ -1,0 +1,135 @@
+{
+  "activity_toggle": {
+    "baseline_toggles": 21739,
+    "boundary_equality_every_cycle": true,
+    "gate_toggles": 21739,
+    "method": "cv32_prefetch_buffer_hwlp_flush_iverilog_vcd_hierarchy_toggle_v1",
+    "power_evidence_type": "toggle_convention",
+    "receipt": "activity/toggle_convention_receipt.json",
+    "receipt_sha256": "4398360438bda45567c71f5ca648a3a9f01ee4c670062529fe99643826e3d952",
+    "toggle_delta_pct": 0.0,
+    "vcd_gzip": {
+      "gate": "activity/gate.vcd.gz",
+      "gate_sha256": "a79990fa02ffd25257a96a08733c84b494becb463745b321dd85a3fb33d3264e",
+      "gold": "activity/gold.vcd.gz",
+      "gold_sha256": "91bafc985057912b12a00cfaabce2425df405c14b2b8a0c8c571876f6cd5f7e4"
+    }
+  },
+  "boundary": "prefetch-buffer parent-context evidence packet using source-local predicate equivalence; no accepted CV32 optimization, no full parent equivalence claim, no IF-stage win, no whole-core claim, no customer impact claim",
+  "candidate_id": "prefetch_hwlp_flush_demorgan",
+  "classification": "prefetch_buffer_parent_area_timing_activity_positive_source_local_equiv_needs_independent_replay",
+  "customer_claim_ready": false,
+  "cv32e40p_commit": "6033d2b1be3295ec774d17ac4cf226faacfdeb08",
+  "interpretation": "The right-sized prefetch-buffer parent context passes area, timing, and activity/toggle. The wider IF-stage wrapper is neutral, so any future wording must stay at the prefetch-buffer boundary unless broader measurements are added.",
+  "methodology_note": "This packet uses source-local output-level SAT plus an exact one-predicate source-delta receipt as the formal weld. It is not a full parent-equivalence packet and still needs the standing methodology and independent replay review.",
+  "module": "cv32e40p_prefetch_controller",
+  "parent_context": "cv32e40p_prefetch_buffer",
+  "predicate_equiv": {
+    "method": "Yosys output-level SAT, proving diff_o == 0",
+    "negative_controls": {
+      "negative_missing_jump": {
+        "log": "predicate_equiv/negative_missing_jump/yosys_sat.log",
+        "log_sha256": "6e8d3b2441bf6f186c2337f9d6dd4036ba0700e6cae73055f3a249c61f0696bb",
+        "result": "FAIL: model found with diff_o=1"
+      },
+      "negative_wrong_demorgan": {
+        "log": "predicate_equiv/negative_wrong_demorgan/yosys_sat.log",
+        "log_sha256": "897a97c9014b5c75d6d4fa031e89d2cac72a1badf68d873f37c2054abc87d8a6",
+        "result": "FAIL: model found with diff_o=1"
+      }
+    },
+    "positive": {
+      "label": "positive",
+      "log": "predicate_equiv/positive/yosys_sat.log",
+      "log_sha256": "56015ca18fd4f3dcb646754be3f88f0509d5f2c619c4c33eee59aa713cea7645",
+      "result": "SUCCESS: no model found for diff_o=1"
+    }
+  },
+  "schema": "cv32e40p_prefetch_hwlp_flush_demorgan_source_local_replay_v1",
+  "scope": {
+    "full_parent_equivalence": "not claimed",
+    "if_stage": "measured neutral; no IF-stage win claimed",
+    "ppa_and_activity": "prefetch-buffer parent context only",
+    "semantic_equivalence": "source-local predicate miter over hwlp_jump_i/fifo_empty_i/resp_valid_i",
+    "whole_core": "not measured"
+  },
+  "selected_flow": {
+    "area": {
+      "baseline": 7186.8928,
+      "delta_pct": -0.226323,
+      "gate": 7170.6272
+    },
+    "baseline_sha256s_sha256": "e087f978c3120761136b96c3cbc968fe0de7372feb8a628278056f44e8f277db",
+    "gate_sha256s_sha256": "7443b08ac16fb827ccdb570666630dee7b8d681d3442291e85683e601304a335",
+    "timing_slack": {
+      "in2out": {
+        "baseline": 2.6664,
+        "gate": 2.6836,
+        "status": "improved"
+      },
+      "in2reg": {
+        "baseline": 0.3554,
+        "gate": 2.0528,
+        "status": "improved"
+      },
+      "overall": {
+        "baseline": -0.7369,
+        "gate": 0.1096,
+        "status": "improved"
+      },
+      "reg2out": {
+        "baseline": 0.0782,
+        "gate": 0.1096,
+        "status": "improved"
+      },
+      "reg2reg": {
+        "baseline": -0.7369,
+        "gate": 0.3772,
+        "status": "improved"
+      }
+    },
+    "top": "cv32e40p_prefetch_buffer"
+  },
+  "selected_toolchain": {
+    "liberty": "sky130_fd_sc_hd__tt_025C_1v80.lib",
+    "yosys_version": "Yosys 0.66+181 (git sha1 afe6b18f2, Release, Clang /usr/bin/clang++ 18.1.8)"
+  },
+  "source_delta": {
+    "behavioral_movements_outside_predicate": 0,
+    "receipt": "replay_source_delta.py",
+    "replacement_count": 1,
+    "source_diff": "SOURCE_DIFF.patch",
+    "source_diff_sha256": "1f9a26502b09fa77a16341391b9cd827e8f30231ed654a167cf00674bc62bea5"
+  },
+  "source_files": [
+    {
+      "path": "gold_source.sv",
+      "sha256": "66e6078ea3b3acd3ceea4b974c0488d25e02324935532de1f2d39cdc34c875a0"
+    },
+    {
+      "path": "gate_source.sv",
+      "sha256": "c14dbaa7c1c01e5a4029ffb69706f9a37503a4d554f487ffed71482744e49f89"
+    },
+    {
+      "path": "gold_prefetch_buffer_parent.v",
+      "sha256": "f6432f7f87101e8d7e7edc07029b34531bd534439535184e9e0e4d42256bd6b2"
+    },
+    {
+      "path": "gate_prefetch_buffer_parent.v",
+      "sha256": "a5d3f42d34a55b8b3200b048f7a5f5d7b2bf25e1dee99929211af33bc98c9772"
+    }
+  ],
+  "wider_context": {
+    "if_stage": {
+      "area": {
+        "baseline": 18228.7328,
+        "delta_pct": 0.0,
+        "gate": 18228.7328
+      },
+      "baseline_sha256s_sha256": "adf06b1b62933958a45230d50958d85fa1d3480845d48441b77c8d06ea31fa77",
+      "gate_sha256s_sha256": "b253ad80c9065e43b74665d8cd5b6668955852b129ff7d96d5e4691120c4bafc",
+      "interpretation": "neutral; not a promotion blocker, not claimed as a wider IF-stage win",
+      "top": "cv32e40p_if_stage"
+    }
+  }
+}

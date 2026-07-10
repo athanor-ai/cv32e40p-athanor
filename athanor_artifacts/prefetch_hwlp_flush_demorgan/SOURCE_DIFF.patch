@@ -1,0 +1,11 @@
+--- gold_source.sv
++++ gate_source.sv
+@@ -258,7 +258,7 @@
+
+       // If HWLP_END-4 is in ID and HWLP_END is being/was returned by the memory
+       // we can flush all the eventual outstanding requests up to now
+-      assign hwlp_flush_resp        = hwlp_jump_i && !(fifo_empty_i && !resp_valid_i);
++      assign hwlp_flush_resp        = hwlp_jump_i && (!fifo_empty_i || resp_valid_i);
+
+       //////////////////////////////////////////////////////////////////////////////
+       // HWLP delayed flush controller
