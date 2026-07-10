@@ -1,0 +1,45 @@
+{
+  "candidate": "compressed_decoder_l244_addi16sp_lui_zero_reduce",
+  "rows": {
+    "negative_missing_bit12": {
+      "fail": true,
+      "label": "full_negative_missing_bit12",
+      "log_sha256": "61690d94fc8ecc39e91f13a13898c9087a22f8cb7969a2f9d22f61d2623f61c8",
+      "miter_sha256": "8a61d79ed9ee7a32b0b8b9b176d89035acb8a2a46edee75f0f83b98244ee7037",
+      "rc": 0,
+      "success": false
+    },
+    "negative_missing_bit2": {
+      "fail": true,
+      "label": "full_negative_missing_bit2",
+      "log_sha256": "d67f89ef4f157c5034d9edae1fd62bfaeb583a67fd26737aa610796199478a2e",
+      "miter_sha256": "53f1c30aa7c20f59a2ba58fc5297207d00498d8043a8657315cadb7c374d90af",
+      "rc": 0,
+      "success": false
+    },
+    "positive_fpu0_zfinx0": {
+      "fail": false,
+      "label": "full_positive_fpu0_zfinx0",
+      "log_sha256": "1132f7908c75565850f1833609a385f786b0fa6a8e03d54841de7e1995087619",
+      "miter_sha256": "96219f4c5b3736900f3abef5d385fd428d7d83b2217029bb180a9c62fd30a621",
+      "rc": 0,
+      "success": true
+    },
+    "positive_fpu1_zfinx0": {
+      "fail": false,
+      "label": "full_positive_fpu1_zfinx0",
+      "log_sha256": "af7cfd4335adb793a56652fc06dc01ddd587ad86f2defa738efc637c9cc5c4c4",
+      "miter_sha256": "1a8cd733a894c943df94afd8f15c472bd3ee44aa6843baf16ddb607816d0e309",
+      "rc": 0,
+      "success": true
+    },
+    "positive_fpu1_zfinx1": {
+      "fail": false,
+      "label": "full_positive_fpu1_zfinx1",
+      "log_sha256": "5babfa6eeeea373c1ebc085e1e75771f8aca4b0f049bf0bab356181e6777910f",
+      "miter_sha256": "a3d8cb6e75a8574e8fb14a5a4759693a4ebf56e7b069501ecf0097993d318560",
+      "rc": 0,
+      "success": true
+    }
+  }
+}

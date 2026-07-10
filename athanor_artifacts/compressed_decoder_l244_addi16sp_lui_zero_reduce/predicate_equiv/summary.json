@@ -1,0 +1,29 @@
+{
+  "candidate": "compressed_decoder_l244_addi16sp_lui_zero_reduce",
+  "rows": {
+    "negative_missing_bit12": {
+      "fail": true,
+      "label": "predicate_negative_missing_bit12",
+      "log_sha256": "111c9a2751f815c6751ea3a5487925bd08e5889eaf405b8e155b6589a9c9336d",
+      "miter_sha256": "8108c50d3bff67907fa311e431cda5b433a3f5922b8d7f89e704c76f4426c0d5",
+      "rc": 0,
+      "success": false
+    },
+    "negative_missing_bit2": {
+      "fail": true,
+      "label": "predicate_negative_missing_bit2",
+      "log_sha256": "97f26acaef6ddcd77d370aa2e266da3caa1b944e36a3ca07e6c2ca734d9eaf10",
+      "miter_sha256": "bbf306f28363f325f8959056ddc2989cc899f430b79ef834bb765c2b19b78f0d",
+      "rc": 0,
+      "success": false
+    },
+    "positive": {
+      "fail": false,
+      "label": "predicate_positive",
+      "log_sha256": "e3a28ff2830aad35d59c4ed077b377e0212b4120775053a92a0490eac3640e74",
+      "miter_sha256": "c3285393f344362fc4cecc0e1010dab641b7020ac2324f67132292ca1ebfe9dd",
+      "rc": 0,
+      "success": true
+    }
+  }
+}

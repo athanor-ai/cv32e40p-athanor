@@ -1,0 +1,12 @@
+{
+  "area": 1278.7264,
+  "manifest_sha": "52cbd2d88038645c21ce225c9841dc95c033a7a8bb01ec7b9196d579686da3ef",
+  "top": "cv32e40p_compressed_decoder",
+  "wns": {
+    "in2out": null,
+    "in2reg": null,
+    "overall": null,
+    "reg2out": null,
+    "reg2reg": null
+  }
+}
