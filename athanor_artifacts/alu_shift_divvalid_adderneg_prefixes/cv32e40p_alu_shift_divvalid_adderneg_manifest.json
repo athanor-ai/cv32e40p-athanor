@@ -1,0 +1,158 @@
+{
+  "activity_toggle": {
+    "baseline_toggles": 1482734,
+    "boundary_equality_every_cycle": true,
+    "gate_toggles": 1482734,
+    "method": "cv32_alu_parent_div_rem_heavy_iverilog_vcd_hierarchy_toggle_v1",
+    "power_evidence_type": "toggle_convention",
+    "receipt": "activity/toggle_convention_receipt.json",
+    "receipt_sha256": "9fe1e939801e093c06f0f5ad2f7cebaac5346bf9905aedd16919a3c4393630ad",
+    "toggle_delta_pct": 0.0,
+    "vcd_gzip": "activity/toggle.vcd.gz",
+    "vcd_gzip_sha256": "91abf21672109f7e5207a39df48dc4d67db61afe59d3d5b44d41527b04edddcd"
+  },
+  "boundary": "default ALU parent-context evidence packet using source-local predicate equivalence; no accepted CV32 optimization, no full parent equivalence claim, no whole-core claim, no customer impact claim",
+  "candidate_id": "alu_shift_divvalid_adderneg_prefixes",
+  "classification": "default_alu_parent_area_timing_activity_positive_source_local_equiv_needs_independent_replay",
+  "customer_claim_ready": false,
+  "cv32e40p_commit": "6033d2b1be3295ec774d17ac4cf226faacfdeb08",
+  "interpretation": "The ALU parent context passes area, timing, and activity/toggle. Semantic evidence is the exact source replacement plus output-level SAT over three rewritten predicates, with one negative control per predicate family.",
+  "methodology_note": "This packet presents a combined three-predicate source-local proof shape. It is not three independent accepted one-predicate promotions and still needs the standing methodology and independent replay review.",
+  "module": "cv32e40p_alu",
+  "predicate_equiv": {
+    "method": "Yosys output-level SAT, proving combined diff_o == 0",
+    "negative_controls": {
+      "negative_adder_even_subs": {
+        "log": "predicate_equiv/negative_adder_even_subs/yosys_sat.log",
+        "log_sha256": "6583a861546ef33455c0a7251275166f31ff8347ed904182d7bb1f8856468b11",
+        "result": "FAIL: model found with diff_o=1"
+      },
+      "negative_div_prefix_01101": {
+        "log": "predicate_equiv/negative_div_prefix_01101/yosys_sat.log",
+        "log_sha256": "32f3c812b2c0513e511975688267a4a3db9b4097563915abab5f4b13d83cf038",
+        "result": "FAIL: model found with diff_o=1"
+      },
+      "negative_shift_prefix_01101": {
+        "log": "predicate_equiv/negative_shift_prefix_01101/yosys_sat.log",
+        "log_sha256": "114df94061025342c496cfc0b9584fcd053aa353d7e6144a98de07977b4ff682",
+        "result": "FAIL: model found with diff_o=1"
+      }
+    },
+    "positive": {
+      "label": "positive",
+      "log": "predicate_equiv/positive/yosys_sat.log",
+      "log_sha256": "c81f60b12d23635f685450acbf5084e82aac170e57becbc84db34a6cd3d7f6a6",
+      "result": "SUCCESS: no model found for diff_o=1"
+    }
+  },
+  "relationship_to_prior_packets": {
+    "not_additive_with": [
+      "alu_shift_left_divrem_prefix",
+      "alu_divrem_prefix_valid",
+      "alu_addsub_divvalid_adderneg_prefixes"
+    ],
+    "overlaps": [
+      {
+        "candidate_id": "alu_addsub_divvalid_adderneg_prefixes",
+        "cv32e40p_athanor_pr": "#5",
+        "dominance_note": "This packet overlaps the three-predicate add/sub/div-valid/adder-negate packet but does not dominate it; it swaps that packet's shift_use_round rewrite for shift_left and has a smaller area delta. Do not add the deltas together.",
+        "shared_predicates": [
+          "div_valid",
+          "adder_op_b_negate"
+        ]
+      }
+    ],
+    "supersets": [
+      {
+        "candidate_id": "alu_shift_left_divrem_prefix",
+        "cv32e40p_athanor_pr": "#4",
+        "dominance_note": "This packet includes the shift_left div/rem-prefix rewrite from the shift-only packet and adds div_valid plus adder_op_b_negate rewrites. Treat the packets as overlapping alternatives, not additive wins.",
+        "shared_predicates": [
+          "shift_left"
+        ]
+      },
+      {
+        "candidate_id": "alu_divrem_prefix_valid",
+        "cv32e40p_athanor_pr": "#3",
+        "dominance_note": "This packet includes the div_valid rewrite from the div-valid-only packet and adds shift_left plus adder_op_b_negate rewrites. Treat the packets as overlapping alternatives, not additive wins.",
+        "shared_predicates": [
+          "div_valid"
+        ]
+      }
+    ],
+    "table_guidance": "If multiple ALU prefix packets reach a customer-facing table, name these relationships explicitly and do not sum reported area/timing/activity deltas."
+  },
+  "schema": "cv32e40p_alu_shift_divvalid_adderneg_source_local_replay_v1",
+  "scope": {
+    "full_parent_equivalence": "not claimed",
+    "ppa_and_activity": "default ALU parent context only",
+    "semantic_equivalence": "source-local combined predicate miter over full 7-bit operator_i space plus enable_i/is_subrot_i where relevant",
+    "whole_core": "not measured"
+  },
+  "selected_flow": {
+    "area": {
+      "baseline": 29548.3392,
+      "delta_pct": -0.660569,
+      "gate": 29353.152
+    },
+    "baseline_sha256s_sha256": "514eb7c9fa26feb088232976711c1e003b055c8cb89a435cb68f4fc30b8b1321",
+    "gate_sha256s_sha256": "eb117377b490bdc1e0f863022e73f176bfcdbb6b745e4f62a848108005b1c5dc",
+    "timing_slack": {
+      "in2out": {
+        "baseline": -20.2186,
+        "gate": -19.3884,
+        "status": "improved"
+      },
+      "in2reg": {
+        "baseline": -16.2551,
+        "gate": -14.4443,
+        "status": "improved"
+      },
+      "overall": {
+        "baseline": -20.2186,
+        "gate": -19.3884,
+        "status": "improved"
+      },
+      "reg2out": {
+        "baseline": -2.4968,
+        "gate": -2.1299,
+        "status": "improved"
+      },
+      "reg2reg": {
+        "baseline": -4.9985,
+        "gate": -4.5136,
+        "status": "improved"
+      }
+    },
+    "top": "cv32e40p_alu_parent_context"
+  },
+  "selected_toolchain": {
+    "liberty": "sky130_fd_sc_hd__tt_025C_1v80.lib",
+    "yosys_version": "Yosys 0.66+181 (git sha1 afe6b18f2, Release, Clang /usr/bin/clang++ 18.1.8)"
+  },
+  "source_delta": {
+    "behavioral_movements_outside_predicates": 0,
+    "receipt": "replay_source_delta.py",
+    "replacement_count": 3,
+    "source_diff": "SOURCE_DIFF.patch",
+    "source_diff_sha256": "63b676f3929f09200181cadd8de9489bd9f96fb098cf64f5a7009f3260481a5c"
+  },
+  "source_files": [
+    {
+      "path": "gold_source.sv",
+      "sha256": "6eca8d4c2e299adcc498417220478360cc22898ba9037cdad6a1b81e80373c7b"
+    },
+    {
+      "path": "gate_source.sv",
+      "sha256": "a7d8f13c6dd0380fac2f6b413c7e74a6006e03bc4ea21c6c5a450e70102ac71e"
+    },
+    {
+      "path": "gold_alu_parent_context.v",
+      "sha256": "965f9b07bc6e84f1b815fe5a897b840c02bfb7bce0dca96a6dee1a206c5bd3a9"
+    },
+    {
+      "path": "gate_alu_parent_context.v",
+      "sha256": "47e9015ea3ef90c774d33c9f9f0800b337c38617d2142971226ba89a8e4c3b11"
+    }
+  ]
+}

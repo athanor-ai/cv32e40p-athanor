@@ -1,0 +1,35 @@
+{
+  "candidate": "alu_shift_divvalid_adderneg_combo",
+  "negative_bites": true,
+  "positive_closes": true,
+  "rows": {
+    "negative_adder_even_subs": {
+      "fail": true,
+      "log_sha": "6583a861546ef33455c0a7251275166f31ff8347ed904182d7bb1f8856468b11",
+      "manifest_sha": "9ecc43d645adea766a5d9ce73cf409cf144a5b195f4f0651670f83cf2d8aa7d1",
+      "rc": 0,
+      "success": false
+    },
+    "negative_div_prefix_01101": {
+      "fail": true,
+      "log_sha": "32f3c812b2c0513e511975688267a4a3db9b4097563915abab5f4b13d83cf038",
+      "manifest_sha": "9ecc43d645adea766a5d9ce73cf409cf144a5b195f4f0651670f83cf2d8aa7d1",
+      "rc": 0,
+      "success": false
+    },
+    "negative_shift_prefix_01101": {
+      "fail": true,
+      "log_sha": "114df94061025342c496cfc0b9584fcd053aa353d7e6144a98de07977b4ff682",
+      "manifest_sha": "9ecc43d645adea766a5d9ce73cf409cf144a5b195f4f0651670f83cf2d8aa7d1",
+      "rc": 0,
+      "success": false
+    },
+    "positive": {
+      "fail": false,
+      "log_sha": "c81f60b12d23635f685450acbf5084e82aac170e57becbc84db34a6cd3d7f6a6",
+      "manifest_sha": "9ecc43d645adea766a5d9ce73cf409cf144a5b195f4f0651670f83cf2d8aa7d1",
+      "rc": 0,
+      "success": true
+    }
+  }
+}

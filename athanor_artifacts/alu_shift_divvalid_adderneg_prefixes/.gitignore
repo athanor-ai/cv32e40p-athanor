@@ -1,0 +1,10 @@
+!*.json
+!*.py
+!*.md
+!*.sv
+!*.v
+!*.patch
+!SHA256SUMS
+!*.log
+!*.rpt
+!*.vcd.gz
