@@ -1,0 +1,623 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.66+181 (git sha1 afe6b18f2, Release, Clang /usr/bin/clang++ 18.1.8)
+
+-- Executing script file `prove.ys' --
+
+1. Executing Verilog-2005 frontend: compressed_decoder_full_miter.sv
+Parsing SystemVerilog input from `compressed_decoder_full_miter.sv' to AST representation.
+Generating RTLIL representation for module `\gold_cv32e40p_compressed_decoder'.
+Generating RTLIL representation for module `\gate_cv32e40p_compressed_decoder'.
+Generating RTLIL representation for module `\compressed_decoder_full_miter'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \compressed_decoder_full_miter
+Used module:     \gate_cv32e40p_compressed_decoder
+Used module:     \gold_cv32e40p_compressed_decoder
+Parameter \FPU = 1
+Parameter \ZFINX = 0
+
+2.1.2. Executing AST frontend in derive mode using pre-parsed AST for module `\gate_cv32e40p_compressed_decoder'.
+Parameter \FPU = 1
+Parameter \ZFINX = 0
+Generating RTLIL representation for module `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gate_cv32e40p_compressed_decoder'.
+Parameter \FPU = 1
+Parameter \ZFINX = 0
+
+2.1.3. Executing AST frontend in derive mode using pre-parsed AST for module `\gold_cv32e40p_compressed_decoder'.
+Parameter \FPU = 1
+Parameter \ZFINX = 0
+Generating RTLIL representation for module `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gold_cv32e40p_compressed_decoder'.
+
+2.1.4. Analyzing design hierarchy..
+Top module:  \compressed_decoder_full_miter
+Used module:     $paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gate_cv32e40p_compressed_decoder
+Used module:     $paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gold_cv32e40p_compressed_decoder
+
+2.1.5. Analyzing design hierarchy..
+Top module:  \compressed_decoder_full_miter
+Used module:     $paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gate_cv32e40p_compressed_decoder
+Used module:     $paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gold_cv32e40p_compressed_decoder
+Removing unused module `\gate_cv32e40p_compressed_decoder'.
+Removing unused module `\gold_cv32e40p_compressed_decoder'.
+Removed 2 unused modules.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 9 empty switches in `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gold_cv32e40p_compressed_decoder.$proc$compressed_decoder_full_miter.sv:24$74'.
+Found and cleaned up 9 empty switches in `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gate_cv32e40p_compressed_decoder.$proc$compressed_decoder_full_miter.sv:198$50'.
+Cleaned up 18 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 4 dead cases from process $proc$compressed_decoder_full_miter.sv:24$74 in module $paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gold_cv32e40p_compressed_decoder.
+Marked 17 switch rules as full_case in process $proc$compressed_decoder_full_miter.sv:24$74 in module $paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gold_cv32e40p_compressed_decoder.
+Removed 4 dead cases from process $proc$compressed_decoder_full_miter.sv:198$50 in module $paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gate_cv32e40p_compressed_decoder.
+Marked 17 switch rules as full_case in process $proc$compressed_decoder_full_miter.sv:198$50 in module $paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gate_cv32e40p_compressed_decoder.
+Removed a total of 8 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 6 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~46 debug messages>
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gold_cv32e40p_compressed_decoder.$proc$compressed_decoder_full_miter.sv:172$96'.
+Creating decoders for process `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gold_cv32e40p_compressed_decoder.$proc$compressed_decoder_full_miter.sv:24$74'.
+     1/42: $28\instr_o[31:0]
+     2/42: $27\instr_o[31:0]
+     3/42: $26\instr_o[31:0]
+     4/42: $25\instr_o[31:0]
+     5/42: $24\instr_o[31:0]
+     6/42: $23\instr_o[31:0]
+     7/42: $14\illegal_instr_o[0:0]
+     8/42: $13\illegal_instr_o[0:0]
+     9/42: $22\instr_o[31:0]
+    10/42: $12\illegal_instr_o[0:0]
+    11/42: $21\instr_o[31:0]
+    12/42: $20\instr_o[31:0]
+    13/42: $11\illegal_instr_o[0:0]
+    14/42: $19\instr_o[31:0]
+    15/42: $18\instr_o[31:0]
+    16/42: $10\illegal_instr_o[0:0]
+    17/42: $17\instr_o[31:0]
+    18/42: $9\illegal_instr_o[0:0]
+    19/42: $16\instr_o[31:0]
+    20/42: $15\instr_o[31:0]
+    21/42: $8\illegal_instr_o[0:0]
+    22/42: $14\instr_o[31:0]
+    23/42: $7\illegal_instr_o[0:0]
+    24/42: $13\instr_o[31:0]
+    25/42: $6\illegal_instr_o[0:0]
+    26/42: $12\instr_o[31:0]
+    27/42: $11\instr_o[31:0]
+    28/42: $10\instr_o[31:0]
+    29/42: $5\illegal_instr_o[0:0]
+    30/42: $9\instr_o[31:0]
+    31/42: $8\instr_o[31:0]
+    32/42: $7\instr_o[31:0]
+    33/42: $4\illegal_instr_o[0:0]
+    34/42: $6\instr_o[31:0]
+    35/42: $5\instr_o[31:0]
+    36/42: $4\instr_o[31:0]
+    37/42: $3\instr_o[31:0]
+    38/42: $3\illegal_instr_o[0:0]
+    39/42: $2\illegal_instr_o[0:0]
+    40/42: $2\instr_o[31:0]
+    41/42: $1\illegal_instr_o[0:0]
+    42/42: $1\instr_o[31:0]
+Creating decoders for process `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gate_cv32e40p_compressed_decoder.$proc$compressed_decoder_full_miter.sv:346$73'.
+Creating decoders for process `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gate_cv32e40p_compressed_decoder.$proc$compressed_decoder_full_miter.sv:198$50'.
+     1/42: $28\instr_o[31:0]
+     2/42: $27\instr_o[31:0]
+     3/42: $26\instr_o[31:0]
+     4/42: $25\instr_o[31:0]
+     5/42: $24\instr_o[31:0]
+     6/42: $23\instr_o[31:0]
+     7/42: $14\illegal_instr_o[0:0]
+     8/42: $13\illegal_instr_o[0:0]
+     9/42: $22\instr_o[31:0]
+    10/42: $12\illegal_instr_o[0:0]
+    11/42: $21\instr_o[31:0]
+    12/42: $20\instr_o[31:0]
+    13/42: $11\illegal_instr_o[0:0]
+    14/42: $19\instr_o[31:0]
+    15/42: $18\instr_o[31:0]
+    16/42: $10\illegal_instr_o[0:0]
+    17/42: $17\instr_o[31:0]
+    18/42: $9\illegal_instr_o[0:0]
+    19/42: $16\instr_o[31:0]
+    20/42: $15\instr_o[31:0]
+    21/42: $8\illegal_instr_o[0:0]
+    22/42: $14\instr_o[31:0]
+    23/42: $7\illegal_instr_o[0:0]
+    24/42: $13\instr_o[31:0]
+    25/42: $6\illegal_instr_o[0:0]
+    26/42: $12\instr_o[31:0]
+    27/42: $11\instr_o[31:0]
+    28/42: $10\instr_o[31:0]
+    29/42: $5\illegal_instr_o[0:0]
+    30/42: $9\instr_o[31:0]
+    31/42: $8\instr_o[31:0]
+    32/42: $7\instr_o[31:0]
+    33/42: $4\illegal_instr_o[0:0]
+    34/42: $6\instr_o[31:0]
+    35/42: $5\instr_o[31:0]
+    36/42: $4\instr_o[31:0]
+    37/42: $3\instr_o[31:0]
+    38/42: $3\illegal_instr_o[0:0]
+    39/42: $2\illegal_instr_o[0:0]
+    40/42: $2\instr_o[31:0]
+    41/42: $1\illegal_instr_o[0:0]
+    42/42: $1\instr_o[31:0]
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gold_cv32e40p_compressed_decoder.\_sv2v_0' from process `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gold_cv32e40p_compressed_decoder.$proc$compressed_decoder_full_miter.sv:172$96'.
+No latch inferred for signal `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gold_cv32e40p_compressed_decoder.\instr_o' from process `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gold_cv32e40p_compressed_decoder.$proc$compressed_decoder_full_miter.sv:24$74'.
+No latch inferred for signal `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gold_cv32e40p_compressed_decoder.\illegal_instr_o' from process `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gold_cv32e40p_compressed_decoder.$proc$compressed_decoder_full_miter.sv:24$74'.
+No latch inferred for signal `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gate_cv32e40p_compressed_decoder.\_sv2v_0' from process `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gate_cv32e40p_compressed_decoder.$proc$compressed_decoder_full_miter.sv:346$73'.
+No latch inferred for signal `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gate_cv32e40p_compressed_decoder.\instr_o' from process `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gate_cv32e40p_compressed_decoder.$proc$compressed_decoder_full_miter.sv:198$50'.
+No latch inferred for signal `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gate_cv32e40p_compressed_decoder.\illegal_instr_o' from process `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gate_cv32e40p_compressed_decoder.$proc$compressed_decoder_full_miter.sv:198$50'.
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gold_cv32e40p_compressed_decoder.$proc$compressed_decoder_full_miter.sv:172$96'.
+Found and cleaned up 23 empty switches in `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gold_cv32e40p_compressed_decoder.$proc$compressed_decoder_full_miter.sv:24$74'.
+Removing empty process `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gold_cv32e40p_compressed_decoder.$proc$compressed_decoder_full_miter.sv:24$74'.
+Removing empty process `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gate_cv32e40p_compressed_decoder.$proc$compressed_decoder_full_miter.sv:346$73'.
+Found and cleaned up 23 empty switches in `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gate_cv32e40p_compressed_decoder.$proc$compressed_decoder_full_miter.sv:198$50'.
+Removing empty process `$paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gate_cv32e40p_compressed_decoder.$proc$compressed_decoder_full_miter.sv:198$50'.
+Cleaned up 46 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module compressed_decoder_full_miter.
+Optimizing module $paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gold_cv32e40p_compressed_decoder.
+<suppressed ~52 debug messages>
+Optimizing module $paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gate_cv32e40p_compressed_decoder.
+<suppressed ~52 debug messages>
+
+2.3. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gold_cv32e40p_compressed_decoder.
+Deleting now unused module $paramod$adc9874edaa69d3acbea972495c7dd7acbcdc349\gate_cv32e40p_compressed_decoder.
+<suppressed ~2 debug messages>
+
+2.4. Executing FUTURE pass.
+
+2.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module compressed_decoder_full_miter.
+
+2.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \compressed_decoder_full_miter..
+Removed 19 unused cells and 184 unused wires.
+<suppressed ~20 debug messages>
+
+2.7. Executing CHECK pass (checking for obvious problems).
+Checking module compressed_decoder_full_miter...
+Found and reported 0 problems.
+
+2.8. Executing OPT pass (performing simple optimizations).
+
+2.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module compressed_decoder_full_miter.
+
+2.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\compressed_decoder_full_miter'.
+Computing hashes of 608 cells of `\compressed_decoder_full_miter'.
+Finding duplicate cells in `\compressed_decoder_full_miter'.
+Computing hashes of 303 cells of `\compressed_decoder_full_miter'.
+Finding duplicate cells in `\compressed_decoder_full_miter'.
+Computing hashes of 285 cells of `\compressed_decoder_full_miter'.
+Finding duplicate cells in `\compressed_decoder_full_miter'.
+<suppressed ~969 debug messages>
+Removed a total of 323 cells.
+
+2.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \compressed_decoder_full_miter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $flatten\gold.$procmux$119.
+    dead port 2/2 on $mux $flatten\gate.$procmux$909.
+    dead port 2/2 on $mux $flatten\gold.$procmux$121.
+    dead port 2/2 on $mux $flatten\gate.$procmux$748.
+    dead port 2/2 on $mux $flatten\gold.$procmux$123.
+    dead port 2/2 on $mux $flatten\gold.$procmux$133.
+    dead port 2/2 on $mux $flatten\gold.$procmux$136.
+    dead port 2/2 on $mux $flatten\gate.$procmux$911.
+    dead port 2/2 on $mux $flatten\gold.$procmux$138.
+    dead port 2/2 on $mux $flatten\gold.$procmux$140.
+    dead port 2/2 on $mux $flatten\gold.$procmux$150.
+    dead port 2/2 on $mux $flatten\gold.$procmux$152.
+    dead port 2/2 on $mux $flatten\gate.$procmux$750.
+    dead port 2/2 on $mux $flatten\gold.$procmux$154.
+    dead port 1/2 on $mux $flatten\gold.$procmux$164.
+    dead port 1/2 on $mux $flatten\gold.$procmux$166.
+    dead port 2/2 on $mux $flatten\gold.$procmux$168.
+    dead port 2/2 on $mux $flatten\gate.$procmux$921.
+    dead port 2/2 on $mux $flatten\gold.$procmux$170.
+    dead port 2/2 on $mux $flatten\gold.$procmux$181.
+    dead port 1/2 on $mux $flatten\gold.$procmux$183.
+    dead port 2/2 on $mux $flatten\gold.$procmux$185.
+    dead port 2/2 on $mux $flatten\gate.$procmux$923.
+    dead port 2/2 on $mux $flatten\gold.$procmux$187.
+    dead port 1/2 on $mux $flatten\gold.$procmux$197.
+    dead port 2/2 on $mux $flatten\gate.$procmux$647.
+    dead port 2/2 on $mux $flatten\gold.$procmux$199.
+    dead port 2/2 on $mux $flatten\gate.$procmux$925.
+    dead port 2/2 on $mux $flatten\gold.$procmux$201.
+    dead port 1/2 on $mux $flatten\gold.$procmux$211.
+    dead port 2/2 on $mux $flatten\gold.$procmux$213.
+    dead port 2/2 on $mux $flatten\gate.$procmux$759.
+    dead port 2/2 on $mux $flatten\gold.$procmux$215.
+    dead port 2/2 on $mux $flatten\gold.$procmux$224.
+    dead port 2/2 on $mux $flatten\gate.$procmux$891.
+    dead port 2/2 on $mux $flatten\gold.$procmux$226.
+    dead port 2/2 on $mux $flatten\gate.$procmux$935.
+    dead port 2/2 on $mux $flatten\gold.$procmux$235.
+    dead port 2/2 on $mux $flatten\gate.$procmux$761.
+    dead port 2/2 on $mux $flatten\gold.$procmux$237.
+    dead port 2/2 on $mux $flatten\gate.$procmux$937.
+    dead port 2/2 on $mux $flatten\gold.$procmux$244.
+    dead port 2/2 on $mux $flatten\gold.$procmux$246.
+    dead port 2/2 on $mux $flatten\gate.$procmux$939.
+    dead port 2/2 on $mux $flatten\gold.$procmux$257.
+    dead port 2/2 on $mux $flatten\gate.$procmux$768.
+    dead port 2/2 on $mux $flatten\gold.$procmux$259.
+    dead port 2/2 on $mux $flatten\gold.$procmux$268.
+    dead port 2/2 on $mux $flatten\gold.$procmux$270.
+    dead port 1/2 on $mux $flatten\gold.$procmux$283.
+    dead port 2/2 on $mux $flatten\gate.$procmux$657.
+    dead port 2/2 on $mux $flatten\gold.$procmux$285.
+    dead port 2/2 on $mux $flatten\gate.$procmux$770.
+    dead port 2/2 on $mux $flatten\gold.$procmux$287.
+    dead port 2/2 on $mux $flatten\gate.$procmux$739.
+    dead port 2/2 on $mux $flatten\gold.$procmux$300.
+    dead port 2/2 on $mux $flatten\gold.$procmux$302.
+    dead port 2/2 on $mux $flatten\gate.$procmux$948.
+    dead port 2/2 on $mux $flatten\gold.$procmux$315.
+    dead port 2/2 on $mux $flatten\gold.$procmux$317.
+    dead port 2/2 on $mux $flatten\gate.$procmux$950.
+    dead port 2/2 on $mux $flatten\gate.$procmux$781.
+    dead port 2/2 on $mux $flatten\gate.$procmux$660.
+    dead port 2/2 on $mux $flatten\gate.$procmux$783.
+    dead port 2/2 on $mux $flatten\gate.$procmux$893.
+    dead port 2/2 on $mux $flatten\gate.$procmux$792.
+    dead port 2/2 on $mux $flatten\gate.$procmux$959.
+    dead port 2/2 on $mux $flatten\gold.$procmux$329.
+    dead port 2/2 on $mux $flatten\gate.$procmux$961.
+    dead port 1/2 on $mux $flatten\gate.$procmux$970.
+    dead port 1/2 on $mux $flatten\gate.$procmux$973.
+    dead port 2/2 on $mux $flatten\gate.$procmux$794.
+    dead port 2/2 on $mux $flatten\gate.$procmux$975.
+    dead port 1/2 on $mux $flatten\gate.$procmux$807.
+    dead port 2/2 on $mux $flatten\gate.$procmux$977.
+    dead port 2/2 on $mux $flatten\gold.$procmux$341.
+    dead port 1/2 on $mux $flatten\gate.$procmux$987.
+    dead port 2/2 on $mux $flatten\gate.$procmux$989.
+    dead port 2/2 on $mux $flatten\gate.$procmux$809.
+    dead port 2/2 on $mux $flatten\gate.$procmux$991.
+    dead port 2/2 on $mux $flatten\gate.$procmux$662.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1000.
+    dead port 2/2 on $mux $flatten\gate.$procmux$811.
+    dead port 2/2 on $mux $flatten\gold.$procmux$352.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1002.
+    dead port 2/2 on $mux $flatten\gold.$procmux$354.
+    dead port 2/2 on $mux $flatten\gold.$procmux$356.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1011.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1013.
+    dead port 2/2 on $mux $flatten\gate.$procmux$824.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1022.
+    dead port 2/2 on $mux $flatten\gate.$procmux$664.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1024.
+    dead port 2/2 on $mux $flatten\gate.$procmux$826.
+    dead port 2/2 on $mux $flatten\gold.$procmux$367.
+    dead port 2/2 on $mux $flatten\gold.$procmux$369.
+    dead port 2/2 on $mux $flatten\gold.$procmux$371.
+    dead port 1/2 on $mux $flatten\gold.$procmux$381.
+    dead port 2/2 on $mux $flatten\gate.$procmux$895.
+    dead port 2/2 on $mux $flatten\gold.$procmux$383.
+    dead port 2/2 on $mux $flatten\gate.$procmux$839.
+    dead port 2/2 on $mux $flatten\gold.$procmux$385.
+    dead port 2/2 on $mux $flatten\gate.$procmux$674.
+    dead port 2/2 on $mux $flatten\gold.$procmux$387.
+    dead port 2/2 on $mux $flatten\gate.$procmux$841.
+    dead port 2/2 on $mux $flatten\gate.$procmux$622.
+    dead port 1/2 on $mux $flatten\gate.$procmux$905.
+    dead port 2/2 on $mux $flatten\gold.$procmux$397.
+    dead port 2/2 on $mux $flatten\gold.$procmux$399.
+    dead port 2/2 on $mux $flatten\gold.$procmux$401.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1035.
+    dead port 2/2 on $mux $flatten\gold.$procmux$411.
+    dead port 2/2 on $mux $flatten\gate.$procmux$676.
+    dead port 2/2 on $mux $flatten\gold.$procmux$413.
+    dead port 2/2 on $mux $flatten\gold.$procmux$415.
+    dead port 2/2 on $mux $flatten\gate.$procmux$678.
+    dead port 1/2 on $mux $flatten\gate.$procmux$688.
+    dead port 1/2 on $mux $flatten\gate.$procmux$690.
+    dead port 2/2 on $mux $flatten\gold.$procmux$424.
+    dead port 2/2 on $mux $flatten\gate.$procmux$624.
+    dead port 2/2 on $mux $flatten\gold.$procmux$426.
+    dead port 2/2 on $mux $flatten\gate.$procmux$692.
+    dead port 2/2 on $mux $flatten\gold.$procmux$98.
+    dead port 2/2 on $mux $flatten\gate.$procmux$853.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1046.
+    dead port 2/2 on $mux $flatten\gold.$procmux$435.
+    dead port 2/2 on $mux $flatten\gold.$procmux$437.
+    dead port 1/2 on $mux $flatten\gold.$procmux$446.
+    dead port 1/2 on $mux $flatten\gold.$procmux$449.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1052.
+    dead port 2/2 on $mux $flatten\gold.$procmux$451.
+    dead port 2/2 on $mux $flatten\gold.$procmux$453.
+    dead port 1/2 on $mux $flatten\gold.$procmux$463.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1054.
+    dead port 2/2 on $mux $flatten\gold.$procmux$465.
+    dead port 2/2 on $mux $flatten\gate.$procmux$694.
+    dead port 2/2 on $mux $flatten\gold.$procmux$467.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1062.
+    dead port 2/2 on $mux $flatten\gold.$procmux$476.
+    dead port 2/2 on $mux $flatten\gold.$procmux$478.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1064.
+    dead port 2/2 on $mux $flatten\gold.$procmux$487.
+    dead port 2/2 on $mux $flatten\gate.$procmux$705.
+    dead port 2/2 on $mux $flatten\gold.$procmux$489.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1073.
+    dead port 2/2 on $mux $flatten\gold.$procmux$498.
+    dead port 1/2 on $mux $flatten\gate.$procmux$707.
+    dead port 2/2 on $mux $flatten\gold.$procmux$500.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1075.
+    dead port 2/2 on $mux $flatten\gate.$procmux$629.
+    dead port 2/2 on $mux $flatten\gold.$procmux$100.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1086.
+    dead port 2/2 on $mux $flatten\gate.$procmux$709.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1088.
+    dead port 2/2 on $mux $flatten\gate.$procmux$907.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1103.
+    dead port 2/2 on $mux $flatten\gate.$procmux$711.
+    dead port 2/2 on $mux $flatten\gold.$procmux$511.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1105.
+    dead port 2/2 on $mux $flatten\gate.$procmux$865.
+    dead port 2/2 on $mux $flatten\gold.$procmux$105.
+    dead port 2/2 on $mux $flatten\gate.$procmux$645.
+    dead port 2/2 on $mux $flatten\gold.$procmux$107.
+    dead port 2/2 on $mux $flatten\gold.$procmux$522.
+    dead port 2/2 on $mux $flatten\gold.$procmux$528.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1119.
+    dead port 2/2 on $mux $flatten\gold.$procmux$530.
+    dead port 2/2 on $mux $flatten\gold.$procmux$538.
+    dead port 2/2 on $mux $flatten\gold.$procmux$540.
+    dead port 2/2 on $mux $flatten\gold.$procmux$549.
+    dead port 2/2 on $mux $flatten\gold.$procmux$551.
+    dead port 2/2 on $mux $flatten\gold.$procmux$562.
+    dead port 2/2 on $mux $flatten\gate.$procmux$876.
+    dead port 2/2 on $mux $flatten\gold.$procmux$564.
+    dead port 2/2 on $mux $flatten\gold.$procmux$579.
+    dead port 2/2 on $mux $flatten\gate.$procmux$878.
+    dead port 2/2 on $mux $flatten\gold.$procmux$581.
+    dead port 1/2 on $mux $flatten\gate.$procmux$721.
+    dead port 2/2 on $mux $flatten\gate.$procmux$1133.
+    dead port 2/2 on $mux $flatten\gate.$procmux$880.
+    dead port 2/2 on $mux $flatten\gate.$procmux$631.
+    dead port 2/2 on $mux $flatten\gate.$procmux$723.
+    dead port 1/2 on $mux $flatten\gate.$procmux$640.
+    dead port 2/2 on $mux $flatten\gold.$procmux$595.
+    dead port 2/2 on $mux $flatten\gate.$procmux$725.
+    dead port 1/2 on $mux $flatten\gold.$procmux$116.
+    dead port 2/2 on $mux $flatten\gold.$procmux$609.
+    dead port 1/2 on $mux $flatten\gate.$procmux$735.
+    dead port 2/2 on $mux $flatten\gate.$procmux$643.
+    dead port 2/2 on $mux $flatten\gate.$procmux$737.
+Removed 190 multiplexer ports.
+<suppressed ~250 debug messages>
+
+2.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \compressed_decoder_full_miter.
+    New ctrl vector for $pmux cell $flatten\gate.$procmux$844: { $auto$opt_reduce.cc:135:opt_pmux$1148 $flatten\gate.$procmux$646_CMP $flatten\gate.$procmux$782_CMP $flatten\gate.$procmux$810_CMP }
+    New ctrl vector for $pmux cell $flatten\gold.$procmux$320: { $auto$opt_reduce.cc:135:opt_pmux$1150 $flatten\gate.$procmux$646_CMP $flatten\gate.$procmux$782_CMP $flatten\gate.$procmux$810_CMP }
+    New ctrl vector for $pmux cell $flatten\gold.$procmux$515: { $auto$opt_reduce.cc:135:opt_pmux$1152 $flatten\gate.$procmux$646_CMP $flatten\gate.$procmux$769_CMP }
+    New ctrl vector for $pmux cell $flatten\gate.$procmux$1111: { $auto$opt_reduce.cc:135:opt_pmux$1154 $flatten\gate.$procmux$810_CMP }
+    New ctrl vector for $pmux cell $flatten\gate.$procmux$1039: { $auto$opt_reduce.cc:135:opt_pmux$1156 $flatten\gate.$procmux$646_CMP $flatten\gate.$procmux$769_CMP }
+    New ctrl vector for $pmux cell $flatten\gold.$procmux$587: { $auto$opt_reduce.cc:135:opt_pmux$1158 $flatten\gate.$procmux$810_CMP }
+    New ctrl vector for $pmux cell $flatten\gold.$procmux$361: { $flatten\gold.$procmux$347_CTRL $auto$opt_reduce.cc:135:opt_pmux$1160 }
+    New ctrl vector for $pmux cell $flatten\gate.$procmux$885: { $flatten\gold.$procmux$347_CTRL $auto$opt_reduce.cc:135:opt_pmux$1162 }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$1151: { $flatten\gate.$procmux$623_CMP $flatten\gate.$procmux$630_CMP $flatten\gate.$procmux$782_CMP $flatten\gate.$procmux$793_CMP $flatten\gate.$procmux$810_CMP $flatten\gate.$procmux$846_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:129:opt_pmux$1155: { $flatten\gate.$procmux$623_CMP $flatten\gate.$procmux$630_CMP $flatten\gate.$procmux$782_CMP $flatten\gate.$procmux$793_CMP $flatten\gate.$procmux$810_CMP $flatten\gate.$procmux$846_CMP }
+  Optimizing cells in module \compressed_decoder_full_miter.
+Performed a total of 10 changes.
+
+2.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\compressed_decoder_full_miter'.
+Computing hashes of 103 cells of `\compressed_decoder_full_miter'.
+Finding duplicate cells in `\compressed_decoder_full_miter'.
+Computing hashes of 85 cells of `\compressed_decoder_full_miter'.
+Finding duplicate cells in `\compressed_decoder_full_miter'.
+Computing hashes of 80 cells of `\compressed_decoder_full_miter'.
+Finding duplicate cells in `\compressed_decoder_full_miter'.
+Computing hashes of 76 cells of `\compressed_decoder_full_miter'.
+Finding duplicate cells in `\compressed_decoder_full_miter'.
+Computing hashes of 73 cells of `\compressed_decoder_full_miter'.
+Finding duplicate cells in `\compressed_decoder_full_miter'.
+Computing hashes of 72 cells of `\compressed_decoder_full_miter'.
+Finding duplicate cells in `\compressed_decoder_full_miter'.
+<suppressed ~93 debug messages>
+Removed a total of 31 cells.
+
+2.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \compressed_decoder_full_miter..
+Removed 0 unused cells and 518 unused wires.
+<suppressed ~1 debug messages>
+
+2.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module compressed_decoder_full_miter.
+<suppressed ~2 debug messages>
+
+2.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \compressed_decoder_full_miter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~60 debug messages>
+
+2.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \compressed_decoder_full_miter.
+Performed a total of 0 changes.
+
+2.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\compressed_decoder_full_miter'.
+Computing hashes of 70 cells of `\compressed_decoder_full_miter'.
+Finding duplicate cells in `\compressed_decoder_full_miter'.
+Removed a total of 0 cells.
+
+2.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \compressed_decoder_full_miter..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+2.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module compressed_decoder_full_miter.
+
+2.8.14. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.15. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \compressed_decoder_full_miter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~60 debug messages>
+
+2.8.16. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \compressed_decoder_full_miter.
+Performed a total of 0 changes.
+
+2.8.17. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\compressed_decoder_full_miter'.
+Computing hashes of 70 cells of `\compressed_decoder_full_miter'.
+Finding duplicate cells in `\compressed_decoder_full_miter'.
+Removed a total of 0 cells.
+
+2.8.18. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \compressed_decoder_full_miter..
+
+2.8.19. Executing OPT_EXPR pass (perform const folding).
+Optimizing module compressed_decoder_full_miter.
+
+2.8.20. Finished fast OPT passes. (There is nothing left to do.)
+
+2.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 7 bits (of 32) from mux cell compressed_decoder_full_miter.$flatten\gold.$procmux$209 ($mux).
+Removed top 3 bits (of 5) from port B of cell compressed_decoder_full_miter.$flatten\gold.$eq$compressed_decoder_full_miter.sv:76$79 ($eq).
+Removed top 2 bits (of 32) from mux cell compressed_decoder_full_miter.$flatten\gate.$procmux$1125 ($pmux).
+Removed top 3 bits (of 32) from mux cell compressed_decoder_full_miter.$flatten\gate.$procmux$984 ($mux).
+Removed top 1 bits (of 2) from port B of cell compressed_decoder_full_miter.$flatten\gate.$procmux$908_CMP1 ($eq).
+Removed top 2 bits (of 3) from port B of cell compressed_decoder_full_miter.$flatten\gate.$procmux$874_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell compressed_decoder_full_miter.$flatten\gate.$procmux$873_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell compressed_decoder_full_miter.$flatten\gate.$procmux$872_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell compressed_decoder_full_miter.$flatten\gate.$procmux$793_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell compressed_decoder_full_miter.$flatten\gate.$procmux$782_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell compressed_decoder_full_miter.$flatten\gate.$procmux$769_CMP0 ($eq).
+Removed top 11 bits (of 32) from mux cell compressed_decoder_full_miter.$flatten\gate.$procmux$655 ($mux).
+Removed top 1 bits (of 2) from port B of cell compressed_decoder_full_miter.$flatten\gate.$procmux$1143_CMP0 ($eq).
+Removed top 11 bits (of 32) from wire compressed_decoder_full_miter.$flatten\gate.$25\instr_o[31:0].
+Removed top 2 bits (of 32) from wire compressed_decoder_full_miter.$flatten\gate.$2\instr_o[31:0].
+Removed top 7 bits (of 32) from wire compressed_decoder_full_miter.$flatten\gate.$22\instr_o[31:0].
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \compressed_decoder_full_miter..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module compressed_decoder_full_miter.
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\compressed_decoder_full_miter'.
+Computing hashes of 70 cells of `\compressed_decoder_full_miter'.
+Finding duplicate cells in `\compressed_decoder_full_miter'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \compressed_decoder_full_miter..
+
+2.12.4. Finished fast OPT passes.
+
+2.13. Executing SORT pass.
+
+2.14. Printing statistics.
+
+=== compressed_decoder_full_miter ===
+
+        +----------Local Count, excluding submodules.
+        |
+       75 wires
+      672 wire bits
+       18 public wires
+      235 public wire bits
+        2 ports
+       33 port bits
+       70 cells
+       20   $eq
+        8   $logic_not
+       13   $mux
+        1   $ne
+        1   $not
+       14   $pmux
+       10   $reduce_or
+        2   $scopeinfo
+        1   $xor
+
+2.15. Executing CHECK pass (checking for obvious problems).
+Checking module compressed_decoder_full_miter...
+Found and reported 0 problems.
+
+3. Executing SAT pass (solving SAT problems in the circuit).
+Using SAT solver `minisat`.
+
+Setting up SAT problem:
+Final constraint equation: { } = { }
+Imported 70 cells to SAT database.
+Import proof-constraint: \diff_o = 1'0
+Final proof equation: \diff_o = 1'0
+Import show expression: { \instr_i \diff_o }
+
+Solving problem with 3900 variables and 10784 clauses..
+SAT proof finished - no model found: SUCCESS!
+
+                  /$$$$$$      /$$$$$$$$     /$$$$$$$
+                 /$$__  $$    | $$_____/    | $$__  $$
+                | $$  \ $$    | $$          | $$  \ $$
+                | $$  | $$    | $$$$$       | $$  | $$
+                | $$  | $$    | $$__/       | $$  | $$
+                | $$/$$ $$    | $$          | $$  | $$
+                |  $$$$$$/ /$$| $$$$$$$$ /$$| $$$$$$$//$$
+                 \____ $$$|__/|________/|__/|_______/|__/
+                       \__/
+
+End of script. Logfile hash: e80e62c99e, time: 0.10s, user: 0.10s, system: 0.01s, MEM: 21.96 MB peak
+Yosys 0.66+181 (git sha1 afe6b18f2, Release, Clang /usr/bin/clang++ 18.1.8)
+Time spent: 14% 2x read_verilog (0 sec), 12% 1x sat (0 sec), ...

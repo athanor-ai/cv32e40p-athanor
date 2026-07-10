@@ -1,0 +1,177 @@
+{
+  "activity_toggle": {
+    "baseline_toggles": 52962,
+    "boundary_equality_every_cycle": true,
+    "gate_toggles": 52962,
+    "method": "cv32_if_stage_compressed_decoder_l71_iverilog_vcd_hierarchy_toggle_v1",
+    "power_evidence_type": "toggle_convention",
+    "receipt": "activity/toggle_convention_receipt.json",
+    "receipt_sha256": "1c3b64713a1d310253ac4dd84d5886d6c2d7124092d5eb715e9beb912720ee15",
+    "toggle_delta_pct": 0.0,
+    "vcd_gzip": {
+      "gate": "activity/gate.vcd.gz",
+      "gate_sha256": "d4eac10a615ff45bc2edf45d921fee0075413a14093a6087dbf0739aedcdf43b",
+      "gold": "activity/gold.vcd.gz",
+      "gold_sha256": "be8678e2a2c6b0eb652e3af4c6b1a3bd467e863f496ddf731d63550cd2e3f9d0"
+    }
+  },
+  "boundary": "IF-stage parent-context evidence packet using full compressed-decoder equivalence plus source-local predicate equivalence; no accepted CV32 optimization, no whole-core claim, no customer impact claim",
+  "candidate_id": "compressed_decoder_l71_addi4spn_zero_reduce",
+  "classification": "if_stage_parent_area_timing_activity_positive_full_decoder_equiv_needs_independent_replay",
+  "customer_claim_ready": false,
+  "cv32e40p_commit": "6033d2b1be3295ec774d17ac4cf226faacfdeb08",
+  "full_decoder_equiv": {
+    "method": "Yosys SAT on a full cv32e40p_compressed_decoder output miter",
+    "negative_controls": {
+      "negative_missing_bit12": {
+        "log": "full_decoder_equiv/negative_missing_bit12/yosys_sat.log",
+        "log_sha256": "0a712773ccf908e40a150e32764839cdd98a337c49c646b173c73b6263677427",
+        "result": "FAIL"
+      },
+      "negative_missing_bit5": {
+        "log": "full_decoder_equiv/negative_missing_bit5/yosys_sat.log",
+        "log_sha256": "686d9689924f006ec028072be5ebac06d4c98960b95a92b1e7567d3c2d156697",
+        "result": "FAIL"
+      }
+    },
+    "positive_tuples": {
+      "FPU0_ZFINX0": {
+        "log": "full_decoder_equiv/positive_fpu0_zfinx0/yosys_sat.log",
+        "log_sha256": "b4e27d32308c0a3ea07fa7095f933225603bad5dfde8f49d736f8b0842bd2012",
+        "result": "SUCCESS"
+      },
+      "FPU1_ZFINX0": {
+        "log": "full_decoder_equiv/positive_fpu1_zfinx0/yosys_sat.log",
+        "log_sha256": "dc2bc48bf6b8260f546049ccef74684953338787ee755bf624ebfae494356a22",
+        "result": "SUCCESS"
+      },
+      "FPU1_ZFINX1": {
+        "log": "full_decoder_equiv/positive_fpu1_zfinx1/yosys_sat.log",
+        "log_sha256": "3d17374f6dc38e7c077f27dd4b0125bfff362955b12a92c132c9c32441e1a164",
+        "result": "SUCCESS"
+      }
+    }
+  },
+  "interpretation": "The IF-stage parent context passes area, timing, and activity/toggle. Full compressed-decoder equivalence proves for default and FPU/ZFINX tuples 00/10/11, and wrong-reduction full-decoder controls bite.",
+  "methodology_note": "This packet has stronger semantic evidence than a source-local-only weld: exact one-predicate source delta, source-local predicate SAT, and full compressed-decoder output SAT across the measured parameter grid. It still needs the standing methodology and independent replay review.",
+  "module": "cv32e40p_compressed_decoder",
+  "module_flow": {
+    "area": {
+      "baseline": 1289.9872,
+      "delta_pct": -0.872939,
+      "gate": 1278.7264
+    },
+    "top": "cv32e40p_compressed_decoder"
+  },
+  "parent_context": "cv32e40p_if_stage",
+  "predicate_equiv": {
+    "method": "Yosys output-level SAT over the rewritten zero-immediate predicate",
+    "negative_controls": {
+      "negative_missing_bit12": {
+        "log": "predicate_equiv/negative_missing_bit12/yosys_sat.log",
+        "log_sha256": "fa83434cee6b56c2f9ea17282ae41bef47df7ba8a726f5d41ff2b7a757fc03de",
+        "result": "FAIL: model found with diff_o=1"
+      },
+      "negative_missing_bit5": {
+        "log": "predicate_equiv/negative_missing_bit5/yosys_sat.log",
+        "log_sha256": "86c5dc2a9d691dabc9a6ee045ce13e4b2612caff34c95ddd829afa2c07ad8bbe",
+        "result": "FAIL: model found with diff_o=1"
+      }
+    },
+    "positive": {
+      "log": "predicate_equiv/positive/yosys_sat.log",
+      "log_sha256": "1360a43cfa534a96c73ec45aa554d4ae69f10d473cf4a3e0cd8c0de8ff14d2db",
+      "result": "SUCCESS: no model found for diff_o=1"
+    }
+  },
+  "related_packets": {
+    "not_additive_with": [
+      "compressed_decoder_l244_addi16sp_lui_zero_reduce"
+    ],
+    "reason": "Both packets change independent zero-detection predicates inside the same compressed decoder and measure the same IF-stage parent context. Customer-table curation must treat them as separate candidate rows unless a combined packet is measured and replayed."
+  },
+  "schema": "cv32e40p_compressed_decoder_l71_full_decoder_replay_v1",
+  "scope": {
+    "full_decoder_equivalence": "proved for FPU/ZFINX tuples 00, 10, and 11",
+    "ppa_and_activity": "default IF-stage parent context only",
+    "source_delta": "one predicate replacement only",
+    "whole_core": "not measured"
+  },
+  "selected_flow": {
+    "area": {
+      "baseline": 18228.7328,
+      "delta_pct": -0.116686,
+      "gate": 18207.4624
+    },
+    "timing_slack": {
+      "in2out": {
+        "baseline": 1.1039,
+        "delta": 0.1152,
+        "gate": 1.2191,
+        "status": "improved"
+      },
+      "in2reg": {
+        "baseline": -1.876,
+        "delta": 1.9853,
+        "gate": 0.1093,
+        "status": "improved"
+      },
+      "overall": {
+        "baseline": -1.876,
+        "delta": 1.2289,
+        "gate": -0.6471,
+        "status": "improved"
+      },
+      "reg2out": {
+        "baseline": 0.9203,
+        "delta": 0.1735,
+        "gate": 1.0938,
+        "status": "improved"
+      },
+      "reg2reg": {
+        "baseline": -1.7646,
+        "delta": 1.1175,
+        "gate": -0.6471,
+        "status": "improved"
+      }
+    },
+    "top": "cv32e40p_if_stage"
+  },
+  "selected_toolchain": {
+    "liberty": "sky130_fd_sc_hd__tt_025C_1v80.lib",
+    "yosys_version": "Yosys 0.66+181 (git sha1 afe6b18f2, Release, Clang /usr/bin/clang++ 18.1.8)"
+  },
+  "source_delta": {
+    "behavioral_movements_outside_predicate": 0,
+    "receipt": "replay_source_delta.py",
+    "replacement_count": 1,
+    "source_diff": "SOURCE_DIFF.patch",
+    "source_diff_sha256": "bd056bb42d7d786b0ce81f3e327ddb6fc26ce2ee56ab32f97cbb28145f207056"
+  },
+  "source_files": [
+    {
+      "path": "gold_source.sv",
+      "sha256": "b0ec2e43d839e01982c75d1460ac65c3f545f9eabd085349aaebb4472519ceb5"
+    },
+    {
+      "path": "gate_source.sv",
+      "sha256": "6d9e90e75a07151768879ccc004b4ca977d695c1e748f12546190f5977497a73"
+    },
+    {
+      "path": "gold_if_stage_parent.v",
+      "sha256": "2840d83692ee690b08339bd20376f725021a2540714a99257d9fa89bfab0c493"
+    },
+    {
+      "path": "gate_if_stage_parent.v",
+      "sha256": "21aefe2275cf23c1a6a067039232978cdac539e9c8b0285d185cb06e0e3ee908"
+    },
+    {
+      "path": "gold_compressed_decoder.v",
+      "sha256": "59a97790818aeec0321da3c5a81bf92722eb1677abe1e5c344fad4dd13c23d69"
+    },
+    {
+      "path": "gate_compressed_decoder.v",
+      "sha256": "d74e7688c78ddae5ce2c5d2d8ee5a39ab35b392a6e3d72f7e2cce2301c5b52c2"
+    }
+  ]
+}

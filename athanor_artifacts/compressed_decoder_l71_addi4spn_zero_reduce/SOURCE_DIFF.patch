@@ -1,0 +1,11 @@
+--- gold_source.sv
++++ gate_source.sv
+@@ -68,7 +68,7 @@
+               instr_i[4:2],
+               OPCODE_OPIMM
+             };
+-            if (instr_i[12:5] == 8'b0) illegal_instr_o = 1'b1;
++            if ((~|instr_i[12:5])) illegal_instr_o = 1'b1;
+           end
+
+           3'b001: begin

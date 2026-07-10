@@ -1,0 +1,29 @@
+{
+  "candidate": "compressed_decoder_l71_addi4spn_zero_reduce",
+  "rows": {
+    "negative_missing_bit12": {
+      "fail": true,
+      "label": "predicate_negative_missing_bit12",
+      "log_sha256": "fa83434cee6b56c2f9ea17282ae41bef47df7ba8a726f5d41ff2b7a757fc03de",
+      "miter_sha256": "142067f19f05798109c697b1f2d4ab238eabf45b77bbe0c1d26d3865b25b6a40",
+      "rc": 0,
+      "success": false
+    },
+    "negative_missing_bit5": {
+      "fail": true,
+      "label": "predicate_negative_missing_bit5",
+      "log_sha256": "86c5dc2a9d691dabc9a6ee045ce13e4b2612caff34c95ddd829afa2c07ad8bbe",
+      "miter_sha256": "99ee4fc404f7c9f3a12f907a75347cee82b4dc0a204f056503925513b7f53b62",
+      "rc": 0,
+      "success": false
+    },
+    "positive": {
+      "fail": false,
+      "label": "predicate_positive",
+      "log_sha256": "1360a43cfa534a96c73ec45aa554d4ae69f10d473cf4a3e0cd8c0de8ff14d2db",
+      "miter_sha256": "f85249b03d065783efffa38a65b2480cbd19c3e42bb159f912e30bc36cd7a944",
+      "rc": 0,
+      "success": true
+    }
+  }
+}
