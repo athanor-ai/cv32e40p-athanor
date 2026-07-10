@@ -15,6 +15,23 @@
   "candidate_id": "readmask_generate_mux_zero",
   "classification": "default_split_context_area_timing_equiv_activity_positive_needs_independent_replay",
   "customer_claim_ready": false,
+  "claim_taxonomy": {
+    "schema": "cv32_claim_taxonomy_v1",
+    "status": "evidence_packet",
+    "promotion_state": "not_customer_ready",
+    "claim_scope": "default_split_id_ex_parent_context",
+    "ppa_scope": "default split ID/EX parent context",
+    "semantic_equivalence_scope": "parent equivalence plus RF-grid equivalence",
+    "accepted_optimization": "not_claimed",
+    "whole_core": "not_claimed",
+    "customer_impact": "not_claimed",
+    "promotion_blockers": [
+      "independent_replay_process_gate",
+      "ATH-2899 composition/proof gate for any full-core wording",
+      "ATH-2900 taxonomy review",
+      "ATH-2901 one-command customer certificate surface"
+    ]
+  },
   "cv32e40p_commit": "6033d2b1be3295ec774d17ac4cf226faacfdeb08",
   "interpretation": "The split ID/EX parent context passes area, timing, parent equivalence, register-file grid equivalence, biting negative controls, and alias-safe activity/toggle. It still needs independent replay/package review before any accepted CV32 or public customer row.",
   "module": "cv32e40p_register_file_ff",

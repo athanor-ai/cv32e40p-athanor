@@ -16,6 +16,7 @@ on:
     paths:
       - "athanor_artifacts/**"
       - "tools/TOOLCHAIN.lock"
+      - "tools/check_packet_toolchain_lock.py"
 
 permissions:
   contents: read
@@ -78,7 +79,10 @@ jobs:
       - name: Replay every changed packet
         run: |
           set -euo pipefail
-          # Activity replays resolve simulators via env-with-pinned-fallback.
+          # Packet replay scripts resolve formal/simulation tools through
+          # explicit env overrides, so the hosted fresh clone never inherits
+          # author-local tool paths.
+          export YOSYS="$HOME/oss-cad-suite/bin/yosys"
           export IVERILOG="$HOME/oss-cad-suite/bin/iverilog"
           export VVP="$HOME/oss-cad-suite/bin/vvp"
           git fetch --quiet origin "${{ github.base_ref }}"

@@ -15,6 +15,23 @@
   "candidate_id": "addsub_divvalid_adderneg_prefixes",
   "classification": "default_alu_parent_area_timing_activity_positive_source_local_equiv_needs_independent_replay",
   "customer_claim_ready": false,
+  "claim_taxonomy": {
+    "schema": "cv32_claim_taxonomy_v1",
+    "status": "evidence_packet",
+    "promotion_state": "not_customer_ready",
+    "claim_scope": "default_alu_parent_context",
+    "ppa_scope": "default ALU parent context",
+    "semantic_equivalence_scope": "source-local combined predicate equivalence",
+    "accepted_optimization": "not_claimed",
+    "whole_core": "not_claimed",
+    "customer_impact": "not_claimed",
+    "promotion_blockers": [
+      "independent_replay_process_gate",
+      "ATH-2899 composition/proof gate for any full-core wording",
+      "ATH-2900 taxonomy review",
+      "ATH-2901 one-command customer certificate surface"
+    ]
+  },
   "cv32e40p_commit": "6033d2b1be3295ec774d17ac4cf226faacfdeb08",
   "interpretation": "The ALU parent context passes area, timing, and activity/toggle. Semantic evidence is the exact source replacement plus output-level SAT over three rewritten predicates, with one negative control per predicate family.",
   "methodology_note": "This packet presents a combined three-predicate source-local proof shape. It is not three independent accepted one-predicate promotions and still needs the standing methodology and independent replay review.",

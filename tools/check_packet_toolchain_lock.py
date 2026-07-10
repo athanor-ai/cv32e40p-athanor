@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate CV32 packet manifests against the repository toolchain lock."""
+"""Validate CV32 packet manifests against repository policy."""
 
 from __future__ import annotations
 
@@ -12,6 +12,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 LOCK_PATH = ROOT / "tools" / "TOOLCHAIN.lock"
 MANIFEST_ROOT = ROOT / "athanor_artifacts"
+TAXONOMY_SCHEMA = "cv32_claim_taxonomy_v1"
+ALLOWED_TAXONOMY_STATUSES = {"evidence_packet", "auxiliary_evidence_manifest"}
+NOT_CUSTOMER_READY = "not_customer_ready"
+NOT_CLAIMED = "not_claimed"
 
 
 def sha256(path: Path) -> str:
@@ -20,6 +24,55 @@ def sha256(path: Path) -> str:
 
 def fail(errors: list[str], message: str) -> None:
     errors.append(message)
+
+
+def _get_str(mapping: dict[str, object], key: str) -> str | None:
+    value = mapping.get(key)
+    return value if isinstance(value, str) and value else None
+
+
+def validate_claim_taxonomy(errors: list[str], rel: Path, data: dict[str, object]) -> None:
+    taxonomy = data.get("claim_taxonomy")
+    if not isinstance(taxonomy, dict):
+        fail(errors, f"{rel}: claim_taxonomy must be an object")
+        return
+
+    if taxonomy.get("schema") != TAXONOMY_SCHEMA:
+        fail(errors, f"{rel}: claim_taxonomy.schema must be {TAXONOMY_SCHEMA!r}")
+    if taxonomy.get("status") not in ALLOWED_TAXONOMY_STATUSES:
+        fail(errors, f"{rel}: claim_taxonomy.status must be one of {sorted(ALLOWED_TAXONOMY_STATUSES)!r}")
+    if taxonomy.get("promotion_state") != NOT_CUSTOMER_READY:
+        fail(errors, f"{rel}: claim_taxonomy.promotion_state must be {NOT_CUSTOMER_READY!r}")
+
+    if data.get("customer_claim_ready") is not False:
+        fail(errors, f"{rel}: customer_claim_ready must be false while promotion_state is not_customer_ready")
+
+    for field in ("accepted_optimization", "whole_core", "customer_impact"):
+        if taxonomy.get(field) != NOT_CLAIMED:
+            fail(errors, f"{rel}: claim_taxonomy.{field} must be {NOT_CLAIMED!r}")
+
+    for field in ("claim_scope", "ppa_scope", "semantic_equivalence_scope"):
+        if not _get_str(taxonomy, field):
+            fail(errors, f"{rel}: claim_taxonomy.{field} must be a non-empty string")
+
+    boundary = data.get("boundary")
+    if not isinstance(boundary, str):
+        fail(errors, f"{rel}: boundary must be a string")
+    else:
+        lowered = boundary.lower()
+        if "no accepted" not in lowered:
+            fail(errors, f"{rel}: boundary must explicitly say there is no accepted optimization claim")
+        if "no whole-core" not in lowered and "no full-core" not in lowered and "not a whole-core claim" not in lowered:
+            fail(errors, f"{rel}: boundary must explicitly deny whole/full-core scope")
+        if "no customer" not in lowered and "not a customer" not in lowered:
+            fail(errors, f"{rel}: boundary must explicitly deny customer impact scope")
+
+    if taxonomy.get("status") == "evidence_packet" and not _get_str(data, "classification"):
+        fail(errors, f"{rel}: evidence packet manifests must carry top-level classification")
+
+    if "dual_scope" in str(data.get("schema", "")) or "dual-scope" in str(data.get("boundary", "")).lower():
+        if not _get_str(taxonomy, "local_caveat"):
+            fail(errors, f"{rel}: dual-scope packets must name claim_taxonomy.local_caveat")
 
 
 def main() -> int:
@@ -61,6 +114,8 @@ def main() -> int:
                 fail(errors, f"{rel}: toolchain_lock.sha256 does not match current lock")
             if toolchain_lock.get("installable_release_tag") != installable_tag:
                 fail(errors, f"{rel}: toolchain_lock.installable_release_tag must be {installable_tag!r}")
+
+        validate_claim_taxonomy(errors, rel, data)
 
     if errors:
         for error in errors:
