@@ -1,0 +1,38 @@
+
+11. Executing EQUIV_STATUS pass.
+Found 2820 $equiv cells in equiv:
+  Of those cells 2788 are proven and 32 are unproven.
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34382: \regfile_data_ra_id_gold [31] \regfile_data_ra_id_gate [31]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34381: \regfile_data_ra_id_gold [30] \regfile_data_ra_id_gate [30]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34380: \regfile_data_ra_id_gold [29] \regfile_data_ra_id_gate [29]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34379: \regfile_data_ra_id_gold [28] \regfile_data_ra_id_gate [28]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34378: \regfile_data_ra_id_gold [27] \regfile_data_ra_id_gate [27]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34377: \regfile_data_ra_id_gold [26] \regfile_data_ra_id_gate [26]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34376: \regfile_data_ra_id_gold [25] \regfile_data_ra_id_gate [25]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34375: \regfile_data_ra_id_gold [24] \regfile_data_ra_id_gate [24]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34374: \regfile_data_ra_id_gold [23] \regfile_data_ra_id_gate [23]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34373: \regfile_data_ra_id_gold [22] \regfile_data_ra_id_gate [22]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34372: \regfile_data_ra_id_gold [21] \regfile_data_ra_id_gate [21]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34371: \regfile_data_ra_id_gold [20] \regfile_data_ra_id_gate [20]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34370: \regfile_data_ra_id_gold [19] \regfile_data_ra_id_gate [19]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34369: \regfile_data_ra_id_gold [18] \regfile_data_ra_id_gate [18]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34368: \regfile_data_ra_id_gold [17] \regfile_data_ra_id_gate [17]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34367: \regfile_data_ra_id_gold [16] \regfile_data_ra_id_gate [16]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34366: \regfile_data_ra_id_gold [15] \regfile_data_ra_id_gate [15]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34365: \regfile_data_ra_id_gold [14] \regfile_data_ra_id_gate [14]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34364: \regfile_data_ra_id_gold [13] \regfile_data_ra_id_gate [13]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34363: \regfile_data_ra_id_gold [12] \regfile_data_ra_id_gate [12]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34362: \regfile_data_ra_id_gold [11] \regfile_data_ra_id_gate [11]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34361: \regfile_data_ra_id_gold [10] \regfile_data_ra_id_gate [10]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34360: \regfile_data_ra_id_gold [9] \regfile_data_ra_id_gate [9]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34359: \regfile_data_ra_id_gold [8] \regfile_data_ra_id_gate [8]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34358: \regfile_data_ra_id_gold [7] \regfile_data_ra_id_gate [7]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34357: \regfile_data_ra_id_gold [6] \regfile_data_ra_id_gate [6]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34356: \regfile_data_ra_id_gold [5] \regfile_data_ra_id_gate [5]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34355: \regfile_data_ra_id_gold [4] \regfile_data_ra_id_gate [4]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34354: \regfile_data_ra_id_gold [3] \regfile_data_ra_id_gate [3]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34353: \regfile_data_ra_id_gold [2] \regfile_data_ra_id_gate [2]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34352: \regfile_data_ra_id_gold [1] \regfile_data_ra_id_gate [1]
+  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$34351: \regfile_data_ra_id_gold [0] \regfile_data_ra_id_gate [0]
+Found a total of 32 unproven $equiv cells.
+ERROR: Found 32 unproven $equiv cells in 'equiv_status -assert'.

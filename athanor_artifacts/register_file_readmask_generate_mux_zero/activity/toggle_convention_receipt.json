@@ -1,0 +1,47 @@
+{
+  "boundary_equality_every_cycle": true,
+  "candidate": "readmask_generate_mux_zero",
+  "gate_sha256": "5ffa5550af38104111169382e2a939a960e9cd82057c8f96e22611f9cdbcac15",
+  "gate_toggles": 705913,
+  "gold_sha256": "4f6802500d684151e8391a1671a3a7ad629d32cdd94b2fa330fd1813260266bb",
+  "gold_toggles": 705913,
+  "no_x_or_z_on_primary_inputs": "construction_guaranteed_binary_assignments",
+  "normalized_vcd_sha256": "3dc7276ca2e76451e2600522c37b47c5d1bd1c78c499a90399fecb29445db640",
+  "power_evidence_type": "toggle_convention",
+  "power_method": "cv32_idstage_ex_readmask_context_iverilog_vcd_hierarchy_toggle_v1",
+  "power_status": "measured",
+  "required_exercise_measured": {
+    "instr_rdata_i": 27339,
+    "raddr_a_i": 2320,
+    "raddr_b_i": 2054,
+    "rdata_a_o": 7946,
+    "rdata_b_o": 8059,
+    "regfile_addr_ra_id": 2320,
+    "regfile_addr_rb_id": 2054,
+    "regfile_alu_waddr_fw_i": 527,
+    "regfile_alu_wdata_fw_i": 3735,
+    "regfile_data_ra_id": 7946,
+    "regfile_data_rb_id": 8059,
+    "regfile_waddr_wb_i": 35,
+    "regfile_wdata_wb_i": 11407
+  },
+  "sim_cycles": 750,
+  "sim_log_sha256": "80c1051b4e0c74e6cb280b0c8cb5a5e7f2dccf19497c8edb9afc9a827b86a3f5",
+  "stimulus": "cv32.id_ex_readmask_context.regfile_read_write_mix+0x5eed3241",
+  "toggle_counting": "alias_safe_all_hierarchy_owner_counts",
+  "toggle_counting_meta": {
+    "common_gold_gate_paths": 2051,
+    "owner_only_paths": {
+      "gate": 0,
+      "gold": 0
+    },
+    "vcd_alias_ids": 330
+  },
+  "toggle_delta_pct": 0.0,
+  "toggle_status": "neutral_or_better",
+  "top": "cv32e40p_id_ex_readmask_context",
+  "trace": "toggle_trace.json",
+  "trace_sha256": "70b28ac5ee5e02187bd7e228235815024d2779fac8c84f111a559999162d3a61",
+  "vcd": "toggle.vcd",
+  "vcd_sha256": "ee94d60685774ad71c9c2193f7487805987744fb98bffed1baf44d764faa4c85"
+}

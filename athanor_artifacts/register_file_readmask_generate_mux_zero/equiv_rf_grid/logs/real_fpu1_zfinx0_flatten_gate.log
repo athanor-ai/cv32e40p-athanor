@@ -1,0 +1,792 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.66+181 (git sha1 afe6b18f2, Release, Clang /usr/bin/clang++ 18.1.8)
+
+-- Running command `read_verilog -sv /workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv; chparam -set ADDR_WIDTH 6 -set FPU 1 -set ZFINX 0 cv32e40p_register_file; hierarchy -check -top cv32e40p_register_file; proc; memory; async2sync; flatten; opt; rename cv32e40p_register_file gate; write_rtlil /workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/rf_grid_out/real_fpu1_zfinx0/gate.il' --
+
+1. Executing Verilog-2005 frontend: /workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv
+Parsing SystemVerilog input from `/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv' to AST representation.
+Generating RTLIL representation for module `\cv32e40p_register_file'.
+/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:95: Warning: Range select out of bounds on signal `\raddr_a_i': Setting result bit to undef.
+/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:96: Warning: Range select out of bounds on signal `\raddr_b_i': Setting result bit to undef.
+/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:97: Warning: Range select out of bounds on signal `\raddr_c_i': Setting result bit to undef.
+Successfully finished Verilog frontend.
+Parameter \ADDR_WIDTH = 6
+Parameter \FPU = 1
+Parameter \ZFINX = 0
+
+2. Executing AST frontend in derive mode using pre-parsed AST for module `\cv32e40p_register_file'.
+Parameter \ADDR_WIDTH = 6
+Parameter \FPU = 1
+Parameter \ZFINX = 0
+Generating RTLIL representation for module `$paramod$7d229141df272dca881d1855321432ac6503f888\cv32e40p_register_file'.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \cv32e40p_register_file
+
+3.2. Analyzing design hierarchy..
+Top module:  \cv32e40p_register_file
+Removed 0 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:124$136 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$409 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$413 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$417 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$421 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$425 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$429 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$433 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$437 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$441 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$445 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$449 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$453 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$457 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$461 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$465 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$469 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$473 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$477 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$481 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$485 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$489 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$493 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$497 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$501 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$505 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$509 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$513 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$517 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$521 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$525 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$529 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$533 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$537 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$541 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$545 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$549 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$553 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$557 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$561 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$565 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$569 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$573 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$577 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$581 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$585 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$589 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$593 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$597 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$601 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$605 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$609 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$613 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$617 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$621 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$625 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$629 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$633 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$637 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$641 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$645 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$649 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$653 in module cv32e40p_register_file.
+Marked 2 switch rules as full_case in process $proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$657 in module cv32e40p_register_file.
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 0 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:124$136'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$409'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$413'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$417'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$421'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$425'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$429'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$433'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$437'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$441'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$445'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$449'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$453'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$457'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$461'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$465'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$469'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$473'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$477'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$481'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$485'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$489'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$493'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$497'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$501'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$505'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$509'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$513'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$517'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$521'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$525'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$529'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$533'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$537'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$541'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$545'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$549'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$553'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$557'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$561'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$565'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$569'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$573'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$577'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$581'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$585'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$589'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$593'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$597'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$601'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$605'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$609'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$613'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$617'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$621'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$625'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$629'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$633'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$637'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$641'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$645'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$649'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$653'.
+Found async reset \rst_n in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$657'.
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~126 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:124$136'.
+     1/1: $0\mem[31:0]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$409'.
+     1/1: $0\mem[63:32]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$413'.
+     1/1: $0\mem[95:64]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$417'.
+     1/1: $0\mem[127:96]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$421'.
+     1/1: $0\mem[159:128]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$425'.
+     1/1: $0\mem[191:160]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$429'.
+     1/1: $0\mem[223:192]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$433'.
+     1/1: $0\mem[255:224]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$437'.
+     1/1: $0\mem[287:256]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$441'.
+     1/1: $0\mem[319:288]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$445'.
+     1/1: $0\mem[351:320]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$449'.
+     1/1: $0\mem[383:352]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$453'.
+     1/1: $0\mem[415:384]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$457'.
+     1/1: $0\mem[447:416]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$461'.
+     1/1: $0\mem[479:448]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$465'.
+     1/1: $0\mem[511:480]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$469'.
+     1/1: $0\mem[543:512]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$473'.
+     1/1: $0\mem[575:544]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$477'.
+     1/1: $0\mem[607:576]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$481'.
+     1/1: $0\mem[639:608]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$485'.
+     1/1: $0\mem[671:640]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$489'.
+     1/1: $0\mem[703:672]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$493'.
+     1/1: $0\mem[735:704]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$497'.
+     1/1: $0\mem[767:736]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$501'.
+     1/1: $0\mem[799:768]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$505'.
+     1/1: $0\mem[831:800]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$509'.
+     1/1: $0\mem[863:832]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$513'.
+     1/1: $0\mem[895:864]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$517'.
+     1/1: $0\mem[927:896]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$521'.
+     1/1: $0\mem[959:928]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$525'.
+     1/1: $0\mem[991:960]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$529'.
+     1/1: $0\mem[1023:992]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$533'.
+     1/1: $0\mem_fp[31:0]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$537'.
+     1/1: $0\mem_fp[63:32]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$541'.
+     1/1: $0\mem_fp[95:64]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$545'.
+     1/1: $0\mem_fp[127:96]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$549'.
+     1/1: $0\mem_fp[159:128]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$553'.
+     1/1: $0\mem_fp[191:160]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$557'.
+     1/1: $0\mem_fp[223:192]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$561'.
+     1/1: $0\mem_fp[255:224]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$565'.
+     1/1: $0\mem_fp[287:256]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$569'.
+     1/1: $0\mem_fp[319:288]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$573'.
+     1/1: $0\mem_fp[351:320]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$577'.
+     1/1: $0\mem_fp[383:352]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$581'.
+     1/1: $0\mem_fp[415:384]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$585'.
+     1/1: $0\mem_fp[447:416]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$589'.
+     1/1: $0\mem_fp[479:448]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$593'.
+     1/1: $0\mem_fp[511:480]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$597'.
+     1/1: $0\mem_fp[543:512]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$601'.
+     1/1: $0\mem_fp[575:544]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$605'.
+     1/1: $0\mem_fp[607:576]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$609'.
+     1/1: $0\mem_fp[639:608]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$613'.
+     1/1: $0\mem_fp[671:640]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$617'.
+     1/1: $0\mem_fp[703:672]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$621'.
+     1/1: $0\mem_fp[735:704]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$625'.
+     1/1: $0\mem_fp[767:736]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$629'.
+     1/1: $0\mem_fp[799:768]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$633'.
+     1/1: $0\mem_fp[831:800]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$637'.
+     1/1: $0\mem_fp[863:832]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$641'.
+     1/1: $0\mem_fp[895:864]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$645'.
+     1/1: $0\mem_fp[927:896]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$649'.
+     1/1: $0\mem_fp[959:928]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$653'.
+     1/1: $0\mem_fp[991:960]
+Creating decoders for process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$657'.
+     1/1: $0\mem_fp[1023:992]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\cv32e40p_register_file.\mem [31:0]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:124$136'.
+  created $adff cell `$procdff$980' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [63:32]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$409'.
+  created $adff cell `$procdff$985' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [95:64]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$413'.
+  created $adff cell `$procdff$990' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [127:96]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$417'.
+  created $adff cell `$procdff$995' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [159:128]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$421'.
+  created $adff cell `$procdff$1000' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [191:160]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$425'.
+  created $adff cell `$procdff$1005' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [223:192]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$429'.
+  created $adff cell `$procdff$1010' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [255:224]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$433'.
+  created $adff cell `$procdff$1015' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [287:256]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$437'.
+  created $adff cell `$procdff$1020' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [319:288]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$441'.
+  created $adff cell `$procdff$1025' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [351:320]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$445'.
+  created $adff cell `$procdff$1030' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [383:352]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$449'.
+  created $adff cell `$procdff$1035' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [415:384]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$453'.
+  created $adff cell `$procdff$1040' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [447:416]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$457'.
+  created $adff cell `$procdff$1045' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [479:448]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$461'.
+  created $adff cell `$procdff$1050' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [511:480]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$465'.
+  created $adff cell `$procdff$1055' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [543:512]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$469'.
+  created $adff cell `$procdff$1060' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [575:544]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$473'.
+  created $adff cell `$procdff$1065' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [607:576]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$477'.
+  created $adff cell `$procdff$1070' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [639:608]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$481'.
+  created $adff cell `$procdff$1075' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [671:640]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$485'.
+  created $adff cell `$procdff$1080' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [703:672]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$489'.
+  created $adff cell `$procdff$1085' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [735:704]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$493'.
+  created $adff cell `$procdff$1090' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [767:736]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$497'.
+  created $adff cell `$procdff$1095' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [799:768]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$501'.
+  created $adff cell `$procdff$1100' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [831:800]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$505'.
+  created $adff cell `$procdff$1105' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [863:832]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$509'.
+  created $adff cell `$procdff$1110' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [895:864]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$513'.
+  created $adff cell `$procdff$1115' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [927:896]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$517'.
+  created $adff cell `$procdff$1120' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [959:928]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$521'.
+  created $adff cell `$procdff$1125' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [991:960]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$525'.
+  created $adff cell `$procdff$1130' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem [1023:992]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$529'.
+  created $adff cell `$procdff$1135' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [31:0]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$533'.
+  created $adff cell `$procdff$1140' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [63:32]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$537'.
+  created $adff cell `$procdff$1145' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [95:64]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$541'.
+  created $adff cell `$procdff$1150' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [127:96]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$545'.
+  created $adff cell `$procdff$1155' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [159:128]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$549'.
+  created $adff cell `$procdff$1160' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [191:160]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$553'.
+  created $adff cell `$procdff$1165' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [223:192]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$557'.
+  created $adff cell `$procdff$1170' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [255:224]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$561'.
+  created $adff cell `$procdff$1175' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [287:256]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$565'.
+  created $adff cell `$procdff$1180' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [319:288]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$569'.
+  created $adff cell `$procdff$1185' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [351:320]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$573'.
+  created $adff cell `$procdff$1190' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [383:352]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$577'.
+  created $adff cell `$procdff$1195' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [415:384]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$581'.
+  created $adff cell `$procdff$1200' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [447:416]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$585'.
+  created $adff cell `$procdff$1205' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [479:448]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$589'.
+  created $adff cell `$procdff$1210' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [511:480]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$593'.
+  created $adff cell `$procdff$1215' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [543:512]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$597'.
+  created $adff cell `$procdff$1220' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [575:544]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$601'.
+  created $adff cell `$procdff$1225' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [607:576]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$605'.
+  created $adff cell `$procdff$1230' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [639:608]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$609'.
+  created $adff cell `$procdff$1235' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [671:640]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$613'.
+  created $adff cell `$procdff$1240' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [703:672]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$617'.
+  created $adff cell `$procdff$1245' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [735:704]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$621'.
+  created $adff cell `$procdff$1250' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [767:736]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$625'.
+  created $adff cell `$procdff$1255' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [799:768]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$629'.
+  created $adff cell `$procdff$1260' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [831:800]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$633'.
+  created $adff cell `$procdff$1265' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [863:832]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$637'.
+  created $adff cell `$procdff$1270' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [895:864]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$641'.
+  created $adff cell `$procdff$1275' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [927:896]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$645'.
+  created $adff cell `$procdff$1280' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [959:928]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$649'.
+  created $adff cell `$procdff$1285' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [991:960]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$653'.
+  created $adff cell `$procdff$1290' with positive edge clock and positive level reset.
+Creating register for signal `\cv32e40p_register_file.\mem_fp [1023:992]' using process `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$657'.
+  created $adff cell `$procdff$1295' with positive edge clock and positive level reset.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:124$136'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$409'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$409'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$413'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$413'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$417'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$417'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$421'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$421'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$425'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$425'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$429'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$429'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$433'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$433'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$437'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$437'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$441'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$441'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$445'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$445'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$449'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$449'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$453'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$453'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$457'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$457'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$461'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$461'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$465'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$465'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$469'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$469'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$473'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$473'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$477'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$477'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$481'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$481'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$485'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$485'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$489'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$489'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$493'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$493'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$497'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$497'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$501'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$501'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$505'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$505'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$509'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$509'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$513'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$513'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$517'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$517'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$521'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$521'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$525'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$525'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$529'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:137$529'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$533'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$533'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$537'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$537'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$541'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$541'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$545'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$545'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$549'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$549'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$553'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$553'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$557'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$557'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$561'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$561'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$565'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$565'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$569'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$569'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$573'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$573'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$577'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$577'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$581'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$581'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$585'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$585'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$589'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$589'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$593'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$593'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$597'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$597'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$601'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$601'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$605'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$605'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$609'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$609'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$613'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$613'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$617'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$617'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$621'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$621'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$625'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$625'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$629'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$629'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$633'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$633'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$637'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$637'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$641'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$641'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$645'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$645'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$649'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$649'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$653'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$653'.
+Found and cleaned up 2 empty switches in `\cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$657'.
+Removing empty process `cv32e40p_register_file.$proc$/workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/gate_register_file_ff.sv:151$657'.
+Cleaned up 126 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cv32e40p_register_file.
+<suppressed ~319 debug messages>
+
+5. Executing MEMORY pass.
+
+5.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+5.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+5.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+5.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+5.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+5.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cv32e40p_register_file..
+Removed 132 unused cells and 641 unused wires.
+<suppressed ~133 debug messages>
+
+5.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+5.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+5.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cv32e40p_register_file..
+
+5.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+5.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+6. Executing ASYNC2SYNC pass.
+Replacing cv32e40p_register_file.$procdff$1260 ($adff): ARST=\rst_n, D=$0\mem_fp[799:768], Q=\mem_fp [799:768]
+Replacing cv32e40p_register_file.$procdff$1185 ($adff): ARST=\rst_n, D=$0\mem_fp[319:288], Q=\mem_fp [319:288]
+Replacing cv32e40p_register_file.$procdff$1190 ($adff): ARST=\rst_n, D=$0\mem_fp[351:320], Q=\mem_fp [351:320]
+Replacing cv32e40p_register_file.$procdff$1180 ($adff): ARST=\rst_n, D=$0\mem_fp[287:256], Q=\mem_fp [287:256]
+Replacing cv32e40p_register_file.$procdff$1175 ($adff): ARST=\rst_n, D=$0\mem_fp[255:224], Q=\mem_fp [255:224]
+Replacing cv32e40p_register_file.$procdff$1255 ($adff): ARST=\rst_n, D=$0\mem_fp[767:736], Q=\mem_fp [767:736]
+Replacing cv32e40p_register_file.$procdff$1170 ($adff): ARST=\rst_n, D=$0\mem_fp[223:192], Q=\mem_fp [223:192]
+Replacing cv32e40p_register_file.$procdff$1165 ($adff): ARST=\rst_n, D=$0\mem_fp[191:160], Q=\mem_fp [191:160]
+Replacing cv32e40p_register_file.$procdff$1160 ($adff): ARST=\rst_n, D=$0\mem_fp[159:128], Q=\mem_fp [159:128]
+Replacing cv32e40p_register_file.$procdff$1250 ($adff): ARST=\rst_n, D=$0\mem_fp[735:704], Q=\mem_fp [735:704]
+Replacing cv32e40p_register_file.$procdff$1155 ($adff): ARST=\rst_n, D=$0\mem_fp[127:96], Q=\mem_fp [127:96]
+Replacing cv32e40p_register_file.$procdff$1280 ($adff): ARST=\rst_n, D=$0\mem_fp[927:896], Q=\mem_fp [927:896]
+Replacing cv32e40p_register_file.$procdff$1150 ($adff): ARST=\rst_n, D=$0\mem_fp[95:64], Q=\mem_fp [95:64]
+Replacing cv32e40p_register_file.$procdff$1145 ($adff): ARST=\rst_n, D=$0\mem_fp[63:32], Q=\mem_fp [63:32]
+Replacing cv32e40p_register_file.$procdff$1245 ($adff): ARST=\rst_n, D=$0\mem_fp[703:672], Q=\mem_fp [703:672]
+Replacing cv32e40p_register_file.$procdff$1140 ($adff): ARST=\rst_n, D=$0\mem_fp[31:0], Q=\mem_fp [31:0]
+Replacing cv32e40p_register_file.$procdff$1290 ($adff): ARST=\rst_n, D=$0\mem_fp[991:960], Q=\mem_fp [991:960]
+Replacing cv32e40p_register_file.$procdff$1135 ($adff): ARST=\rst_n, D=$0\mem[1023:992], Q=\mem [1023:992]
+Replacing cv32e40p_register_file.$procdff$1130 ($adff): ARST=\rst_n, D=$0\mem[991:960], Q=\mem [991:960]
+Replacing cv32e40p_register_file.$procdff$1240 ($adff): ARST=\rst_n, D=$0\mem_fp[671:640], Q=\mem_fp [671:640]
+Replacing cv32e40p_register_file.$procdff$1125 ($adff): ARST=\rst_n, D=$0\mem[959:928], Q=\mem [959:928]
+Replacing cv32e40p_register_file.$procdff$1120 ($adff): ARST=\rst_n, D=$0\mem[927:896], Q=\mem [927:896]
+Replacing cv32e40p_register_file.$procdff$1115 ($adff): ARST=\rst_n, D=$0\mem[895:864], Q=\mem [895:864]
+Replacing cv32e40p_register_file.$procdff$1235 ($adff): ARST=\rst_n, D=$0\mem_fp[639:608], Q=\mem_fp [639:608]
+Replacing cv32e40p_register_file.$procdff$1110 ($adff): ARST=\rst_n, D=$0\mem[863:832], Q=\mem [863:832]
+Replacing cv32e40p_register_file.$procdff$1275 ($adff): ARST=\rst_n, D=$0\mem_fp[895:864], Q=\mem_fp [895:864]
+Replacing cv32e40p_register_file.$procdff$1105 ($adff): ARST=\rst_n, D=$0\mem[831:800], Q=\mem [831:800]
+Replacing cv32e40p_register_file.$procdff$1100 ($adff): ARST=\rst_n, D=$0\mem[799:768], Q=\mem [799:768]
+Replacing cv32e40p_register_file.$procdff$1230 ($adff): ARST=\rst_n, D=$0\mem_fp[607:576], Q=\mem_fp [607:576]
+Replacing cv32e40p_register_file.$procdff$1095 ($adff): ARST=\rst_n, D=$0\mem[767:736], Q=\mem [767:736]
+Replacing cv32e40p_register_file.$procdff$1295 ($adff): ARST=\rst_n, D=$0\mem_fp[1023:992], Q=\mem_fp [1023:992]
+Replacing cv32e40p_register_file.$procdff$1090 ($adff): ARST=\rst_n, D=$0\mem[735:704], Q=\mem [735:704]
+Replacing cv32e40p_register_file.$procdff$1085 ($adff): ARST=\rst_n, D=$0\mem[703:672], Q=\mem [703:672]
+Replacing cv32e40p_register_file.$procdff$1225 ($adff): ARST=\rst_n, D=$0\mem_fp[575:544], Q=\mem_fp [575:544]
+Replacing cv32e40p_register_file.$procdff$1080 ($adff): ARST=\rst_n, D=$0\mem[671:640], Q=\mem [671:640]
+Replacing cv32e40p_register_file.$procdff$1075 ($adff): ARST=\rst_n, D=$0\mem[639:608], Q=\mem [639:608]
+Replacing cv32e40p_register_file.$procdff$1070 ($adff): ARST=\rst_n, D=$0\mem[607:576], Q=\mem [607:576]
+Replacing cv32e40p_register_file.$procdff$1220 ($adff): ARST=\rst_n, D=$0\mem_fp[543:512], Q=\mem_fp [543:512]
+Replacing cv32e40p_register_file.$procdff$1065 ($adff): ARST=\rst_n, D=$0\mem[575:544], Q=\mem [575:544]
+Replacing cv32e40p_register_file.$procdff$1270 ($adff): ARST=\rst_n, D=$0\mem_fp[863:832], Q=\mem_fp [863:832]
+Replacing cv32e40p_register_file.$procdff$1060 ($adff): ARST=\rst_n, D=$0\mem[543:512], Q=\mem [543:512]
+Replacing cv32e40p_register_file.$procdff$1055 ($adff): ARST=\rst_n, D=$0\mem[511:480], Q=\mem [511:480]
+Replacing cv32e40p_register_file.$procdff$1215 ($adff): ARST=\rst_n, D=$0\mem_fp[511:480], Q=\mem_fp [511:480]
+Replacing cv32e40p_register_file.$procdff$1050 ($adff): ARST=\rst_n, D=$0\mem[479:448], Q=\mem [479:448]
+Replacing cv32e40p_register_file.$procdff$1045 ($adff): ARST=\rst_n, D=$0\mem[447:416], Q=\mem [447:416]
+Replacing cv32e40p_register_file.$procdff$1040 ($adff): ARST=\rst_n, D=$0\mem[415:384], Q=\mem [415:384]
+Replacing cv32e40p_register_file.$procdff$1210 ($adff): ARST=\rst_n, D=$0\mem_fp[479:448], Q=\mem_fp [479:448]
+Replacing cv32e40p_register_file.$procdff$1035 ($adff): ARST=\rst_n, D=$0\mem[383:352], Q=\mem [383:352]
+Replacing cv32e40p_register_file.$procdff$1030 ($adff): ARST=\rst_n, D=$0\mem[351:320], Q=\mem [351:320]
+Replacing cv32e40p_register_file.$procdff$1025 ($adff): ARST=\rst_n, D=$0\mem[319:288], Q=\mem [319:288]
+Replacing cv32e40p_register_file.$procdff$1205 ($adff): ARST=\rst_n, D=$0\mem_fp[447:416], Q=\mem_fp [447:416]
+Replacing cv32e40p_register_file.$procdff$1020 ($adff): ARST=\rst_n, D=$0\mem[287:256], Q=\mem [287:256]
+Replacing cv32e40p_register_file.$procdff$1265 ($adff): ARST=\rst_n, D=$0\mem_fp[831:800], Q=\mem_fp [831:800]
+Replacing cv32e40p_register_file.$procdff$1015 ($adff): ARST=\rst_n, D=$0\mem[255:224], Q=\mem [255:224]
+Replacing cv32e40p_register_file.$procdff$1010 ($adff): ARST=\rst_n, D=$0\mem[223:192], Q=\mem [223:192]
+Replacing cv32e40p_register_file.$procdff$1200 ($adff): ARST=\rst_n, D=$0\mem_fp[415:384], Q=\mem_fp [415:384]
+Replacing cv32e40p_register_file.$procdff$1005 ($adff): ARST=\rst_n, D=$0\mem[191:160], Q=\mem [191:160]
+Replacing cv32e40p_register_file.$procdff$1285 ($adff): ARST=\rst_n, D=$0\mem_fp[959:928], Q=\mem_fp [959:928]
+Replacing cv32e40p_register_file.$procdff$1000 ($adff): ARST=\rst_n, D=$0\mem[159:128], Q=\mem [159:128]
+Replacing cv32e40p_register_file.$procdff$995 ($adff): ARST=\rst_n, D=$0\mem[127:96], Q=\mem [127:96]
+Replacing cv32e40p_register_file.$procdff$1195 ($adff): ARST=\rst_n, D=$0\mem_fp[383:352], Q=\mem_fp [383:352]
+Replacing cv32e40p_register_file.$procdff$990 ($adff): ARST=\rst_n, D=$0\mem[95:64], Q=\mem [95:64]
+Replacing cv32e40p_register_file.$procdff$985 ($adff): ARST=\rst_n, D=$0\mem[63:32], Q=\mem [63:32]
+Replacing cv32e40p_register_file.$procdff$980 ($adff): ARST=\rst_n, D=0, Q=\mem [31:0]
+
+7. Executing FLATTEN pass (flatten design).
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cv32e40p_register_file.
+<suppressed ~12 debug messages>
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cv32e40p_register_file'.
+Computing hashes of 515 cells of `\cv32e40p_register_file'.
+Finding duplicate cells in `\cv32e40p_register_file'.
+Removed a total of 0 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cv32e40p_register_file..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~575 debug messages>
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cv32e40p_register_file.
+Performed a total of 0 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cv32e40p_register_file'.
+Computing hashes of 515 cells of `\cv32e40p_register_file'.
+Finding duplicate cells in `\cv32e40p_register_file'.
+Removed a total of 0 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 1 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 2 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 3 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 4 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 5 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 6 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 7 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 8 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 9 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 10 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 11 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 12 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 13 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 14 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 15 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 16 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 17 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 18 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 19 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 20 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 21 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 22 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 23 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 24 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 25 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 26 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 27 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 28 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 29 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 30 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+Setting constant 0-bit at position 31 on $procdff$980 ($sdff) from module cv32e40p_register_file.
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cv32e40p_register_file..
+Removed 0 unused cells and 7 unused wires.
+<suppressed ~1 debug messages>
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cv32e40p_register_file.
+<suppressed ~1 debug messages>
+
+8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cv32e40p_register_file..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~573 debug messages>
+
+8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cv32e40p_register_file.
+Performed a total of 0 changes.
+
+8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cv32e40p_register_file'.
+Computing hashes of 513 cells of `\cv32e40p_register_file'.
+Finding duplicate cells in `\cv32e40p_register_file'.
+Removed a total of 0 cells.
+
+8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cv32e40p_register_file..
+
+8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cv32e40p_register_file.
+
+8.16. Finished fast OPT passes. (There is nothing left to do.)
+Renaming module \cv32e40p_register_file to \gate.
+
+9. Executing RTLIL backend.
+Output filename: /workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero_old_parent_equiv/rf_grid_out/real_fpu1_zfinx0/gate.il
+
+Warnings: 3 unique messages, 3 total
+End of script. Logfile hash: 679c140cd9, time: 0.14s, user: 0.14s, system: 0.01s, MEM: 27.07 MB peak
+Yosys 0.66+181 (git sha1 afe6b18f2, Release, Clang /usr/bin/clang++ 18.1.8)
+Time spent: 17% 2x opt_dff (0 sec), 17% 1x chparam (0 sec), ...
