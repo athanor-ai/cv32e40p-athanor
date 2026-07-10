@@ -1,0 +1,99 @@
+name: Packet Replay Gate
+
+# Every artifact packet ships replay commands that must work from a fresh
+# clone — not just from the tree where the packet was built. Three packets
+# in a row carried author-environment leaks (absolute paths, simulator-
+# dependent fields, out-of-tree miter references) that only a clean-room
+# replay exposes. This workflow IS that clean room: a hosted runner has no
+# author state by construction. It installs the toolchain pinned by
+# tools/TOOLCHAIN.lock, verifies the lock, the manifests, and the installed
+# binaries agree, then runs each changed packet's own replay battery.
+#
+# Log output is limited to the replay commands' own receipts.
+
+on:
+  pull_request:
+    paths:
+      - "athanor_artifacts/**"
+      - "tools/TOOLCHAIN.lock"
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # The tarball hash is verified BEFORE extraction: an upstream re-tag
+      # must fail loudly, not install silently.
+      - name: Install pinned replay toolchain (tools/TOOLCHAIN.lock)
+        run: |
+          set -euo pipefail
+          url=$(python3 -c "import json; print(json.load(open('tools/TOOLCHAIN.lock'))['oss_cad_suite']['download_url'])")
+          want=$(python3 -c "import json; print(json.load(open('tools/TOOLCHAIN.lock'))['oss_cad_suite']['tarball_sha256'])")
+          echo "lock pins $(python3 -c "import json; print(json.load(open('tools/TOOLCHAIN.lock'))['oss_cad_suite']['installable_release_tag'])")"
+          curl -sSfL "$url" -o /tmp/suite.tgz
+          echo "${want}  /tmp/suite.tgz" | sha256sum -c -
+          tar xzf /tmp/suite.tgz -C "$HOME"
+          echo "$HOME/oss-cad-suite/bin" >> "$GITHUB_PATH"
+
+      # Two consistency legs: the static validator (manifests agree with the
+      # lock) plus a live check the validator cannot do from inside the repo
+      # — the INSTALLED binaries must report the lock's version prefixes.
+      - name: Lock / manifests / installed-binary consistency
+        run: |
+          set -euo pipefail
+          python3 tools/check_packet_toolchain_lock.py
+          python3 - <<'PY'
+          import json, subprocess, sys
+          lock = json.load(open("tools/TOOLCHAIN.lock"))
+          fail = 0
+          for name, argv in (("yosys", ["yosys", "-V"]),
+                             ("iverilog", ["iverilog", "-V"]),
+                             ("vvp", ["vvp", "-V"])):
+              prefix = lock["tools"][name]["version_prefix"]
+              out = subprocess.run(argv, capture_output=True, text=True).stdout.splitlines()[0]
+              if not out.startswith(prefix):
+                  print(f"::error::installed {name} reports '{out}' but the lock pins prefix '{prefix}'")
+                  fail = 1
+              else:
+                  print(f"OK: {name}: '{out}'")
+          sys.exit(fail)
+          PY
+
+      - name: Replay every changed packet
+        run: |
+          set -euo pipefail
+          # Activity replays resolve simulators via env-with-pinned-fallback.
+          export IVERILOG="$HOME/oss-cad-suite/bin/iverilog"
+          export VVP="$HOME/oss-cad-suite/bin/vvp"
+          base="origin/${{ github.base_ref }}"
+          git fetch --quiet origin "${{ github.base_ref }}"
+          mapfile -t pkgs < <(git diff --name-only "$base"...HEAD -- athanor_artifacts/ \
+            | cut -d/ -f1-2 | sort -u)
+          if [ "${#pkgs[@]}" -eq 0 ]; then
+            echo "no packet dirs changed (lock-only PR) — consistency legs above are the gate"
+            exit 0
+          fi
+          fail=0
+          for pkg in "${pkgs[@]}"; do
+            [ -d "$pkg" ] || continue   # deleted packet dirs have nothing to replay
+            echo "=== replaying $pkg from a fresh clone"
+            ( cd "$pkg"
+              sha256sum -c SHA256SUMS
+              for script in replay_source_delta.py replay_predicate_equiv.py \
+                            replay_selected_summary.py activity/replay_toggle.py; do
+                if [ -f "$script" ]; then
+                  echo "--- $script"
+                  python3 "$script"
+                fi
+              done
+              python3 -c "import json,glob; [json.load(open(f)) for f in glob.glob('*_manifest.json')]"
+            ) || { echo "::error::replay failed for $pkg"; fail=1; }
+          done
+          exit "$fail"
