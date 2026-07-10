@@ -15,7 +15,7 @@ CASES = {
 
 
 def run_case(path: Path) -> dict:
-    proc = subprocess.run([str(YOSYS), "-s", str(path / "prove.ys")], text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=60)
+    proc = subprocess.run([str(YOSYS), "-s", "prove.ys"], cwd=path, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=60)
     text = proc.stdout + proc.stderr
     return {"rc": proc.returncode, "success": "no model found: SUCCESS" in text, "fail": "model found: FAIL" in text, "text": text}
 

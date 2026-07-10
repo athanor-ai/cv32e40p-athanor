@@ -1,4 +1,4 @@
 
-read_verilog -sv /workdir/_tmp/cv32_alu_shift_expr_equiv/positive_prefix_01100/shiftleft_expr_miter.sv
+read_verilog -sv shiftleft_expr_miter.sv
 prep -top shiftleft_expr_miter
 sat -prove diff_o 0 -show operator_i,old_shift_left,new_shift_left,diff_o
