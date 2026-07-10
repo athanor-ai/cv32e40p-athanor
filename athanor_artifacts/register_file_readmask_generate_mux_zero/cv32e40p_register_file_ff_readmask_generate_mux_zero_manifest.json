@@ -1,0 +1,145 @@
+{
+  "activity_toggle": {
+    "baseline_toggles": 705913,
+    "boundary_equality_every_cycle": true,
+    "gate_toggles": 705913,
+    "method": "cv32_idstage_ex_readmask_context_iverilog_vcd_hierarchy_toggle_v1",
+    "power_evidence_type": "toggle_convention",
+    "receipt": "activity/toggle_convention_receipt.json",
+    "receipt_sha256": "5481929e1849b6443414de0a0eeb934c090e354aeaa4f2b00e41a279da24f4c7",
+    "toggle_delta_pct": 0.0,
+    "vcd_gzip": "activity/toggle.vcd.gz",
+    "vcd_gzip_sha256": "303b1bfa5b6e67436dd6cffaab6c5fffc08be5013db68641716ad83f32df806b"
+  },
+  "boundary": "default split ID/EX parent-context evidence packet; no accepted CV32 optimization, no whole-core claim, no customer impact claim",
+  "candidate_id": "readmask_generate_mux_zero",
+  "classification": "default_split_context_area_timing_equiv_activity_positive_needs_independent_replay",
+  "customer_claim_ready": false,
+  "cv32e40p_commit": "6033d2b1be3295ec774d17ac4cf226faacfdeb08",
+  "interpretation": "The split ID/EX parent context passes area, timing, parent equivalence, register-file grid equivalence, biting negative controls, and alias-safe activity/toggle. It still needs independent replay/package review before any accepted CV32 or public customer row.",
+  "module": "cv32e40p_register_file_ff",
+  "module_local_selected_flow": {
+    "area": {
+      "baseline": 31970.6624,
+      "gate": 32005.696,
+      "status": "regression"
+    },
+    "timing_note": "in2out/overall slack worsens 0.7245 -> 0.4880; parent-context result is the load-bearing PPA claim",
+    "top": "cv32e40p_register_file"
+  },
+  "negative_controls": [
+    {
+      "log": "equiv_idstage/logs/negative_yosys_equiv.log",
+      "log_sha256": "e77c1604a06c9f1224ccfb620978175b3ab684d4b99acec6bb4d289a9ca63329",
+      "name": "bad_high_bit_mask_parent",
+      "result": "FAIL: 32 unproven cells",
+      "top": "cv32e40p_id_stage"
+    },
+    {
+      "log": "equiv_rf_grid/logs/neg_fpu0_zfinx0_equiv.log",
+      "log_sha256": "396c517e61fec436071662fad116b496de75d0645f6533750fe9999da7db43a6",
+      "name": "bad_high_bit_mask_register_file_grid",
+      "result": "FAIL: 32 unproven cells in FPU=0,ZFINX=0 tuple",
+      "top": "cv32e40p_register_file"
+    }
+  ],
+  "positive_checks": [
+    {
+      "log": "equiv_idstage/logs/yosys_equiv.log",
+      "log_sha256": "b41d5b0d732d11535c98601679bda8760f496a364b64e611da72610fa67abced",
+      "name": "parent_yosys_equiv_induct",
+      "result": "2820/2820 $equiv cells proven",
+      "top": "cv32e40p_id_stage"
+    },
+    {
+      "log_sha256": {
+        "real_fpu0_zfinx0": "695b948ca44a68394fc2d7981dafd3f56cadada940e85bc574eecdb622a405d3",
+        "real_fpu1_zfinx0": "5ef05b9d5b2eaa12f59a67dd4de63b9b3bbab3def31bb9dcf4aa0042e8616bc8",
+        "real_fpu1_zfinx1": "24ce3ceb7de46d9ac6c747690d6a33f6e03d02209515fd03e06762d85fcf80f3"
+      },
+      "name": "register_file_grid_equiv",
+      "result": "FPU/ZFINX 00: 1150/1150, 10: 2238/2238, 11: 1150/1150 $equiv cells proven",
+      "top": "cv32e40p_register_file"
+    }
+  ],
+  "schema": "cv32e40p_register_file_ff_equiv_induct_split_context_replay_v1",
+  "scope": {
+    "equivalence_grid": "register-file grid covers FPU/ZFINX tuples 00, 10, and 11",
+    "module_local_ppa": "does not pass; parent-context claim only",
+    "non_default_ppa_activity": "not measured; do not claim area/timing/toggle for non-default parent contexts",
+    "ppa_and_activity": "default split ID/EX parent tuple only: FPU=0, ZFINX=0"
+  },
+  "selected_flow": {
+    "area": {
+      "baseline": 123569.7632,
+      "delta_pct": -0.109355,
+      "gate": 123434.6336
+    },
+    "baseline_sha256s_sha256": "e7f418f3b941f1d238c855907d36f8041c956e8a10d8447526689c599c3ffb63",
+    "gate_sha256s_sha256": "d361529426a81e19060390ddc345f8fc7fe0122a602e8ce1e44496d7d94c7724",
+    "timing_slack": {
+      "in2out": {
+        "baseline": -4.8178,
+        "gate": -4.6949,
+        "status": "improved"
+      },
+      "in2reg": {
+        "baseline": -4.9827,
+        "gate": -4.8608,
+        "status": "improved"
+      },
+      "overall": {
+        "baseline": -19.5738,
+        "gate": -19.5634,
+        "status": "improved"
+      },
+      "reg2out": {
+        "baseline": -18.7501,
+        "gate": -18.7499,
+        "status": "improved"
+      },
+      "reg2reg": {
+        "baseline": -19.5738,
+        "gate": -19.5634,
+        "status": "improved"
+      }
+    },
+    "top": "cv32e40p_id_ex_readmask_context"
+  },
+  "selected_toolchain": {
+    "liberty": "sky130_fd_sc_hd__tt_025C_1v80.lib",
+    "liberty_sha256": "ec0e1067a35c8bf20b11e58d1e8ac53326067e4dac84a125cc1b917a3518d0d9",
+    "sim_clock_gate": "upstream cv32e40p_sim_clock_gate.sv, simulation-only",
+    "yosys_version": "Yosys 0.66+181 (git sha1 afe6b18f2, Release, Clang /usr/bin/clang++ 18.1.8)"
+  },
+  "source_files": [
+    {
+      "path": "gold_source.sv",
+      "sha256": "cd04d46afbf778ff3f1573bdd390784e5461a09b33fd670fa126ae7d3c433e89"
+    },
+    {
+      "path": "gate_source.sv",
+      "sha256": "6bf5fb726992a1caaa4ae2beb9bf271c71ea999987ee6899df691874e97bd139"
+    },
+    {
+      "path": "gold_idstage_default.v",
+      "sha256": "875dbe8ba3cba8bff06a6fb6be65424c7dfe7f07b91b0c75a43fad9688c46d07"
+    },
+    {
+      "path": "gate_idstage_default.v",
+      "sha256": "0d21dc0932e2cb08195fbcf84d39c76733360295c8e4d6214abe467389cc8b04"
+    },
+    {
+      "path": "gold_split_context_default.v",
+      "sha256": "4f6802500d684151e8391a1671a3a7ad629d32cdd94b2fa330fd1813260266bb"
+    },
+    {
+      "path": "gate_split_context_default.v",
+      "sha256": "5ffa5550af38104111169382e2a939a960e9cd82057c8f96e22611f9cdbcac15"
+    },
+    {
+      "path": "equiv_idstage/negative_idstage_default.v",
+      "sha256": "f9f372fadb7b349539c7e33e0d0d0a17bd607bf00cf17b0cdf221329ec60f9ef"
+    }
+  ]
+}
