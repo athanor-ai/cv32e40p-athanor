@@ -1,0 +1,4 @@
+
+read_verilog -sv compressed_l71_predicate_miter.sv
+prep -top compressed_l71_predicate_miter -flatten
+sat -prove diff_o 0 -show instr_i,old_zero,new_zero,diff_o

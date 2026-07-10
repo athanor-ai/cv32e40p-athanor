@@ -1,0 +1,4 @@
+
+read_verilog -sv compressed_decoder_full_miter.sv
+prep -top compressed_decoder_full_miter -flatten
+sat -prove diff_o 0 -show instr_i,diff_o
