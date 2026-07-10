@@ -1,0 +1,12 @@
+--- gold_source.sv
++++ gate_source.sv
+@@ -237,8 +237,7 @@
+   // ALU_FL1 and ALU_CBL are used for the bit counting ops later
+   assign shift_left = (operator_i == ALU_SLL) || (operator_i == ALU_BINS) ||
+                       (operator_i == ALU_FL1) || (operator_i == ALU_CLB)  ||
+-                      (operator_i == ALU_DIV) || (operator_i == ALU_DIVU) ||
+-                      (operator_i == ALU_REM) || (operator_i == ALU_REMU) ||
++                      (operator_i[6:2] == 5'b01100) ||
+                       (operator_i == ALU_BREV);
+
+   assign shift_use_round = (operator_i == ALU_ADD)   || (operator_i == ALU_SUB)   ||

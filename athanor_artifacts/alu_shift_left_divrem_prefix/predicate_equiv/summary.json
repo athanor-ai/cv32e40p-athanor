@@ -1,0 +1,21 @@
+{
+  "candidate": "alu_shift_left_divrem_prefix",
+  "negative": {
+    "fail": true,
+    "label": "negative_prefix_01101",
+    "log_sha": "1639a424dd94b6f0b4d8535f0eb5e8c236ca67d25eec6b27ad5fbc6cd163bb49",
+    "manifest_sha": "89c1b22f3cbab2d08f0f6276c0a40ba926b6634875ee36a67c51e4c4a4d49b57",
+    "rc": 0,
+    "success": false
+  },
+  "new": "shift_left uses operator_i[6:2] == 5'b01100 for DIV/REM family",
+  "old": "shift_left contains explicit ALU_DIV/ALU_DIVU/ALU_REM/ALU_REMU terms",
+  "positive": {
+    "fail": false,
+    "label": "positive_prefix_01100",
+    "log_sha": "6ed0d4b4b9d0d0441f70b3de172a7c919534ce18172b909fedece2755b4a2ea7",
+    "manifest_sha": "08d303f33bf20aa09b3623e1b2abadbac31d562540c7aa947a2921b10079a937",
+    "rc": 0,
+    "success": true
+  }
+}
