@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-YOSYS="${YOSYS:-/workdir/_tools/oss-cad-suite-20260630/bin/yosys}"
+YOSYS="${YOSYS:-yosys}"
 OUT_DIR="${OUT_DIR:-$ROOT/replay_out/parent_equiv}"
 mkdir -p "$OUT_DIR"
 expect_unproven_count() {

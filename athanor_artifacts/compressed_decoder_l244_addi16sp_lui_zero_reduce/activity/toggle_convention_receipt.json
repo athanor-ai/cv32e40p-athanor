@@ -37,7 +37,7 @@
   "gold_vcd_gzip_sha256": "2ac78daf78afe230ceebf16edf749c5c346a9b7843d645c2f35a1b9e6335e677",
   "toggle_delta_pct_common_paths": 0.0,
   "tools": {
-    "iverilog": "/workdir/_tools/oss-cad-suite-20260630/bin/iverilog",
-    "vvp": "/workdir/_tools/oss-cad-suite-20260630/bin/vvp"
+    "iverilog": "iverilog",
+    "vvp": "vvp"
   }
 }

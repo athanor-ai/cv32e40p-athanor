@@ -12,7 +12,7 @@
   },
   "adapter_miter": {
     "elaboration_log_sha256": "9a980997059f6fc97d2c43608a9f8c0e9392fdb407b5e72a5f96039c29e32b0a",
-    "note": "This adapter is supplied for ATH-2853 ingest work. The package proof receipt is the parent_yosys_equiv_induct check above, not this auxiliary tempinduct run.",
+    "note": "This adapter is supplied as auxiliary relation-aware miter evidence. The package proof receipt is the parent_yosys_equiv_induct check above, not this auxiliary tempinduct run.",
     "path": "relation_aware_miter/cv32e40p_id_stage_relation_seq_miter.sv",
     "tempinduct_k4_log": "relation_aware_miter/logs/cv32e40p_id_stage_relation_seq_miter_tempinduct_k4.log",
     "tempinduct_k4_log_sha256": "f267d894eb32914a7b7d7d4f9c37ff3468f7d776ba4e568e1e43a59c37c6f8db",
@@ -34,9 +34,9 @@
     "customer_impact": "not_claimed",
     "promotion_blockers": [
       "independent_replay_process_gate",
-      "ATH-2899 composition/proof gate for any full-core wording",
-      "ATH-2900 taxonomy review",
-      "ATH-2901 one-command customer certificate surface"
+      "composition/proof gate for any full-core wording",
+      "public taxonomy review",
+      "one-command public certificate surface"
     ]
   },
   "cv32e40p_commit": "6033d2b1be3295ec774d17ac4cf226faacfdeb08",

@@ -7,7 +7,7 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-YOSYS = Path(os.environ.get("YOSYS", "/workdir/_tools/oss-cad-suite-20260630/bin/yosys"))
+YOSYS = Path(os.environ.get("YOSYS", "yosys"))
 CASES = {
     "positive": {"path": ROOT / "predicate_equiv/positive", "expect": "success"},
     "negative_shift_prefix_01101": {"path": ROOT / "predicate_equiv/negative_shift_prefix_01101", "expect": "fail"},

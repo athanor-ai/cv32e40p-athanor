@@ -8,7 +8,7 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-YOSYS = Path(os.environ.get("YOSYS", "/workdir/_tools/oss-cad-suite-20260630/bin/yosys"))
+YOSYS = Path(os.environ.get("YOSYS", "yosys"))
 OUT = Path(os.environ.get("OUT_DIR", "/tmp/cv32-alu-divrem-prefix-predicate-replay"))
 
 

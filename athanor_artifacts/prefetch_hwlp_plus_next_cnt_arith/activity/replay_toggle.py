@@ -13,8 +13,8 @@ ROOT = Path(__file__).resolve().parent.parent
 GOLD = ROOT / "gold_prefetch_buffer_parent.v"
 GATE = ROOT / "gate_prefetch_buffer_parent.v"
 OUT = Path(os.environ.get("OUT_DIR", "/tmp/cv32-prefetch-activity"))
-IVERILOG = Path(os.environ.get("IVERILOG", "/workdir/_tools/oss-cad-suite-20260630/bin/iverilog"))
-VVP = Path(os.environ.get("VVP", "/workdir/_tools/oss-cad-suite-20260630/bin/vvp"))
+IVERILOG = Path(os.environ.get("IVERILOG", "iverilog"))
+VVP = Path(os.environ.get("VVP", "vvp"))
 CANDIDATE = "prefetch_hwlp_plus_next_cnt_arith"
 
 TB = r"""

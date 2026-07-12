@@ -15,7 +15,7 @@ Reader terms:
 - Negative control: an intentionally wrong rewrite that must fail. This package includes two biting negatives.
 - Activity/toggle: a VCD toggle-count proxy on the same prefetch-buffer parent context. It is not a full power signoff.
 
-Boundary: this is not an accepted CV32 optimization, not a full parent-equivalence proof, not a whole-core claim, not an IF-stage win, and not a customer-impact claim. It is a prefetch-buffer parent-context package that still needs independent replay.
+Boundary: this is not an accepted CV32 optimization, not a full parent-equivalence proof, not a whole-core claim, not an IF-stage win, and not a customer impact claim. It is a prefetch-buffer parent-context package that still needs independent replay.
 
 Key results:
 

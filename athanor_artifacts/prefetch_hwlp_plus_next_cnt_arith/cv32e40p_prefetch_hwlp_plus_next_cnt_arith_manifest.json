@@ -67,9 +67,9 @@
     "customer_impact": "not_claimed",
     "promotion_blockers": [
       "independent_replay_process_gate",
-      "ATH-2899 composition/proof gate for any full-core wording",
-      "ATH-2900 taxonomy review",
-      "ATH-2901 one-command customer certificate surface"
+      "composition/proof gate for any full-core wording",
+      "public taxonomy review",
+      "one-command public certificate surface"
     ],
     "local_caveat": "prefetch-buffer parent in2out regression is first-class and blocks standalone prefetch-buffer reuse wording"
   },

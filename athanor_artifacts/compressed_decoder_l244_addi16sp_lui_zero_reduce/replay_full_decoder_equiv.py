@@ -7,7 +7,7 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-YOSYS = Path(os.environ.get("YOSYS", "/workdir/_tools/oss-cad-suite-20260630/bin/yosys"))
+YOSYS = Path(os.environ.get("YOSYS", "yosys"))
 CASES = {
     "positive_fpu0_zfinx0": {"expect": "success", "path": ROOT / "full_decoder_equiv/positive_fpu0_zfinx0"},
     "positive_fpu1_zfinx0": {"expect": "success", "path": ROOT / "full_decoder_equiv/positive_fpu1_zfinx0"},

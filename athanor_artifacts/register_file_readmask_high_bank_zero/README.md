@@ -88,10 +88,10 @@ Activity/toggle:
 
 `parent_context_area_timing_equiv_activity_positive_needs_replay_package`
 
-The next gate is an independent replay/package review. No `riscv-athanor`
-accepted row should be added until that replay gate closes.
+The next gate is an independent replay/package review. No accepted public row
+should be added until that replay gate closes.
 
-## ATH-2853 Replay Handoff
+## Auxiliary Relation-Aware Miter
 
 `cv32e40p_register_file_ff_readmask_high_bank_zero_manifest.json` is the
 machine-readable packet manifest for the replay gate. It records the default
@@ -99,8 +99,7 @@ parent-context scope, the register-file equivalence grid, the selected-flow
 area/timing numbers, the activity/toggle receipts, and the biting negative
 controls.
 
-`relation_aware_miter/` contains the handoff shape Perry requested for the
-ATH-2853 ingest leg:
+`relation_aware_miter/` contains auxiliary relation-aware miter files:
 
 - distinct gold, gate, and mutant parent-bundle source files;
 - an adapter miter source over the same default parent context;
@@ -122,6 +121,6 @@ checked-in Yosys `equiv_make` / `equiv_induct` replay in
 - `equiv_rf_grid/`: register-file grid proof inputs/logs.
 - `activity/`: activity/toggle replay script, A/A control, receipts, and
   compressed VCDs.
-- `relation_aware_miter/`: ATH-2853 handoff files and adapter-miter logs.
+- `relation_aware_miter/`: auxiliary relation-aware miter files and adapter-miter logs.
 - `COMMANDS.md`: cold replay commands.
 - `SHA256SUMS`: hashes for package files.

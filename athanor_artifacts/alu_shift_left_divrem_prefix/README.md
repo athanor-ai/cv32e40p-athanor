@@ -10,7 +10,7 @@ Reader terms:
 - Negative control: an intentionally wrong prefix that must fail. Here `01101` incorrectly drops a real REMU opcode, so the SAT check must find `diff_o=1`.
 - Activity/toggle: a VCD toggle-count proxy on the same parent context. It is not a full power signoff.
 
-Boundary: this is not an accepted CV32 optimization, not a full parent-equivalence proof, not a whole-core claim, and not a customer-impact claim. It is a default ALU parent-context package that still needs independent replay.
+Boundary: this is not an accepted CV32 optimization, not a full parent-equivalence proof, not a whole-core claim, and not a customer impact claim. It is a default ALU parent-context package that still needs independent replay.
 
 Key results:
 

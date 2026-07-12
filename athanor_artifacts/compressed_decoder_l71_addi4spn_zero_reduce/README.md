@@ -14,7 +14,7 @@ Reader terms:
 - Negative control: an intentionally wrong rewrite that must fail. This package includes missing-bit controls for bit 12 and bit 5 in both the local predicate and the full decoder miter.
 - Activity/toggle: a VCD toggle-count proxy on the same IF-stage parent context. It is not a full power signoff.
 
-Boundary: this is not an accepted CV32 optimization, not a whole-core claim, and not a customer-impact claim. It is a default IF-stage parent-context package that still needs independent replay.
+Boundary: this is not an accepted CV32 optimization, not a whole-core claim, and not a customer impact claim. It is a default IF-stage parent-context package that still needs independent replay.
 
 Relationship to other packets: this packet is not additive with the c.addi16sp/c.lui compressed-decoder packet. Both measure the same IF-stage parent context; customer-table curation should keep them as separate candidate rows unless a combined packet is measured and replayed.
 

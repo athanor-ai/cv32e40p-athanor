@@ -319,8 +319,8 @@ def main() -> None:
     trace = build_trace(inputs)
     (OUT / "toggle_trace.json").write_text(json.dumps(trace, indent=2) + "\n")
     (work / "tb.v").write_text(make_tb(inputs, outputs, trace))
-    iverilog = os.environ.get("IVERILOG", "/workdir/_tools/oss-cad-suite-20260630/bin/iverilog")
-    vvp = os.environ.get("VVP", "/workdir/_tools/oss-cad-suite-20260630/bin/vvp")
+    iverilog = os.environ.get("IVERILOG", "iverilog")
+    vvp = os.environ.get("VVP", "vvp")
     cp = subprocess.run([iverilog, "-g2012", "-o", "simv", "gold_design.v", "gate_design.v", "tb.v"], cwd=work, text=True, capture_output=True)
     log = cp.stdout + cp.stderr
     if cp.returncode:

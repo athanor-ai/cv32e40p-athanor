@@ -16,7 +16,7 @@ Reader terms:
 
 Classification: `if_stage_scoped_win_with_named_prefetch_buffer_in2out_regression`.
 
-Boundary: this is not an accepted CV32 optimization, not a whole-core claim, and not a customer-impact claim. The claim scope is the default IF-stage parent context. The immediate prefetch-buffer local in2out regression is a first-class caveat, not a footnote.
+Boundary: this is not an accepted CV32 optimization, not a whole-core claim, and not a customer impact claim. The claim scope is the default IF-stage parent context. The immediate prefetch-buffer local in2out regression is a first-class caveat, not a footnote.
 
 Key results:
 

@@ -27,9 +27,9 @@
     "customer_impact": "not_claimed",
     "promotion_blockers": [
       "independent_replay_process_gate",
-      "ATH-2899 composition/proof gate for any full-core wording",
-      "ATH-2900 taxonomy review",
-      "ATH-2901 one-command customer certificate surface"
+      "composition/proof gate for any full-core wording",
+      "public taxonomy review",
+      "one-command public certificate surface"
     ]
   },
   "cv32e40p_commit": "6033d2b1be3295ec774d17ac4cf226faacfdeb08",
@@ -76,7 +76,7 @@
         ]
       }
     ],
-    "table_guidance": "If both packets reach a customer-facing table, name this packet's relationship to the div-valid-only packet explicitly; do not sum the reported area/timing/activity deltas."
+    "table_guidance": "If both packets reach a public results table, name this packet's relationship to the div-valid-only packet explicitly; do not sum the reported area/timing/activity deltas."
   },
   "schema": "cv32e40p_alu_addsub_divvalid_adderneg_source_local_replay_v1",
   "scope": {

@@ -90,8 +90,7 @@ Activity/toggle:
 
 `default_split_context_area_timing_equiv_activity_positive_needs_independent_replay`
 
-The next gate is independent replay/package review. No `riscv-athanor` accepted
-row or customer-impact claim should be added until that replay gate closes.
+The next gate is independent replay/package review. No accepted public row or customer impact claim should be added until that replay gate closes.
 
 ## Files
 

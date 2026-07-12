@@ -10,7 +10,7 @@ Reader terms:
 - Negative control: an intentionally wrong rewrite that must fail. This package includes one biting negative for each predicate family.
 - Activity/toggle: a VCD toggle-count proxy on the same parent context. It is not a full power signoff.
 
-Boundary: this is not an accepted CV32 optimization, not a full parent-equivalence proof, not a whole-core claim, and not a customer-impact claim. It is a default ALU parent-context package that still needs independent replay.
+Boundary: this is not an accepted CV32 optimization, not a full parent-equivalence proof, not a whole-core claim, and not a customer impact claim. It is a default ALU parent-context package that still needs independent replay.
 
 Relationship to earlier packets: this candidate overlaps the shift-only packet (`alu_shift_left_divrem_prefix`), the div-valid-only packet (`alu_divrem_prefix_valid`), and the three-predicate add/sub/div-valid/adder-negate packet (`alu_addsub_divvalid_adderneg_prefixes`). Treat these as overlapping alternatives; do not add their area, timing, or activity numbers together. This packet does not dominate `alu_addsub_divvalid_adderneg_prefixes`; it trades that packet's `shift_use_round` rewrite for `shift_left` and has a smaller area delta.
 

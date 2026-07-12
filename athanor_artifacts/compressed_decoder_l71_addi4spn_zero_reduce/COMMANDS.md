@@ -11,6 +11,6 @@ python3 replay_selected_summary.py
 OUT_DIR=/tmp/cv32-compressed-l71-activity-replay python3 activity/replay_toggle.py
 ```
 
-The default Yosys path is `/workdir/_tools/oss-cad-suite-20260630/bin/yosys`. Override it with `YOSYS=/path/to/yosys` if needed.
+The default Yosys path is `yosys`. Override it with `YOSYS=/path/to/yosys` if needed.
 
-The activity replay uses `/workdir/_tools/oss-cad-suite-20260630/bin/iverilog` and `/workdir/_tools/oss-cad-suite-20260630/bin/vvp` by default. Override with `IVERILOG=/path/to/iverilog VVP=/path/to/vvp` if needed.
+The activity replay uses `iverilog` and `vvp` by default. Override with `IVERILOG=/path/to/iverilog VVP=/path/to/vvp` if needed.

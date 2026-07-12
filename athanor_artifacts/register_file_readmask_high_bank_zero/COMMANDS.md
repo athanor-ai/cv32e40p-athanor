@@ -25,5 +25,5 @@ activity commands recompute their receipts from checked-in package files.
 
 The parent equivalence command uses Yosys `equiv_make` / `equiv_induct`; it does
 not use an explicit `sat -seq K` command. The adapter-miter log in
-`relation_aware_miter/logs/` is included for Perry's ATH-2853 ingest work, but
+`relation_aware_miter/logs/` is included as auxiliary adapter-miter evidence, but
 it is not the promotion proof.

@@ -92,8 +92,7 @@ Activity/toggle:
 
 `default_alu_parent_area_timing_activity_positive_source_local_equiv_needs_independent_replay`
 
-The next gate is independent replay/package review. No `riscv-athanor` accepted
-row or customer-impact claim should be added until that review closes.
+The next gate is independent replay/package review. No accepted public row or customer impact claim should be added until that review closes.
 
 ## Files
 

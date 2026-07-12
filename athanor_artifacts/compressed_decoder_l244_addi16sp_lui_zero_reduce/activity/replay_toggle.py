@@ -13,8 +13,8 @@ PACKAGE = Path(__file__).resolve().parents[1]
 GOLD = PACKAGE / "gold_if_stage_parent.v"
 GATE = PACKAGE / "gate_if_stage_parent.v"
 OUT = Path(os.environ.get("OUT_DIR", "/tmp/cv32-compressed-l244-activity"))
-IVERILOG = Path(os.environ.get("IVERILOG", "/workdir/_tools/oss-cad-suite-20260630/bin/iverilog"))
-VVP = Path(os.environ.get("VVP", "/workdir/_tools/oss-cad-suite-20260630/bin/vvp"))
+IVERILOG = Path(os.environ.get("IVERILOG", "iverilog"))
+VVP = Path(os.environ.get("VVP", "vvp"))
 
 TB = r"""
 `timescale 1ns/1ps

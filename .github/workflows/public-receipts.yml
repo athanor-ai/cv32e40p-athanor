@@ -1,0 +1,24 @@
+name: Public Receipt Verification
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    paths:
+      - "README.md"
+      - "athanor/**"
+      - "athanor_artifacts/**"
+      - "tools/**"
+      - ".github/workflows/public-receipts.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  verify-public-receipts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify public receipt manifests
+        run: python3 athanor/verify_public_receipts.py
