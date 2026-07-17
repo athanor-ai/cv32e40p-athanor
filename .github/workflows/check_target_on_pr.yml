@@ -5,7 +5,25 @@ jobs:
   check_target:
     runs-on: ubuntu-latest
     steps:
-      - if: ${{ (github.event.pull_request.head.ref == 'dev' && github.event.pull_request.base.ref == 'master') || github.event.pull_request.base.ref == 'dev' }}
-        run: exit 0
-      - if: ${{ github.event.pull_request.base.ref != 'dev' }}
-        run: exit 1
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check target branch
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          if [[ "$HEAD_REF" == "dev" && "$BASE_REF" == "master" ]]; then
+            exit 0
+          fi
+          if [[ "$BASE_REF" == "dev" ]]; then
+            exit 0
+          fi
+          if [[ "$BASE_REF" == "master" ]]; then
+            git fetch origin "$BASE_REF" --depth=1
+            changed="$(git diff --name-only "origin/$BASE_REF...HEAD")"
+            if [[ "$changed" == "README.md" ]]; then
+              exit 0
+            fi
+          fi
+          exit 1
