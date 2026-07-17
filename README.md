@@ -32,6 +32,18 @@ register-file candidates with local caveats or overlapping scopes. Do not add
 metrics across overlapping packets unless a composed package measures that exact
 composition.
 
+## Formal Verification Map
+
+The package directory named in each row is the proof entry point. Methods not
+listed in that package are not part of its public claim.
+
+| Evidence | Where | Boundary |
+| --- | --- | --- |
+| Source-local SAT checks | Package `replay_predicate_equiv.py` and `predicate_equiv/*/yosys_sat.log` | Proves the named local predicate only. |
+| Decoder and parent equivalence | `replay_full_decoder_equiv.py`, `replay_parent_equiv.sh`, and equivalence logs | Applies only to the measured decoder or parent-context package. |
+| Relation-aware temporal induction | `register_file_readmask_high_bank_zero/relation_aware_miter/` | Register-file relation proof only; no whole-core CV32E40P claim. |
+| Activity checks | `activity/toggle_convention_receipt.json` and replay scripts | Activity evidence under the package convention; it is not signoff power. |
+
 ## Evidence Bar
 
 A promoted row requires:
