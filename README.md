@@ -1,13 +1,13 @@
-# Athanor CV32E40P Evidence Surface
+# Athanor CV32E40P Results
 
-CV32E40P is a real 32-bit in-order RISC-V core from OpenHW Group. This fork is
-Athanor's public evidence surface for scoped CV32E40P optimization packets:
-exact RTL candidates, selected-flow measurements, proof or equivalence evidence,
-negative controls, and replay notes.
+CV32E40P is a real 32-bit in-order RISC-V core from OpenHW Group. This fork
+publishes scoped Athanor CV32E40P optimization results: exact RTL candidates,
+selected-flow measurements, proof or equivalence evidence, negative controls,
+and replay notes.
 
 ## Status
 
-| Field | Current read |
+| Field | Status |
 | --- | --- |
 | Core | OpenHW Group CORE-V CV32E40P |
 | Evidence level | Scoped parent-context packets; no whole-core CV32E40P claim |
