@@ -1,5 +1,5 @@
-read_liberty /workdir/.main-6b922e97/src/kairos/data/liberty/sky130_fd_sc_hd__tt_025C_1v80.lib
-read_verilog /workdir/_tmp/cv32_readmask_shape_sweep/baseline/context_selected/generated/cv32e40p_id_ex_readmask_context_sta.v
+read_liberty <local>/.main-6b922e97/src/kairos/data/liberty/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog <local>/_tmp/cv32_readmask_shape_sweep/baseline/context_selected/generated/cv32e40p_id_ex_readmask_context_sta.v
 link_design cv32e40p_id_ex_readmask_context
 create_clock -name clk -period 5.0 [get_ports clk]
 
@@ -32,11 +32,11 @@ proc timing_csv {group path count} {
   write_paths $paths ${path}.csv.rpt
 }
 
-report_checks -group_count 50 > /workdir/_tmp/cv32_readmask_shape_sweep/baseline/context_selected/reports/timing/overall.rpt
+report_checks -group_count 50 > <local>/_tmp/cv32_readmask_shape_sweep/baseline/context_selected/reports/timing/overall.rpt
 set overall_paths [find_timing_paths -group_count 50]
-write_paths $overall_paths /workdir/_tmp/cv32_readmask_shape_sweep/baseline/context_selected/reports/timing/overall.csv.rpt
-timing_csv reg2reg /workdir/_tmp/cv32_readmask_shape_sweep/baseline/context_selected/reports/timing/reg2reg 50
-timing_csv reg2out /workdir/_tmp/cv32_readmask_shape_sweep/baseline/context_selected/reports/timing/reg2out 50
-timing_csv in2reg /workdir/_tmp/cv32_readmask_shape_sweep/baseline/context_selected/reports/timing/in2reg 50
-timing_csv in2out /workdir/_tmp/cv32_readmask_shape_sweep/baseline/context_selected/reports/timing/in2out 50
+write_paths $overall_paths <local>/_tmp/cv32_readmask_shape_sweep/baseline/context_selected/reports/timing/overall.csv.rpt
+timing_csv reg2reg <local>/_tmp/cv32_readmask_shape_sweep/baseline/context_selected/reports/timing/reg2reg 50
+timing_csv reg2out <local>/_tmp/cv32_readmask_shape_sweep/baseline/context_selected/reports/timing/reg2out 50
+timing_csv in2reg <local>/_tmp/cv32_readmask_shape_sweep/baseline/context_selected/reports/timing/in2reg 50
+timing_csv in2out <local>/_tmp/cv32_readmask_shape_sweep/baseline/context_selected/reports/timing/in2out 50
 exit

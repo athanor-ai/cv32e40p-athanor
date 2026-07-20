@@ -1,4 +1,4 @@
-read_liberty /workdir/.main-6b922e97/src/kairos/data/liberty/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty <local>/.main-6b922e97/src/kairos/data/liberty/sky130_fd_sc_hd__tt_025C_1v80.lib
 read_verilog /tmp/dexter_cv32_regfile_readmask_idstage_gate_selected/generated/cv32e40p_id_stage_sta.v
 link_design cv32e40p_id_stage
 create_clock -name clk -period 5.0 [get_ports clk]

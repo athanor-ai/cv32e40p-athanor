@@ -1,4 +1,4 @@
-read_verilog /workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero/context/bundle.v
+read_verilog <local>/_tmp/cv32_readmask_shape_sweep/generate_mux_zero/context/bundle.v
 hierarchy -check -top cv32e40p_id_ex_readmask_context
 proc
 opt
@@ -8,16 +8,16 @@ memory
 opt
 techmap
 opt
-dfflibmap -liberty /workdir/.main-6b922e97/src/kairos/data/liberty/sky130_fd_sc_hd__tt_025C_1v80.lib
+dfflibmap -liberty <local>/.main-6b922e97/src/kairos/data/liberty/sky130_fd_sc_hd__tt_025C_1v80.lib
 opt
-abc -liberty /workdir/.main-6b922e97/src/kairos/data/liberty/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty <local>/.main-6b922e97/src/kairos/data/liberty/sky130_fd_sc_hd__tt_025C_1v80.lib
 opt
 flatten
 clean
-write_verilog -noattr /workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero/context_selected/generated/cv32e40p_id_ex_readmask_context_mapped.v
+write_verilog -noattr <local>/_tmp/cv32_readmask_shape_sweep/generate_mux_zero/context_selected/generated/cv32e40p_id_ex_readmask_context_mapped.v
 setundef -zero
 splitnets
 clean
-write_verilog -noattr -noexpr -nohex -nodec -simple-lhs /workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero/context_selected/generated/cv32e40p_id_ex_readmask_context_sta.v
+write_verilog -noattr -noexpr -nohex -nodec -simple-lhs <local>/_tmp/cv32_readmask_shape_sweep/generate_mux_zero/context_selected/generated/cv32e40p_id_ex_readmask_context_sta.v
 check
-tee -o /workdir/_tmp/cv32_readmask_shape_sweep/generate_mux_zero/context_selected/reports/area.rpt stat -liberty /workdir/.main-6b922e97/src/kairos/data/liberty/sky130_fd_sc_hd__tt_025C_1v80.lib
+tee -o <local>/_tmp/cv32_readmask_shape_sweep/generate_mux_zero/context_selected/reports/area.rpt stat -liberty <local>/.main-6b922e97/src/kairos/data/liberty/sky130_fd_sc_hd__tt_025C_1v80.lib

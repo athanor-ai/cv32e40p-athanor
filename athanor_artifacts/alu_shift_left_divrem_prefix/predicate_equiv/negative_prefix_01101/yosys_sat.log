@@ -6,10 +6,10 @@
  \----------------------------------------------------------------------------/
  Yosys 0.66+181 (git sha1 afe6b18f2, Release, Clang /usr/bin/clang++ 18.1.8)
 
--- Executing script file `/workdir/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/prove.ys' --
+-- Executing script file `<local>/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/prove.ys' --
 
-1. Executing Verilog-2005 frontend: /workdir/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv
-Parsing SystemVerilog input from `/workdir/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv' to AST representation.
+1. Executing Verilog-2005 frontend: <local>/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv
+Parsing SystemVerilog input from `<local>/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv' to AST representation.
 Generating RTLIL representation for module `\shiftleft_expr_miter'.
 Successfully finished Verilog frontend.
 
@@ -142,15 +142,15 @@ Optimizing module shiftleft_expr_miter.
 2.7.14. Finished fast OPT passes. (There is nothing left to do.)
 
 2.8. Executing WREDUCE pass (reducing word size of cells).
-Removed top 1 bits (of 7) from port B of cell shiftleft_expr_miter.$eq$/workdir/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv:20$8 ($eq).
-Removed top 1 bits (of 7) from port B of cell shiftleft_expr_miter.$eq$/workdir/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv:20$10 ($eq).
-Removed top 1 bits (of 7) from port B of cell shiftleft_expr_miter.$eq$/workdir/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv:21$12 ($eq).
-Removed top 1 bits (of 7) from port B of cell shiftleft_expr_miter.$eq$/workdir/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv:21$14 ($eq).
-Removed top 1 bits (of 7) from port B of cell shiftleft_expr_miter.$eq$/workdir/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv:23$18 ($eq).
-Removed top 1 bits (of 7) from port B of cell shiftleft_expr_miter.$eq$/workdir/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv:24$21 ($eq).
-Removed top 1 bits (of 7) from port B of cell shiftleft_expr_miter.$eq$/workdir/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv:24$23 ($eq).
-Removed top 1 bits (of 5) from port B of cell shiftleft_expr_miter.$eq$/workdir/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv:25$25 ($eq).
-Removed top 1 bits (of 7) from port B of cell shiftleft_expr_miter.$eq$/workdir/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv:26$27 ($eq).
+Removed top 1 bits (of 7) from port B of cell shiftleft_expr_miter.$eq$<local>/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv:20$8 ($eq).
+Removed top 1 bits (of 7) from port B of cell shiftleft_expr_miter.$eq$<local>/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv:20$10 ($eq).
+Removed top 1 bits (of 7) from port B of cell shiftleft_expr_miter.$eq$<local>/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv:21$12 ($eq).
+Removed top 1 bits (of 7) from port B of cell shiftleft_expr_miter.$eq$<local>/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv:21$14 ($eq).
+Removed top 1 bits (of 7) from port B of cell shiftleft_expr_miter.$eq$<local>/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv:23$18 ($eq).
+Removed top 1 bits (of 7) from port B of cell shiftleft_expr_miter.$eq$<local>/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv:24$21 ($eq).
+Removed top 1 bits (of 7) from port B of cell shiftleft_expr_miter.$eq$<local>/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv:24$23 ($eq).
+Removed top 1 bits (of 5) from port B of cell shiftleft_expr_miter.$eq$<local>/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv:25$25 ($eq).
+Removed top 1 bits (of 7) from port B of cell shiftleft_expr_miter.$eq$<local>/_tmp/cv32_alu_shift_expr_equiv/negative_prefix_01101/shiftleft_expr_miter.sv:26$27 ($eq).
 
 2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \shiftleft_expr_miter..
