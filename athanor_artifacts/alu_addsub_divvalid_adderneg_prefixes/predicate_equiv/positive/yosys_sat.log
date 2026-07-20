@@ -6,10 +6,10 @@
  \----------------------------------------------------------------------------/
  Yosys 0.66+181 (git sha1 afe6b18f2, Release, Clang /usr/bin/clang++ 18.1.8)
 
--- Executing script file `/workdir/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/prove.ys' --
+-- Executing script file `<local>/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/prove.ys' --
 
-1. Executing Verilog-2005 frontend: /workdir/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv
-Parsing SystemVerilog input from `/workdir/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv' to AST representation.
+1. Executing Verilog-2005 frontend: <local>/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv
+Parsing SystemVerilog input from `<local>/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv' to AST representation.
 Generating RTLIL representation for module `\alu_combo_expr_miter'.
 Successfully finished Verilog frontend.
 
@@ -136,20 +136,20 @@ Optimizing module alu_combo_expr_miter.
 2.7.14. Finished fast OPT passes. (There is nothing left to do.)
 
 2.8. Executing WREDUCE pass (reducing word size of cells).
-Removed top 2 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$/workdir/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:27$1 ($eq).
-Removed top 2 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$/workdir/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:28$4 ($eq).
-Removed top 2 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$/workdir/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:29$8 ($eq).
-Removed top 2 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$/workdir/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:30$12 ($eq).
-Removed top 1 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$/workdir/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:33$17 ($eq).
-Removed top 1 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$/workdir/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:33$18 ($eq).
-Removed top 1 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$/workdir/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:34$20 ($eq).
-Removed top 1 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$/workdir/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:34$22 ($eq).
-Removed top 1 bits (of 5) from port B of cell alu_combo_expr_miter.$eq$/workdir/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:35$25 ($eq).
-Removed top 2 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$/workdir/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:37$27 ($eq).
-Removed top 2 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$/workdir/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:37$28 ($eq).
-Removed top 2 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$/workdir/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:38$30 ($eq).
-Removed top 2 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$/workdir/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:38$32 ($eq).
-Removed top 2 bits (of 4) from port B of cell alu_combo_expr_miter.$eq$/workdir/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:39$35 ($eq).
+Removed top 2 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$<local>/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:27$1 ($eq).
+Removed top 2 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$<local>/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:28$4 ($eq).
+Removed top 2 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$<local>/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:29$8 ($eq).
+Removed top 2 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$<local>/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:30$12 ($eq).
+Removed top 1 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$<local>/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:33$17 ($eq).
+Removed top 1 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$<local>/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:33$18 ($eq).
+Removed top 1 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$<local>/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:34$20 ($eq).
+Removed top 1 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$<local>/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:34$22 ($eq).
+Removed top 1 bits (of 5) from port B of cell alu_combo_expr_miter.$eq$<local>/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:35$25 ($eq).
+Removed top 2 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$<local>/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:37$27 ($eq).
+Removed top 2 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$<local>/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:37$28 ($eq).
+Removed top 2 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$<local>/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:38$30 ($eq).
+Removed top 2 bits (of 7) from port B of cell alu_combo_expr_miter.$eq$<local>/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:38$32 ($eq).
+Removed top 2 bits (of 4) from port B of cell alu_combo_expr_miter.$eq$<local>/_tmp/cv32_alu_addsub_divvalid_adderneg_expr_equiv/positive/alu_combo_expr_miter.sv:39$35 ($eq).
 
 2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \alu_combo_expr_miter..

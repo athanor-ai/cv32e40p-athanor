@@ -8,9 +8,9 @@ memory
 opt
 techmap
 opt
-dfflibmap -liberty /workdir/.main-6b922e97/src/kairos/data/liberty/sky130_fd_sc_hd__tt_025C_1v80.lib
+dfflibmap -liberty <local>/.main-6b922e97/src/kairos/data/liberty/sky130_fd_sc_hd__tt_025C_1v80.lib
 opt
-abc -liberty /workdir/.main-6b922e97/src/kairos/data/liberty/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty <local>/.main-6b922e97/src/kairos/data/liberty/sky130_fd_sc_hd__tt_025C_1v80.lib
 opt
 flatten
 clean
@@ -20,4 +20,4 @@ splitnets
 clean
 write_verilog -noattr -noexpr -nohex -nodec -simple-lhs /tmp/dexter_cv32_regfile_readmask_idstage_gate_selected/generated/cv32e40p_id_stage_sta.v
 check
-tee -o /tmp/dexter_cv32_regfile_readmask_idstage_gate_selected/reports/area.rpt stat -liberty /workdir/.main-6b922e97/src/kairos/data/liberty/sky130_fd_sc_hd__tt_025C_1v80.lib
+tee -o /tmp/dexter_cv32_regfile_readmask_idstage_gate_selected/reports/area.rpt stat -liberty <local>/.main-6b922e97/src/kairos/data/liberty/sky130_fd_sc_hd__tt_025C_1v80.lib
