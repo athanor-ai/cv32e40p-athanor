@@ -24,6 +24,18 @@ and replay notes.
 | `cv32e40p_prefetch_controller / prefetch_hwlp_plus_next_cnt_arith` | IF-stage parent context | Area `18228.7328 -> 18187.4432`; all IF-stage timing groups improve | Source-local SAT equivalence; two negatives bite; activity flat; local prefetch-buffer timing caveat retained | [`prefetch_hwlp_plus_next_cnt_arith`](athanor_artifacts/prefetch_hwlp_plus_next_cnt_arith/) |
 | `cv32e40p_register_file_ff / readmask_high_bank_zero` | Default ID-stage parent context | Area `111291.7376 -> 110963.9232`; measured timing groups flat or improved | Parent equivalence `2820/2820`; RF-grid equivalence closes; negative bites; activity flat | [`register_file_readmask_high_bank_zero`](athanor_artifacts/register_file_readmask_high_bank_zero/) |
 
+## Proofs And Receipts
+
+Proofs and replay receipts live inside the package linked from each row.
+
+| Evidence | Where to look |
+| --- | --- |
+| Source-local SAT / predicate equivalence | Package-local `predicate_equiv/summary.json` and replay notes |
+| Parent / grid equivalence | `register_file_readmask_high_bank_zero/equiv_idstage/logs/yosys_equiv.log` and `equiv_rf_grid/logs/real_*.log` |
+| Negative controls | Package-local negative logs, negative summaries, and package manifests |
+| Metrics and replay | Package README files, selected-flow summaries, `toggle_convention_receipt.json`, `SHA256SUMS`, and `python3 athanor/verify_public_receipts.py` |
+| Lean / EBMC / CEGAR | Not claimed by these promoted rows unless a package explicitly carries that method's receipt |
+
 ## Evidence Ledger
 
 Other artifact packages remain visible because they teach the search, but they
